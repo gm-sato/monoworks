@@ -1,0 +1,29 @@
+section {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.Top {
+    &__ttl {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        background: url("https://jajaaan.co.jp/wp-content/uploads/2020/01/inside-sales.jpg") center / cover;
+
+        &__text {
+            position: absolute;
+            top: calc(50% - 0.5em);
+            margin: 0;
+            width: 100%;
+
+            h1 {
+                text-align: center;
+                line-height: 1;
+                font-size: 8vw;
+                font-family: "Montserrat",
+                    sans-serif;
+                text-shadow: 10px 10px 0 #fff;
+            }
+        }
+    }
+}
