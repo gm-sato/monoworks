@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  outline: 0;
+  vertical-align: baseline;
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+}
+
+$pc-min-width: 765px;
+
+@mixin mq-pc($min: $pc-min-width) {
+  @media only screen and (min-width : $min) {
+    @content;
+  }
+}
+
+html {
+  width: 100%;
+  font-size: calc(100vw / 375 * 10);
+
+  @include mq-pc {
+    font-size: calc(100vw / 1920 * 10);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+p {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-feature-settings: "palt";
+  transform: rotate(0.03deg);
+  /* シャギー防止 */
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/*---------color-----------*/
+
+.pink {
+  background-color: #e5c1cb;
+}
+
+.pink2 {
+  background-color: #f1ced4;
+}
+
+.blue {
+  background-color: #a4bad2;
+}
+
+.blue2 {
+  background-color: #bbcbda;
+}
+
+.green {
+  background-color: #bddac8;
+}
+
+.sp-br {
+  display: inline-block;
+
+  @include mq-pc {
+    display: none;
+  }
+}
+
+.pc-br {
+  display: none;
+
+  @include mq-pc {
+    display: inline-block;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  transition: 1s;
+}
+
+.fadeIn.is-show {
+  opacity: 1;
+}
+
+.hoverBtn {
+  opacity: 1;
+  transition: 1s;
+
+  :hover {
+    opacity: 0.5;
+  }
+}
