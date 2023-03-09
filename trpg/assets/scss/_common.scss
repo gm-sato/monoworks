@@ -71,6 +71,30 @@ li {
   background-color: #bddac8;
 }
 
+/*---------color-----------*/
+
+.sec_ttl {
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    font-size: 3.4rem;
+
+    @include mq-pc {
+      font-size: 3rem;
+    }
+  }
+
+  span {
+    font-size: 1.6rem;
+
+    @include mq-pc {
+      font-size: 1.2rem;
+    }
+  }
+
+}
+
 .sp-br {
   display: inline-block;
 
