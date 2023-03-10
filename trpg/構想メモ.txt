@@ -1,0 +1,9 @@
+header：TOP/Character/MOVIE/Twitter
+main
+　TOP:PC集合画像フルサイズ
+　Character：ブロック→クリックしたら立ち絵表示　表情差分あれば表示、プロフィール簡易表示
+             ※各設定したブロックにタグを持たせて、クリックしたら絞り込み表示 
+　MOVIE：スライド式で、youtubeサムネイル表示、読み込みはモーダルウィンドウで出す。
+　profile：アイコンとTwitter、youtubeリンク
+
+footer：とくにいらんかも

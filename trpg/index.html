@@ -1,204 +1,129 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!doctype html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.min.css" />
-    <script src="./assets/script/lib/jquery-3.5.1.min.js"></script>
-    <script src="./assets/script/lib/jquery.lazyload.min.js"></script>
-
+	<meta charset="utf-8">
+	<title>TRPG</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="keywords" itemprop="keywords" content="" />
+	<link rel="stylesheet" href="/assets/css/trpg_style.min.css" type="text/css" media="all" />
 </head>
 
 <body>
-    <header></header>
-    <main>
-        <section class="Top">
-            <div class="Top__ttl">
-                <div class="Top__ttl__mv">
-                    <picture>
-                        <source>
-                        <img src="">
-                    </picture>
-                </div>
-                <div class="Top__ttl__text">
-                    <h1>SAMPLE TEXT</h1>
-                </div>
-            </div>
-        </section>
-        <section class="Story">
-            <div class="sec_ttl">
-                <h2>ストーリー</h2>
-                <span>STORY</span>
-            </div>
-            <div class="Story__text">
-                <p>
-                    ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>ここにテキストが入ります。
-                </p>
-            </div>
-        </section>
-        <section class="Chara">
-            <div class="sec_ttl">
-                <h2>キャラクター</h2>
-                <span>CHARACTER</span>
-            </div>
-            <div class="Chara__wrapper">
-                <div class="Chara__wrapper__container">
-                    <div id="openModal" class="Chara__wrapper__container--box">
+	<header>
+		<nav class="mwtrpg_header mwtrpg-font_imp">
+			<ul>
+				<li><a href="#top">TOP</a></li>
+				<li><a href="#chara">CHARACTER</a></li>
+				<li><a href="#movie">MOVIE</a></li>
+				<li><a href="#log">SESSION LOG</a></li>
+				<li><a href="#profile">PROFILE</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main class="mwtrpg">
+		<section id="top" class="mwtrpg__top">
+			<div class="mwtrpg__top__mv">
+				<picture>
+					<source media="(max-width: 768px)" srcset="/assets/images/main_kv_pc.webp">
+					<source media="(min-width: 769px)" srcset="/assets/images/main_kv_pc.webp">
+					<img src="/assets/images/main_kv_pc.webp" width="100%" alt="">
+				</picture>
+				<div class="mwtrpg__top__mv__ttl">
+					<h1 class="mwtrpg-font_imp">GOMAMESI<br>TRPG<br>STUDIO</h1>
+				</div>
+			</div>
+		</section>
+		<section id="chara" class="mwtrpg__chara">
+			<div class="mwtrpg__chara__container">
+				<h2 class="mwtrpg-font_imp">CHARACTER</h2>
+				<ul>
+					<li><img src="/assets/images/chara_01.webp"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li><img src="/assets/images/chara_01.webp"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</section>
+		<section id="movie" class="mwtrpg__movie">
+			<div class="mwtrpg__movie__container">
+				<h2 class="mwtrpg-font_imp">MOVIE</h2>
+				<div class="mwtrpg__movie__container__warpper">
+					<div class="js-modal-video-open thumbnail" data-url="https://www.youtube.com/watch?v=SzrOCUnZL_E">
+						<img src="/assets/images/nobady.webp" />
+						<span><img src="/assets/images/yt_icon_rgb.webp"></span>
+					</div>
+					<div class="js-modal-video-open thumbnail" data-url="https://www.youtube.com/watch?v=Ds2G9LERNyI">
+						<img src="/assets/images/bash.webp" />
+						<span><img src="/assets/images/yt_icon_rgb.webp"></span>
+					</div>
+					<div class="js-modal-video-open thumbnail" data-url="https://www.youtube.com/watch?v=zs-wXELT7CQ">
+						<img src="/assets/images/zosuku.webp" />
+						<span><img src="/assets/images/yt_icon_rgb.webp"></span>
+					</div>
+					<div class="js-modal-video-open thumbnail" data-url="https://www.youtube.com/watch?v=UZw-5p24mvY">
+						<img src="/assets/images/Hallows.webp" />
+						<span><img src="/assets/images/yt_icon_rgb.webp"></span>
+					</div>
+					<div id="modal-video" class="close js-modal-video-close">
+						<div id="player"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="log" class="mwtrpg__log">
+			<div class="mwtrpg__log__container">
+				<h2 class="mwtrpg-font_imp">SESSION LOG</h2>
+				<ul class="mwtrpg__log__container__warpper">
+					<li class="mwtrpg__log__container__warpper__box">
+						<div class="mwtrpg__log__container__warpper__box__img">
+							<img src="/assets/images/bash.webp">
+						</div>
+						<div class="mwtrpg__log__container__warpper__box__text">
+							<h3>テスト</h3>
+							<p>ここにテキストが入りますここにテキストが入ります。ここにテキストが入りますここにテキストが入ります。ここにテキストが入りますここにテキストが入ります。</p>
+						</div>
+						<div class="mwtrpg__log__container__warpper__box__info">
+							<p>2022/00/00</p><a href="" target="_top">more →</a>
+						</div>
+					</li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</section>
+		<section id="profile" class="mwtrpg__profile">
+			<div class="mwtrpg__profile__container">
+				<h2 class="mwtrpg-font_imp">PROFILE</h2>
+				<div class="mwtrpg__profile__container__warpper">
+					<div class="mwtrpg__profile__container__warpper__img">
+						<picture>
+							<img src="">
+						</picture>
+					</div>
+					<div class="mwtrpg__profile__container__warpper__text">
+						<h3></h3>
+						<p></p>
+						<a href=""></a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+	</footer>
 
-                    </div>
-                    <div id="modalArea" class="modalArea">
-                        <div id="modalBg" class="modalBg"></div>
-                        <div class="modalWrapper">
-                            <div class="modalContents">
-                                <h1>Here are modal contents!</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                            </div>
-                            <div id="closeModal" class="closeModal">
-                                ×
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Chara__wrapper__container--box">
+	<script src="/assets/script/lib/jquery-3.5.1.min.js"></script>
+	<script src="/assets/script/youtube.js"></script>
 
-                    </div>
-                    <div class="Chara__wrapper__container--box">
+	<script>
+	</script>
 
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="Movie">
-            <div class="sec_ttl">
-                <h2>ムービー</h2>
-                <span>MOVIE</span>
-            </div>
-            <div class="Movie__wrapper">
-                <div id="demo02" class="card02 l-section">
-                    <div class="l-inner">
-
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/139/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/1060/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/1023/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Ut enim ad minim veniam.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/1047/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/248/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/109/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Excepteur sint obcaecat cupiditat non proident.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/120/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Sunt in culpa qui officia.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/225/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Deserunt mollit anim id est laborum.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/1003/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                                <a href="#" class="swiper-slide">
-                                    <article class="slide">
-                                        <div class="slide-media img-cover"><img src="https://picsum.photos/id/127/800/500" alt=""></div>
-                                        <div class="slide-content">
-                                            <time class="slide-date" datetime="2021-12-01">2021.12.01</time>
-                                            <h2 class="slide-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-                                        </div>
-                                    </article>
-                                </a>
-                            </div><!-- /swiper-wrapper -->
-
-                            <div class="swiper-controller">
-                                <div class="swiper-pagination"></div>
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-button-next"></div>
-                            </div>
-                        </div><!-- /swiper -->
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="Info">
-            <div class="sec_ttl">
-                <h2>更新情報</h2>
-                <span>INFO</span>
-            </div>
-            <ul>
-                <li><span>2023/03/09</span>
-                    <p>テストサイトをアップしました</p>
-                </li>
-            </ul>
-        </section>
-    </main>
-    <footer></footer>
-    <script src="./assets/script/lib/swiper-bundle.min.js"></script>
-    <script src="./assets/script/script.js"></script>
 </body>
 
 </html>
