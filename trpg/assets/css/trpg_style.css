@@ -315,6 +315,10 @@ html {
 html .trpg {
   overflow-x: hidden;
 }
+html .trpg--is_open {
+  overflow-y: hidden;
+  height: calc(100vh + 0.1px);
+}
 html .trpg section {
   position: relative;
   width: 100%;
@@ -386,8 +390,6 @@ nav ul li:last-of-type {
 .mwtrpg__chara__container__wrapper {
   margin: 10rem calc(50% - 50vw);
   width: 100vw;
-  /* モーダルCSSここから */
-  /* モーダルCSSここまで */
 }
 .mwtrpg__chara__container__wrapper ul {
   display: flex;
@@ -411,20 +413,20 @@ nav ul li:last-of-type {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.mwtrpg__chara__container__wrapper .modal {
+.mwtrpg__chara__container__modal {
   display: none;
   height: 100vh;
   position: fixed;
   top: 0;
   width: 100vw;
 }
-.mwtrpg__chara__container__wrapper .modal__bg {
+.mwtrpg__chara__container__modal--bg {
   background: rgba(0, 0, 0, 0.8);
   height: 100vh;
   position: absolute;
   width: 100vw;
 }
-.mwtrpg__chara__container__wrapper .modal__content {
+.mwtrpg__chara__container__modal--content {
   background: #fff;
   left: 50%;
   padding: 40px;

@@ -74,24 +74,23 @@
 						}
 					}
 				}
+			}
 
-				/* モーダルCSSここから */
-				.modal {
-					display: none;
-					height: 100vh;
-					position: fixed;
-					top: 0;
-					width: 100vw;
-				}
+			&__modal {
+				display: none;
+				height: 100vh;
+				position: fixed;
+				top: 0;
+				width: 100vw;
 
-				.modal__bg {
+				&--bg {
 					background: rgba(0, 0, 0, 0.8);
 					height: 100vh;
 					position: absolute;
 					width: 100vw;
 				}
 
-				.modal__content {
+				&--content {
 					background: #fff;
 					left: 50%;
 					padding: 40px;
@@ -100,8 +99,6 @@
 					transform: translate(-50%, -50%);
 					width: 60%;
 				}
-
-				/* モーダルCSSここまで */
 			}
 		}
 	}

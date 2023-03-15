@@ -1,70 +1,61 @@
-// header・footer共通パーツ化
+// スムーススクロール
+// headerの高さを取得し、headeHeightに代入
+const headerHeight = document.querySelector('header').offsetHeight;
 
-function include_header(rootDir) {
-  $.ajax({
-    url: rootDir + 'assets/parts/header.html', // リクエストを送信するURLを指定
-    async: false, // 非同期リクエストを無効にする
-  }).done(function (header_html) { // 通信が成功したら
-    header_html = header_html.replace(/\{\$root\}/g, rootDir); // header.htmlの文字列を置き換え
-    document.write(header_html); // herder.htmlを表示する
-  });
-}
+//querySelectorAllメソッドを使用してページ内のhref属性が#で始まるものを選択
+//forEachメソッドを使って、各アンカータグにクリックされた時の処理
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
 
-function include_footer(rootDir) {
-  $.ajax({
-    url: rootDir + 'assets/parts/footer.html', // リクエストを送信するURLを指定
-    async: false, // 非同期リクエストを無効にする
-  }).done(function (footer_html) { // 通信が成功したら
-    footer_html = footer_html.replace(/\{\$root\}/g, rootDir); // footer.htmlの文字列を置き換え
-    document.write(footer_html); // footer.htmlを表示する
-  });
-}
+    // クリックされたときのデフォルトの挙動を防ぐ
+    e.preventDefault();
 
-$(function () {
-  // ページ内移動アニメーション
-  $('a[href^="#"]').click(function () {
-    var adjust = 0;
-    var speed = 400;
-    var href = $(this).attr("href");
-    var target = $(href == "#" || href == "" ? "html" : href);
-    var position = target.offset().top + adjust;
-    $("body,html").animate({
-      scrollTop: position
-    }, speed, "swing");
-    return false;
-  });
-  //フェードアニメーション
-  $(window).scroll(function () {
-    const windowHeight = $(window).height();
-    const scroll = $(window).scrollTop();
+    // クリックされたアンカータグのhref属性を取得
+    const href = anchor.getAttribute('href');
 
-    $(".fadeIn").each(function () {
-      const targetPosition = $(this).offset().top;
-      if (scroll > targetPosition - windowHeight + 100) {
-        $(this).addClass("is-show");
-      }
+    // href属性の#を取り除いた部分と一致するIDを取得
+    const target = document.getElementById(href.replace('#', ''));
+
+    //取得した要素の位置を取得するために、getBoundingClientRect()を呼び出し、ページ上の位置を計算。
+    //headerの高さを引いて、スクロール位置がヘッダーの下になるように調整します。
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+    // window.scrollTo()を呼び出して、スクロール位置を設定します。behaviorオプションをsmoothに設定することで、スムーズなスクロールを実現します。
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
     });
   });
 });
 
-$(function () {
-  $('.js-modal-open').each(function () {
-    $(this).on('click', function () {
-      var target = $(this).data('target');
-      var modal = document.getElementById(target);
-      $(modal).fadeIn();
-      $('.trpg').css('overflow-y', 'hidden');
-      $('.trpg').css('height', 'calc(100vh + 1px)');
-      return false;
-    });
-  });
-  $('.js-modal-close').on('click', function () {
-    $('.js-modal').fadeOut();
-    $('.trpg').css('overflow-y', 'auto');
-    $('.trpg').css('height', 'auto');
-    return false;
-  });
+
+//モーダルウィンドウ
+const modalBtns = document.querySelectorAll(".js-modal-open");
+const modalbg = document.getElementsByClassName('trpg')[0];
+modalBtns.forEach(function (btn) {
+  btn.onclick = function () {
+    let modal = btn.getAttribute('data-modal');
+    document.getElementById(modal).style.display = "block";
+    modalbg.classList.add("trpg--is_open");
+  };
 });
+const closeBtns = document.querySelectorAll(".js-modal-close");
+closeBtns.forEach(function (btn) {
+  btn.onclick = function () {
+    let modal = btn.closest('.js-modal');
+    modal.style.display = "none";
+    modalbg.classList.remove("trpg--is_open");
+  };
+});
+
+window.onclick = function (event) {
+  if (event.target.className === ".js-modal") {
+    event.target.style.display = "none";
+    modalbg.classList.remove("trpg--is_open");
+  }
+};
+//モーダルウィンドウここまで
+
 
 let mySwiper = new Swiper('.swiper', {
   navigation: {
@@ -81,7 +72,8 @@ let mySwiper = new Swiper('.swiper', {
   slidesPerView: 1,
   breakpoints: {
     820: {
-      slidesPerView: 2,
+
+      slidesPerView: 4,
     }
   }
 });
