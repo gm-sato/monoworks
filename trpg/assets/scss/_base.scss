@@ -17,68 +17,101 @@ $pc-min-width: 1981px;
 
 //Media Queries
 @mixin mq-sp($max: $sp-max-width) {
-  @media only screen and (max-width: #{$max}){
-    @content;
-  }
+	@media only screen and (max-width: #{$max}) {
+		@content;
+	}
 }
+
 @mixin mq-tb($max: $tb-max-width) {
-  @media only screen and (max-width: #{$max}){
-    @content;
-  }
+	@media only screen and (max-width: #{$max}) {
+		@content;
+	}
 }
+
 @mixin mq-pc($min: $pc-min-width) {
-  @media only screen and (min-width: #{$min}){
-    @content;
-  }
+	@media only screen and (min-width: #{$min}) {
+		@content;
+	}
 }
 
-body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dd,dt{
-  padding: 0;
-  margin: 0;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dd,
+dt {
+	padding: 0;
+	margin: 0;
 }
 
-ul,li{
+ul,
+li {
 	list-style: none;
 }
 
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section { 
-  display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+	display: block;
 }
 
-a{
+a {
 	text-decoration: none;
 	color: inherit;
 }
 
-img{
-	vertical-align:top;
+img {
+	vertical-align: top;
 }
 
-.mwtrpg-font_yugo{
+.mwtrpg-font_yugo {
 	font-family: YuGothic, "Yu Gothic medium", "Hiragino Sans", Meiryo, "sans-serif";
 }
 
-.mwtrpg-font_din{
+.mwtrpg-font_din {
 	font-family: "din-2014";
 }
 
-.mwtrpg-font_imp{
-	font-family: Impact,Charcoal;
+.mwtrpg-font_imp {
+	font-family: Impact, Charcoal;
 }
 
-html{
+html {
 	font-size: calc(100vw / 1920 * 10);
 	text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
-	overflow:auto;
+	overflow: auto;
+
 	@include mq-tb {
 		font-size: calc(100vw / 820 * 10);
+
 		@include mq-sp {
 			font-size: calc(100vw / 750 * 10);
 		}
 	}
-	section{
-		position: relative;
-		width: 100%;
+
+	.trpg {
+		overflow-x: hidden;
+
+		section {
+			position: relative;
+			width: 100%;
+		}
 	}
 }

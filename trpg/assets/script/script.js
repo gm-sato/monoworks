@@ -21,7 +21,6 @@ function include_footer(rootDir) {
 }
 
 $(function () {
-
   // ページ内移動アニメーション
   $('a[href^="#"]').click(function () {
     var adjust = 0;
@@ -48,47 +47,41 @@ $(function () {
   });
 });
 
-// iframe設定
-$(window).on("message", function (e) {
-  $(function () {
-    if ($("#goodsmenuframe").length !== 0) {
-      $("#goodsmenuframe iframe").css({
-        height: e.originalEvent.data + 4 + "px",
-        border: "none",
-      });
-    }
-  });
-});
-
-// 遅延読み込み
-jQuery(function ($) {
-  $("img.lazy").lazyload();
-});
-
 $(function () {
-  $('#openModal').click(function () {
-    $('#modalArea').fadeIn();
+  $('.js-modal-open').each(function () {
+    $(this).on('click', function () {
+      var target = $(this).data('target');
+      var modal = document.getElementById(target);
+      $(modal).fadeIn();
+      $('.trpg').css('overflow-y', 'hidden');
+      $('.trpg').css('height', 'calc(100vh + 1px)');
+      return false;
+    });
   });
-  $('#closeModal , #modalBg').click(function () {
-    $('#modalArea').fadeOut();
+  $('.js-modal-close').on('click', function () {
+    $('.js-modal').fadeOut();
+    $('.trpg').css('overflow-y', 'auto');
+    $('.trpg').css('height', 'auto');
+    return false;
   });
 });
 
-const mySwiper = new Swiper('.card02 .swiper', {
-  slidesPerView: 'auto',
-  spaceBetween: 16,
-  grabCursor: true,
-  pagination: {
-    el: '.card02 .swiper-pagination',
-    clickable: true,
-  },
+let mySwiper = new Swiper('.swiper', {
   navigation: {
-    nextEl: '.card02 .swiper-button-next',
-    prevEl: '.card02 .swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  },
+  // オプション設定
+  loop: true,
+  slidesPerView: 1,
   breakpoints: {
-    1025: {
-      spaceBetween: 32,
+    820: {
+      slidesPerView: 2,
     }
-  },
+  }
 });
