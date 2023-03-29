@@ -30,10 +30,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 //モーダルウィンドウ
+const body = document.body;
 const modalBtns = document.querySelectorAll(".js-modal-open");
-const modalbg = document.getElementsByClassName('trpg')[0];
 modalBtns.forEach(function (btn) {
   btn.onclick = function () {
+    body.style.top = `-${window.scrollY}px`;
+    body.classList.add('backgroundfix');
     let modal = btn.getAttribute('data-modal');
     document.getElementById(modal).style.display = "block";
     modalbg.classList.add("trpg--is_open");
@@ -42,16 +44,19 @@ modalBtns.forEach(function (btn) {
 const closeBtns = document.querySelectorAll(".js-modal-close");
 closeBtns.forEach(function (btn) {
   btn.onclick = function () {
+    body.classList.remove('backgroundfix');
     let modal = btn.closest('.js-modal');
     modal.style.display = "none";
-    modalbg.classList.remove("trpg--is_open");
+    const top = body.style.top;
+    const topHeight = top.replace('px', '').replace('-', '');
+    window.scrollTo(0, topHeight);
   };
 });
 
 window.onclick = function (event) {
   if (event.target.className === ".js-modal") {
     event.target.style.display = "none";
-    modalbg.classList.remove("trpg--is_open");
+    bodyFixedOff();
   }
 };
 //モーダルウィンドウここまで

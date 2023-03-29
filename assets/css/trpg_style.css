@@ -353,6 +353,7 @@ nav ul li:last-of-type {
 .mwtrpg__top__mv {
   position: relative;
   background-color: #000;
+  height: 100vh;
 }
 .mwtrpg__top__mv img {
   width: 100%;
@@ -477,8 +478,6 @@ nav ul li:last-of-type {
   width: 100vw;
 }
 .mwtrpg__chara__container__modal--content {
-  display: flex;
-  justify-content: space-between;
   background: #fff;
   left: 50%;
   padding: 40px;
@@ -486,39 +485,6 @@ nav ul li:last-of-type {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
-}
-.mwtrpg__chara__container__modal--content--text {
-  width: 50%;
-}
-.mwtrpg__chara__container__modal--content--text h3 {
-  font-size: 3rem;
-}
-.mwtrpg__chara__container__modal--content--text p {
-  font-size: 2rem;
-}
-.mwtrpg__chara__container__modal--content--text ul {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: auto;
-  justify-content: left;
-}
-.mwtrpg__chara__container__modal--content--text ul li {
-  display: flex;
-  font-size: 1.8rem;
-  width: 100%;
-}
-.mwtrpg__chara__container__modal--content--text ul li span {
-  width: 20%;
-}
-.mwtrpg__chara__container__modal--content--text ul li p {
-  width: 80%;
-}
-.mwtrpg__chara__container__modal--content--img {
-  width: 40%;
-}
-.mwtrpg__chara__container__modal--content--img img {
-  width: 100%;
 }
 .mwtrpg__movie {
   background: #333;
@@ -644,18 +610,4 @@ nav ul li:last-of-type {
 .mwtrpg__profile__container h2 {
   color: #fff;
   font-size: 3.4rem;
-}
-.mwtrpg__profile__container__warpper {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-.mwtrpg__profile__container__warpper--img {
-  width: 30%;
-}
-.mwtrpg__profile__container__warpper--img img {
-  width: 100%;
-}
-.mwtrpg__profile__container__warpper--text {
-  width: 70%;
 }/*# sourceMappingURL=trpg_style.css.map */

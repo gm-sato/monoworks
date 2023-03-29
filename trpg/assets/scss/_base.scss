@@ -105,18 +105,8 @@ html {
 			font-size: calc(100vw / 750 * 10);
 		}
 	}
+}
 
-	.trpg {
-		overflow-x: hidden;
-
-		&--is_open {
-			overflow-y: hidden;
-			height: calc(100vh + 0.1px);
-		}
-
-		section {
-			position: relative;
-			width: 100%;
-		}
-	}
+.-lock {
+	overflow: hidden;
 }

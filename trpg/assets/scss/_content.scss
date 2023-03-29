@@ -14,7 +14,6 @@
 		&__mv {
 			position: relative;
 			background-color: #000;
-			height: 100vh;
 
 			img {
 				width: 100%;
@@ -164,6 +163,8 @@
 				}
 
 				&--content {
+					display: flex;
+					justify-content: space-between;
 					background: #fff;
 					left: 50%;
 					padding: 40px;
@@ -171,6 +172,48 @@
 					top: 50%;
 					transform: translate(-50%, -50%);
 					width: 60%;
+
+					&--text {
+						width: 50%;
+
+						h3 {
+							font-size: 3rem;
+						}
+
+						p {
+							font-size: 2rem;
+						}
+
+						ul {
+							display: flex;
+							flex-direction: column;
+							width: 100%;
+							margin: auto;
+							justify-content: left;
+
+							li {
+								display: flex;
+								font-size: 1.8rem;
+								width: 100%;
+
+								span {
+									width: 20%;
+								}
+
+								p {
+									width: 80%;
+								}
+							}
+						}
+					}
+
+					&--img {
+						width: 40%;
+
+						img {
+							width: 100%;
+						}
+					}
 				}
 			}
 		}
@@ -327,6 +370,23 @@
 				font-size: 3.4rem;
 			}
 
+			&__warpper {
+				display: flex;
+				width: 100%;
+				justify-content: space-between;
+
+				&--img {
+					width: 30%;
+
+					img {
+						width: 100%;
+					}
+				}
+
+				&--text {
+					width: 70%;
+				}
+			}
 		}
 	}
 }
