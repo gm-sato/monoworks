@@ -96,7 +96,7 @@ html {
 	font-size: calc(100vw / 1920 * 10);
 	text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
-	overflow: auto;
+	overflow-y: scroll;
 
 	@include mq-tb {
 		font-size: calc(100vw / 820 * 10);
@@ -105,8 +105,11 @@ html {
 			font-size: calc(100vw / 750 * 10);
 		}
 	}
-}
 
-.-lock {
-	overflow: hidden;
+	body {
+		&.backgroundfix {
+			position: fixed;
+			width: 100%;
+		}
+	}
 }

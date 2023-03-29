@@ -57,6 +57,8 @@ class ToggleModal {
    */
   open() {
     this.target.addEventListener('click', event => {
+      body.style.top = `-${window.scrollY}px`;
+      body.classList.add('backgroundfix');
       this.onYouTubeIframeAPIReady();
       document.querySelector('#modal-video').classList.add('open');
       document.querySelector('#modal-video').classList.remove('close');
@@ -69,9 +71,13 @@ class ToggleModal {
    */
   close() {
     document.querySelector('.js-modal-video-close').addEventListener('click', event => {
+      body.classList.remove('backgroundfix');
       document.querySelector('#modal-video').classList.add('close');
       document.querySelector('#modal-video').classList.remove('open');
       this.remakePlayerElement();
+      const top = body.style.top;
+      const topHeight = top.replace('px', '').replace('-', '');
+      window.scrollTo(0, topHeight);
     });
   }
 }

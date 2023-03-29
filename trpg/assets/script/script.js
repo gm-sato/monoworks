@@ -78,7 +78,7 @@ let mySwiper = new Swiper('.swiper', {
   breakpoints: {
     820: {
 
-      slidesPerView: 4,
+      slidesPerView: 3,
     }
   }
 });

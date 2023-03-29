@@ -300,7 +300,7 @@ html {
   -moz-text-size-adjust: 100%;
        text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  overflow: auto;
+  overflow-y: scroll;
 }
 @media only screen and (max-width: 820px) {
   html {
@@ -312,9 +312,9 @@ html {
     font-size: 1.3333333333vw;
   }
 }
-
-.-lock {
-  overflow: hidden;
+html body.backgroundfix {
+  position: fixed;
+  width: 100%;
 }
 
 /*---header----*/
@@ -469,6 +469,7 @@ nav ul li:last-of-type {
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: 2;
 }
 .mwtrpg__chara__container__modal--bg {
   background: rgba(0, 0, 0, 0.8);
@@ -519,6 +520,9 @@ nav ul li:last-of-type {
 }
 .mwtrpg__chara__container__modal--content--img img {
   width: 100%;
+}
+.mwtrpg__chara__container .js-modal.visible {
+  display: block;
 }
 .mwtrpg__movie {
   background: #333;

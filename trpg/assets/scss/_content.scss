@@ -154,6 +154,7 @@
 				position: fixed;
 				top: 0;
 				width: 100vw;
+				z-index: 2;
 
 				&--bg {
 					background: rgba(0, 0, 0, 0.8);
@@ -214,6 +215,12 @@
 							width: 100%;
 						}
 					}
+				}
+			}
+
+			.js-modal {
+				&.visible {
+					display: block;
 				}
 			}
 		}
