@@ -62,23 +62,61 @@ window.onclick = function (event) {
 //モーダルウィンドウここまで
 
 
-let mySwiper = new Swiper('.swiper', {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+const movieA = new Swiper('.movie_a', {
+  loop: true,
+  centerdSlides: true,
+  slidesPerView: 1,
+  breakpoints: {
+    820: {
+      slidesPerView: 3,
+    }
   },
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true
+  speed: 10000,
+  allowTouchMove: false,
+  slidesPerView: "auto",
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
   },
-  // オプション設定
+});
+
+const movieB = new Swiper('.movie_b', {
   loop: true,
   slidesPerView: 1,
   breakpoints: {
     820: {
-
       slidesPerView: 3,
+    }
+  },
+  speed: 10000,
+  allowTouchMove: false,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+    reverseDirection: true,
+  },
+});
+
+
+const character = new Swiper('.chara_slide', {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  slidesPerView: 1,
+  loop: true,
+});
+
+
+const targets = document.querySelectorAll('.chara-box'); //アニメーションさせたい要素
+//スクロールイベント
+window.addEventListener('scroll', function () {
+  let scroll = window.scrollY; //スクロール量を取得
+  let windowHeight = window.innerHeight; //画面の高さを取得
+  for (let target of targets) { //ターゲット要素がある分、アニメーション用のクラスをつける処理を繰り返す
+    let targetPos = target.getBoundingClientRect().top + scroll; //ターゲット要素の位置を取得
+    if (scroll > targetPos - windowHeight) { //スクロール量 > ターゲット要素の位置
+      target.classList.add('is-animated'); //is-animatedクラスを加える
     }
   }
 });

@@ -300,6 +300,7 @@ html {
   -moz-text-size-adjust: 100%;
        text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 @media only screen and (max-width: 820px) {
@@ -317,6 +318,16 @@ html body.backgroundfix {
   width: 100%;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) skewX(-25deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%) skewX(-25deg);
+  }
+}
 /*---header----*/
 nav {
   position: fixed;
@@ -342,13 +353,30 @@ nav ul li:last-of-type {
 
 /*---コンテンツ----*/
 .mwtrpg {
+  background: #333;
   position: relative;
   display: block;
-  max-width: 192rem;
+  max-width: 192.8rem;
   width: 100%;
 }
+.mwtrpg section {
+  display: block;
+  width: 124rem;
+  margin: auto;
+  padding-bottom: 10rem;
+}
+.mwtrpg section:last-of-type {
+  padding-bottom: 0;
+}
+.mwtrpg section .section-ttl {
+  color: #fff;
+  font-size: 5rem;
+  margin-bottom: 10rem;
+}
 .mwtrpg__top {
-  width: 100%;
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  overflow: hidden;
 }
 .mwtrpg__top__mv {
   position: relative;
@@ -424,39 +452,62 @@ nav ul li:last-of-type {
   }
 }
 .mwtrpg__chara {
-  background: #333;
   height: 100vh;
   width: 100%;
 }
 .mwtrpg__chara__container {
-  width: 124rem;
-  padding: 10rem 0;
   margin: auto;
-}
-.mwtrpg__chara__container h2 {
-  color: #fff;
-  font-size: 3.4rem;
 }
 .mwtrpg__chara__container__wrapper {
   margin: 10rem calc(50% - 50vw);
   width: 100vw;
 }
-.mwtrpg__chara__container__wrapper ul {
+.mwtrpg__chara__container__wrapper__list {
   display: flex;
   width: 108rem;
   margin: 10rem auto;
   flex-wrap: wrap;
   justify-content: center;
 }
-.mwtrpg__chara__container__wrapper ul li {
+.mwtrpg__chara__container__wrapper__list li {
   margin: 0;
   width: 25%;
   height: auto;
-  transform: skewX(-25deg);
+  transform: translateX(-150%) skewX(-25deg);
+  opacity: 0;
   background: #fff;
   cursor: pointer;
 }
-.mwtrpg__chara__container__wrapper ul li img {
+.mwtrpg__chara__container__wrapper__list li.is-animated {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.mwtrpg__chara__container__wrapper__list li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.mwtrpg__chara__container__wrapper__list li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.mwtrpg__chara__container__wrapper__list li:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.mwtrpg__chara__container__wrapper__list li:nth-child(4) {
+  animation-delay: 0.5s;
+}
+.mwtrpg__chara__container__wrapper__list li:nth-child(5) {
+  animation-delay: 0.6s;
+}
+.mwtrpg__chara__container__wrapper__list li:nth-child(6) {
+  animation-delay: 0.7s;
+}
+.mwtrpg__chara__container__wrapper__list li:nth-child(7) {
+  animation-delay: 0.8s;
+}
+.mwtrpg__chara__container__wrapper__list li:nth-child(8) {
+  animation-delay: 0.9s;
+}
+.mwtrpg__chara__container__wrapper__list li img {
   width: 100%;
   height: 100%;
   transform: skewX(25deg);
@@ -517,6 +568,7 @@ nav ul li:last-of-type {
 }
 .mwtrpg__chara__container__modal--content--img {
   width: 40%;
+  overflow: hidden;
 }
 .mwtrpg__chara__container__modal--content--img img {
   width: 100%;
@@ -530,25 +582,27 @@ nav ul li:last-of-type {
   width: 100%;
 }
 .mwtrpg__movie__container {
-  width: 124rem;
-  padding: 10rem;
   margin: auto;
 }
-.mwtrpg__movie__container h2 {
-  color: #fff;
-  font-size: 3.4rem;
+.mwtrpg__movie__container__warpper {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
 }
-.mwtrpg__movie__container__warpper .swiper-slide {
+.mwtrpg__movie__container__warpper .swiper-wrapper {
+  transition-timing-function: linear;
+}
+.mwtrpg__movie__container__warpper .swiper-wrapper .swiper-slide {
   position: relative;
   cursor: pointer;
   width: 100%;
   height: auto;
 }
-.mwtrpg__movie__container__warpper .swiper-slide img {
+.mwtrpg__movie__container__warpper .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 100%;
 }
-.mwtrpg__movie__container__warpper .swiper-slide span {
+.mwtrpg__movie__container__warpper .swiper-wrapper .swiper-slide span {
   display: block;
   position: absolute;
   width: 8rem;
@@ -585,18 +639,15 @@ nav ul li:last-of-type {
   height: 36vw;
 }
 .mwtrpg__log {
-  background: #333;
   height: 100vh;
   width: 100%;
 }
 .mwtrpg__log__container {
-  width: 124rem;
-  padding: 10rem 0;
   margin: auto;
 }
-.mwtrpg__log__container h2 {
-  color: #fff;
-  font-size: 3.4rem;
+.mwtrpg__log__container__warpper {
+  display: flex;
+  justify-content: left;
 }
 .mwtrpg__log__container__warpper__box {
   display: flex;
@@ -641,8 +692,6 @@ nav ul li:last-of-type {
   width: 100%;
 }
 .mwtrpg__profile__container {
-  width: 124rem;
-  padding: 10rem 0;
   margin: auto;
 }
 .mwtrpg__profile__container h2 {
@@ -651,15 +700,57 @@ nav ul li:last-of-type {
 }
 .mwtrpg__profile__container__warpper {
   display: flex;
-  width: 100%;
+  width: 70%;
+  margin: auto;
   justify-content: space-between;
 }
 .mwtrpg__profile__container__warpper--img {
-  width: 30%;
+  position: relative;
+  width: 40%;
 }
 .mwtrpg__profile__container__warpper--img img {
-  width: 100%;
+  display: block;
+  width: 70%;
+  margin: auto;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .mwtrpg__profile__container__warpper--text {
-  width: 70%;
+  width: 60%;
+  text-align: left;
+  color: #FFF;
+}
+.mwtrpg__profile__container__warpper--text h3 {
+  font-size: 2.6rem;
+}
+.mwtrpg__profile__container__warpper--text p {
+  font-size: 1.8rem;
+}
+.mwtrpg__profile__container__warpper--text .sns_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.mwtrpg__profile__container__warpper--text .sns_wrapper--btn {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 6px 12px;
+  font-size: 3rem;
+  width: 20rem;
+  text-align: center;
+}
+.mwtrpg__profile__container__warpper--text .sns_wrapper--btn.twitter {
+  background-color: #1688DF;
+}
+.mwtrpg__profile__container__warpper--text .sns_wrapper--btn.youtube {
+  background: red;
+}
+.mwtrpg__profile__container__warpper--text .job-address {
+  margin-top: 1rem;
 }/*# sourceMappingURL=trpg_style.css.map */
