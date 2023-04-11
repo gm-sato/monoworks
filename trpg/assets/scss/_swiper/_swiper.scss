@@ -10,6 +10,8 @@
  * Released on: February 28, 2023
  */
 
+
+
 $themeColor: #007aff !default;
 
 @at-root {
@@ -268,3 +270,5 @@ swiper-container:not(.swiper-watch-progress),
     transform: rotate(360deg);
   }
 }
+
+@import "scrollbar";

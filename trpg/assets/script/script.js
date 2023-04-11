@@ -64,8 +64,7 @@ window.onclick = function (event) {
 
 const movieA = new Swiper('.movie_a', {
   loop: true,
-  centerdSlides: true,
-  slidesPerView: 1,
+  slidesPerView: 2,
   breakpoints: {
     820: {
       slidesPerView: 3,
@@ -73,7 +72,6 @@ const movieA = new Swiper('.movie_a', {
   },
   speed: 10000,
   allowTouchMove: false,
-  slidesPerView: "auto",
   autoplay: {
     delay: 0,
     disableOnInteraction: false,
@@ -82,7 +80,7 @@ const movieA = new Swiper('.movie_a', {
 
 const movieB = new Swiper('.movie_b', {
   loop: true,
-  slidesPerView: 1,
+  slidesPerView: 2,
   breakpoints: {
     820: {
       slidesPerView: 3,
@@ -95,6 +93,16 @@ const movieB = new Swiper('.movie_b', {
     disableOnInteraction: false,
     reverseDirection: true,
   },
+});
+
+const log = new Swiper('.log_slider', {
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    hide: false,
+    draggable: true
+  },
+  loop: false,
+  slidesPerView: 'auto',
 });
 
 
