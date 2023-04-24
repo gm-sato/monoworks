@@ -3,7 +3,7 @@
 /*---コンテンツ----*/
 
 .mwtrpg {
-	background: #333;
+	background-color: #050505;
 	position: relative;
 	display: block;
 	max-width: 192.8rem;
@@ -156,7 +156,7 @@
 			margin: auto;
 
 			&__wrapper {
-				margin: 10rem calc(50% - 50vw);
+				margin: 0 calc(50% - 50vw);
 				width: 100vw;
 
 				@include mq-sp {
@@ -166,7 +166,7 @@
 				&__list {
 					display: flex;
 					width: 108rem;
-					margin: 10rem auto;
+					margin: 0 auto;
 					flex-wrap: wrap;
 					justify-content: center;
 
@@ -181,7 +181,8 @@
 						height: auto;
 						transform: translateX(-150%) skewX(-25deg);
 						opacity: 0;
-						background: #fff;
+						background: #333333;
+						overflow: hidden;
 						cursor: pointer;
 
 						@include mq-sp {
@@ -227,10 +228,11 @@
 						}
 
 						img {
+							display: block;
+							object-fit: cover;
 							width: 100%;
 							height: 100%;
 							transform: skewX(25deg);
-							object-fit: cover;
 						}
 					}
 				}
@@ -254,22 +256,25 @@
 				&--content {
 					display: flex;
 					justify-content: space-between;
-					background: #fff;
+					background: #333333;
+					color: #FFF;
 					left: 50%;
 					padding: 40px;
 					position: absolute;
 					top: 50%;
 					transform: translate(-50%, -50%);
-					width: 80%;
+					width: 60%;
 
 					&--text {
 						width: 50%;
 
 						h3 {
+							margin: 10rem auto 0;
 							font-size: 3.125rem;
 						}
 
 						p {
+							margin-top: 1rem;
 							font-size: 2.0rem;
 						}
 
@@ -277,11 +282,12 @@
 							display: flex;
 							flex-direction: column;
 							width: 100%;
-							margin: auto;
+							margin: 5rem auto 0;
 							justify-content: left;
 
 							li {
 								display: flex;
+								align-items: center;
 								font-size: 1.6rem;
 								width: 100%;
 
@@ -290,6 +296,7 @@
 								}
 
 								p {
+									margin-top: 0;
 									width: 80%;
 								}
 							}
@@ -299,10 +306,12 @@
 					&--img {
 						position: relative;
 						width: 40%;
+						height: 70rem;
 						overflow: hidden;
 
 						img {
 							width: 100%;
+							object-fit: contain;
 						}
 					}
 
@@ -330,7 +339,6 @@
 	}
 
 	&__movie {
-		background: #333;
 		height: 100vh;
 		width: 100%;
 
@@ -488,8 +496,7 @@
 	}
 
 	&__profile {
-		background: #333;
-		height: 100vh;
+		height: 60vh;
 		width: 100%;
 
 		&__container {
@@ -585,5 +592,28 @@
 
 			}
 		}
+	}
+}
+
+.LpBodyLine {
+	bottom: 0;
+	display: flex;
+	height: 100vh;
+	justify-content: space-between;
+	left: 0;
+	margin: 0 auto;
+	max-width: 120rem;
+	pointer-events: none;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+
+	span {
+		background-color: hsla(0, 0%, 100%, .05);
+		display: block;
+		height: 100%;
+		width: 1px;
 	}
 }
