@@ -1022,12 +1022,65 @@ nav ul li:last-of-type {
     margin: auto;
   }
 }
+.mwtrpg__chara__container__wrapper__filters {
+  display: flex;
+}
+.mwtrpg__chara__container__wrapper__filters button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #4082f0;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.59);
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 15px;
+  min-width: 120px;
+  padding: 1em;
+  transform: translateY(-2px);
+  transition: all 0.2s;
+}
+.mwtrpg__chara__container__wrapper__filters button.active, .mwtrpg__chara__container__wrapper__filters button:hover {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.79);
+  transform: none;
+}
+.mwtrpg__chara__container__wrapper__filters button.active {
+  background: #15366d;
+}
+.mwtrpg__chara__container__wrapper .js-item.fadeOut {
+  display: none;
+}
+@keyframes fadeInItem {
+  0% {
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOutItem {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    width: 0;
+  }
+}
 .mwtrpg__chara__container__wrapper__list {
   display: flex;
   width: 108rem;
   margin: 0 auto;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 @media only screen and (max-width: 750px) {
   .mwtrpg__chara__container__wrapper__list {
@@ -1086,6 +1139,18 @@ nav ul li:last-of-type {
   width: 100%;
   height: 100%;
   transform: skewX(25deg);
+}
+.mwtrpg__chara__container__wrapper__list .accept {
+  display: block;
+}
+.mwtrpg__chara__container__wrapper__list .hidden {
+  display: none;
+}
+.mwtrpg__chara__container__wrapper__list .fadeIn {
+  display: block;
+}
+.mwtrpg__chara__container__wrapper__list .fadeIn:nth-of-type(n + 8) {
+  display: none;
 }
 .mwtrpg__chara__container__modal {
   display: none;

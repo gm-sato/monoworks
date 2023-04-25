@@ -42,15 +42,45 @@
 			<div class="mwtrpg__chara__container">
 				<h2 class="section-ttl mwtrpg-font_imp LpGlitchText">CHARACTER</h2>
 				<div class="mwtrpg__chara__container__wrapper">
-					<ul class="mwtrpg__chara__container__wrapper__list">
-						<li class="js-modal-open chara-box" data-modal="modal01"><img src="/assets/images/chara_01.webp"></li>
-						<li class="js-modal-open chara-box" data-modal="modal02"><img src="/assets/images/chara_02.png"></li>
-						<li class="js-modal-open chara-box" data-modal="modal03"><img src="/assets/images/chara_03.png"></li>
-						<li class="js-modal-open chara-box" data-modal="modal04"><img src="/assets/images/chara_04.png"></li>
-						<li class="js-modal-open chara-box" data-modal="modal05"><img src="/assets/images/chara_05.png"></li>
-						<li class="js-modal-open chara-box" data-modal="modal06"><img src="/assets/images/chara_06.png"></li>
-						<li class="js-modal-open chara-box" data-modal="modal07"><img src="/assets/images/chara_07.png"></li>
-						<li class="js-modal-open chara-box" data-modal="modal08"><img src="/assets/images/chara_08.png"></li>
+					<ul class="mwtrpg__chara__container__wrapper__filters">
+						<li>
+							<button class="js-item-term" data-term="woman">woman</button>
+						</li>
+						<li>
+							<button class="js-item-term" data-term="man">man</button>
+						</li>
+						<li>
+							<button class="js-item-term" data-term="villain">villain</button>
+						</li>
+						<li>
+							<button class="js-item-term" data-term="justice">justice</button>
+						</li>
+						<li>
+							<button class="js-item-term" data-term="normal">normal</button>
+						</li>
+					</ul>
+					<!-- 1.タブで管理
+					2.タブを押したら下部リスト内のデータとタブのデータを比較し、適していたら表示
+					3.順番を入れ替え(表示を上部へ非表示を下部へ)
+					4.8つから下は非表示
+					5.8つ以上のデータ群はmoreボタンを追加し別ページへ飛ばす -->
+					<ul class="mwtrpg__chara__container__wrapper__list targets">
+						<li class="js-modal-open chara-box js-item" data-tag="woman,villain" data-modal="modal01"><img src="/assets/images/chara_01.webp"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman,villain" data-modal="modal02"><img src="/assets/images/chara_02.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman,justice" data-modal="modal03"><img src="/assets/images/chara_03.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman" data-modal="modal04"><img src="/assets/images/chara_04.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman" data-modal="modal05"><img src="/assets/images/chara_05.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman" data-modal="modal06"><img src="/assets/images/chara_06.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman" data-modal="modal07"><img src="/assets/images/chara_07.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman,normal" data-modal="modal08"><img src="/assets/images/chara_08.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman,villain" data-modal="modal01"><img src="/assets/images/chara_01.webp"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman,villain" data-modal="modal02"><img src="/assets/images/chara_02.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman,justice" data-modal="modal03"><img src="/assets/images/chara_03.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman" data-modal="modal04"><img src="/assets/images/chara_04.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman" data-modal="modal05"><img src="/assets/images/chara_05.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman" data-modal="modal06"><img src="/assets/images/chara_06.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman" data-modal="modal07"><img src="/assets/images/chara_07.png"></li>
+						<li class="js-modal-open chara-box js-item" data-tag="woman,normal" data-modal="modal08"><img src="/assets/images/chara_08.png"></li>
 					</ul>
 					<div id="modal01" class="mwtrpg__chara__container__modal js-modal">
 						<div class="mwtrpg__chara__container__modal--bg js-modal-close"></div>

@@ -163,12 +163,77 @@
 					margin: auto;
 				}
 
+				// ボタン
+				&__filters {
+					display: flex;
+
+					button {
+						appearance: none;
+						background: #4082f0;
+						border: none;
+						border-radius: 30px;
+						box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.59);
+						color: #fff;
+						cursor: pointer;
+						font-size: 12px;
+						line-height: 15px;
+						min-width: 120px;
+						padding: 1em;
+						transform: translateY(-2px);
+						transition: all 0.2s;
+
+						&.active,
+						&:hover {
+							box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.79);
+							transform: none;
+						}
+
+						&.active {
+							background: #15366d;
+						}
+					}
+				}
+
+				// 表示/非表示
+				.js-item {
+					&.fadeOut {
+						display: none;
+					}
+				}
+
+				@keyframes fadeInItem {
+					0% {
+						margin: 0;
+						opacity: 0;
+						padding: 0;
+						width: 0;
+					}
+
+					100% {
+						opacity: 1;
+					}
+				}
+
+				@keyframes fadeOutItem {
+					0% {
+						opacity: 1;
+					}
+
+					100% {
+						display: none;
+						margin: 0;
+						opacity: 0;
+						padding: 0;
+						width: 0;
+					}
+				}
+
 				&__list {
 					display: flex;
 					width: 108rem;
 					margin: 0 auto;
 					flex-wrap: wrap;
-					justify-content: center;
+					justify-content: left;
 
 					@include mq-sp {
 						width: 100%;
@@ -235,6 +300,23 @@
 							transform: skewX(25deg);
 						}
 					}
+
+					.accept {
+						display: block;
+					}
+
+					.hidden {
+						display: none;
+					}
+
+					.fadeIn {
+						display: block;
+
+						&:nth-of-type(n + 8) {
+							display: none;
+						}
+					}
+
 				}
 			}
 
