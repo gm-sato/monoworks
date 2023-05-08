@@ -905,6 +905,12 @@ nav ul li:last-of-type {
   margin-bottom: 10rem;
 }
 @media only screen and (max-width: 750px) {
+  .mwtrpg section .section-ttl {
+    font-size: 6.5rem;
+    margin-left: 1rem;
+  }
+}
+@media only screen and (max-width: 750px) {
   .mwtrpg section {
     width: 100%;
     margin: auto;
@@ -940,9 +946,13 @@ nav ul li:last-of-type {
   line-height: 30rem;
 }
 @media only screen and (max-width: 750px) {
+  .mwtrpg__top__mv__ttl {
+    top: 50%;
+    transform: translateY(-50%);
+  }
   .mwtrpg__top__mv__ttl h1 {
     font-size: 11rem;
-    line-height: 11rem;
+    line-height: 15rem;
   }
 }
 .mwtrpg__top__mv__ttl .reveal-text,
@@ -1002,13 +1012,7 @@ nav ul li:last-of-type {
   }
 }
 .mwtrpg__chara {
-  height: 100vh;
   width: 100%;
-}
-@media only screen and (max-width: 750px) {
-  .mwtrpg__chara {
-    height: 60vh;
-  }
 }
 .mwtrpg__chara__container {
   margin: auto;
@@ -1024,30 +1028,46 @@ nav ul li:last-of-type {
 }
 .mwtrpg__chara__container__wrapper__filters {
   display: flex;
+  width: 108rem;
+  margin: auto;
 }
-.mwtrpg__chara__container__wrapper__filters button {
+@media only screen and (max-width: 750px) {
+  .mwtrpg__chara__container__wrapper__filters {
+    width: 100%;
+  }
+}
+.mwtrpg__chara__container__wrapper__filters li {
+  width: 20%;
+}
+.mwtrpg__chara__container__wrapper__filters li button {
+  position: relative;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: #4082f0;
-  border: none;
-  border-radius: 30px;
+  background: #000;
+  border: 1px solid #fff;
   box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.59);
   color: #fff;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 1.4rem;
   line-height: 15px;
-  min-width: 120px;
-  padding: 1em;
-  transform: translateY(-2px);
+  width: 100%;
+  height: 5rem;
+  transform: skewX(-25deg);
   transition: all 0.2s;
 }
-.mwtrpg__chara__container__wrapper__filters button.active, .mwtrpg__chara__container__wrapper__filters button:hover {
+.mwtrpg__chara__container__wrapper__filters li button.active, .mwtrpg__chara__container__wrapper__filters li button:hover {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.79);
-  transform: none;
 }
-.mwtrpg__chara__container__wrapper__filters button.active {
-  background: #15366d;
+.mwtrpg__chara__container__wrapper__filters li button span {
+  transform: skewX(25deg) translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.mwtrpg__chara__container__wrapper__filters li button.active {
+  background: #fff;
+  color: #000;
 }
 .mwtrpg__chara__container__wrapper .js-item.fadeOut {
   display: none;
@@ -1086,6 +1106,7 @@ nav ul li:last-of-type {
   .mwtrpg__chara__container__wrapper__list {
     width: 100%;
     margin: auto;
+    justify-content: center;
   }
 }
 .mwtrpg__chara__container__wrapper__list li {
@@ -1235,13 +1256,7 @@ nav ul li:last-of-type {
   display: block;
 }
 .mwtrpg__movie {
-  height: 100vh;
   width: 100%;
-}
-@media only screen and (max-width: 750px) {
-  .mwtrpg__movie {
-    height: 40vh;
-  }
 }
 .mwtrpg__movie__container {
   margin: auto;
@@ -1301,7 +1316,6 @@ nav ul li:last-of-type {
   height: 36vw;
 }
 .mwtrpg__log {
-  height: 60vh;
   width: 100%;
 }
 .mwtrpg__log__container {
@@ -1366,7 +1380,6 @@ nav ul li:last-of-type {
   justify-content: space-between;
 }
 .mwtrpg__profile {
-  height: 60vh;
   width: 100%;
 }
 .mwtrpg__profile__container {
@@ -1386,11 +1399,13 @@ nav ul li:last-of-type {
   .mwtrpg__profile__container__warpper {
     width: 100%;
     flex-direction: column;
+    justify-content: center;
   }
 }
 .mwtrpg__profile__container__warpper--img {
   position: relative;
   width: 40%;
+  margin: auto;
 }
 .mwtrpg__profile__container__warpper--img img {
   display: block;
@@ -1408,6 +1423,7 @@ nav ul li:last-of-type {
 .mwtrpg__profile__container__warpper--text {
   width: 60%;
   text-align: left;
+  margin: auto;
   color: #FFF;
 }
 .mwtrpg__profile__container__warpper--text h3 {
@@ -1556,4 +1572,110 @@ nav ul li:last-of-type {
   animation: animateLarge 4s 0.8s infinite;
   animation-timing-function: step-end;
   perspective: 1000;
+}
+
+.mwCharacter__top {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+.mwCharacter__top__wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 170rem;
+  height: 90vh;
+  margin: auto;
+  background-color: gray;
+}
+.mwCharacter__top__wrapper__text {
+  width: 100rem;
+  margin: 0 auto;
+  padding: 30px;
+}
+.mwCharacter__top__wrapper__text h2 {
+  color: #fff;
+  font-size: 5rem;
+  margin-bottom: 3rem;
+}
+.mwCharacter__top__wrapper__text__tab-list {
+  display: flex;
+}
+.mwCharacter__top__wrapper__text__tab-list li {
+  width: 50%;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1rem;
+  color: #333;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.mwCharacter__top__wrapper__text__tab-list li:hover {
+  background: #333;
+  color: #fff;
+}
+.mwCharacter__top__wrapper__text__tab-list li.active {
+  background: #333;
+  color: #fff;
+}
+.mwCharacter__top__wrapper__text .tab-content {
+  display: none;
+  width: 100%;
+}
+.mwCharacter__top__wrapper__text .tab-content.active {
+  display: block;
+  color: #fff;
+}
+.mwCharacter__top__wrapper__text__container {
+  display: flex;
+  width: 100%;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+.mwCharacter__top__wrapper__text__container--data {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mwCharacter__top__wrapper__text__container--data .profile {
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mwCharacter__top__wrapper__text__container--data .profile li {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: auto;
+}
+.mwCharacter__top__wrapper__text__container--data .profile li span {
+  font-weight: bold;
+  font-size: 1.8rem;
+  background-color: #000;
+}
+.mwCharacter__top__wrapper__text__container--data .profile li p {
+  background-color: #595959;
+  font-size: 2.2rem;
+  padding-left: 1rem;
+}
+.mwCharacter__top__wrapper__text__container--data .status {
+  width: 50%;
+}
+.mwCharacter__top__wrapper__text__container--deco {
+  display: inline-block;
+}
+.mwCharacter__top__wrapper__text__container--deco h3 {
+  font-size: 2.6rem;
+}
+.mwCharacter__top__wrapper__text__container--deco p {
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+}
+.mwCharacter__top__wrapper__img {
+  width: 45rem;
 }/*# sourceMappingURL=trpg_style.css.map */

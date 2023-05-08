@@ -3,10 +3,10 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>GOMAMESI TRPG STUDIO</title>
+	<title>CHARACTER | GOMAMESI TRPG STUDIO</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="keywords" itemprop="keywords" content="" />
-	<link rel="stylesheet" href="./assets/css/trpg_style.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/assets/css/trpg_style.min.css" type="text/css" media="all" />
 	<script src="https://kit.fontawesome.com/1b9b3abfee.js" crossorigin="anonymous"></script>
 </head>
 
@@ -22,30 +22,159 @@
 			</ul>
 		</nav>
 	</header>
-	<main class="mwtrpg">
-		<section id="top" class="mwtrpg__top">
-			<div class="mwtrpg__top__mv">
-				<picture>
-					<source media="(max-width: 768px)" srcset="/assets/images/main_kv_pc.webp">
-					<source media="(min-width: 769px)" srcset="/assets/images/main_kv_pc.webp">
-					<img src="/assets/images/main_kv_pc.webp" width="100%" alt="">
-				</picture>
-				<div class="mwtrpg__top__mv__ttl">
-					<h1 class="mwtrpg-font_imp">
-						<span class="reveal-text">GOMAMESI</span><br>
-						<span class="reveal-text">TRPG</span><br>
-						<span class="reveal-text">STUDIO</span></h1>
+
+	<main class="mwCharacter">
+		<section class="mwCharacter__top">
+			<div class="mwCharacter__top__wrapper">
+				<div class="mwCharacter__top__wrapper__text">
+					<h2>ここに名前が入ります</h2>
+
+					<ul class="mwCharacter__top__wrapper__text__tab-list">
+						<li class="tab-item active">プロフィール</li>
+						<li class="tab-item">補足</li>
+					</ul>
+					<div class="mwCharacter__top__wrapper__text__container">
+						<div class=" tab-content active">
+							<div class="mwCharacter__top__wrapper__text__container--data">
+								<ul class="profile">
+									<li><span>SEX:</span>
+										<p>Man</p>
+									</li>
+									<li><span>JOB:</span>
+										<p>都市伝説課職員</p>
+									</li>
+									<li><span>AGE:</span>
+										<p>27</p>
+									</li>
+									<li><span>SYSTEM:</span>
+										<p>CoC</p>
+									</li>
+									<li><span>ILLUSTRATOR:</span>
+										<p>心肺停止</p>
+									</li>
+								</ul>
+								<div class="status">
+									<!-- ここにグラフ -->
+									<canvas id="myRadarChart" width="300" height="300"></canvas>
+								</div>
+							</div>
+						</div>
+						<div class="tab-content">
+							<div class="mwCharacter__top__wrapper__text__container--deco">
+								<h3>「ここにセリフが入ります。ここにセリフが入ります。」</h3>
+								<p>ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。</p>
+								<!-- ここに補足説明(文章系) -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mwCharacter__top__wrapper__img chara_slide">
+					<!-- ここに立ち絵 -->
+					<div class="swiper-wrapper">
+						<img class="swiper-slide" src="../assets/images/chara/kabane_01.png">
+						<img class="swiper-slide" src="../assets/images/chara/kabane_02.png">
+					</div>
 				</div>
 			</div>
 		</section>
+		<section class="mwCharacter__sessionlog">
+			<div class="">
+				<!-- ・セッションログのタグから引っ張って結びつける -->
+			</div>
+		</section>
 	</main>
+
+
 	<footer>
 	</footer>
-	<script src="./assets/script/youtube.js"></script>
-	<script src="./assets/script/lib/swiper-bundle.min.js"></script>
-	<script src="./assets/script/script.js"></script>
+	<script src="/assets/script/youtube.js"></script>
+	<script src="/assets/script/lib/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+	<script src="/assets/script/script.js"></script>
 
 	<script>
+		// var chartItem = function () {
+		var ctx = document.getElementById("myRadarChart");
+		var myRadarChart = new Chart(ctx, {
+			//グラフの種類
+			type: 'radar',
+			//データの設定
+			data: {
+				labels: ['STR', 'CON', 'POW', 'DEX', 'SIZ', 'APP', 'INT', 'EDU'],
+				datasets: [{
+					label: '',
+					//グラフのデータ
+					data: [18, 10, 9, 5, 17, 17, 17, 17],
+					// データライン
+					borderColor: '#000',
+				}],
+			},
+			options: {
+				elements: {
+					line: {
+						borderWidth: 3
+					}
+				},
+				scales: {
+					r: {
+						//グラフの最小値・最大値
+						min: 0,
+						max: 18,
+						//背景色
+						backgroundColor: 'snow',
+						angleLines: {
+							color: 'green'
+						},
+						grid: {
+							color: 'pink'
+						},
+						pointLabels: {
+							color: '#fff'
+						},
+						ticks: {
+							display: false
+						}
+					}
+				},
+				plugins: {
+					legend: {
+						display: false
+					}
+				}
+
+			},
+		});
+
+
+		// 要素の取得
+		const tabItem = document.querySelectorAll(".tab-item");
+		const tabContent = document.querySelectorAll(".tab-content");
+
+		// tabItemに対してクリックイベントを追加
+		// クリックした時にtabToggle関数を発火
+		for (let i = 0; i < tabItem.length; i++) {
+			tabItem[i].addEventListener("click", tabToggle);
+		}
+
+		function tabToggle() {
+			// tabItemとtabContentの.activeを削除する 
+			for (let i = 0; i < tabItem.length; i++) {
+				tabItem[i].classList.remove("active");
+			}
+			for (let i = 0; i < tabContent.length; i++) {
+				tabContent[i].classList.remove("active");
+			}
+			// クリックしたtabItemに.activeを追加
+			this.classList.add("active");
+			// tabItemを配列にする 
+			const aryTabs = Array.prototype.slice.call(tabItem);
+
+			// 配列に格納したキーワードと最初一致したインデックスを格納
+			const index = aryTabs.indexOf(this);
+
+			// インデックスに対応したtabContentに.activeを追加
+			tabContent[index].classList.add("active");
+		}
 	</script>
 
 </body>

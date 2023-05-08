@@ -23,6 +23,11 @@
 			color: #fff;
 			font-size: 4.883rem;
 			margin-bottom: 10rem;
+
+			@include mq-sp {
+				font-size: 6.5rem;
+				margin-left: 1rem;
+			}
 		}
 
 		@include mq-sp {
@@ -63,9 +68,12 @@
 				}
 
 				@include mq-sp {
+					top: 50%;
+					transform: translateY(-50%);
+
 					h1 {
 						font-size: 11rem;
-						line-height: 11rem;
+						line-height: 15rem;
 					}
 
 				}
@@ -145,11 +153,11 @@
 	}
 
 	&__chara {
-		height: 100vh;
+		// height: 100vh;
 		width: 100%;
 
 		@include mq-sp {
-			height: 60vh;
+			// height: 60vh;
 		}
 
 		&__container {
@@ -166,32 +174,50 @@
 				// ボタン
 				&__filters {
 					display: flex;
+					width: 108rem;
+					margin: auto;
 
-					button {
-						appearance: none;
-						background: #4082f0;
-						border: none;
-						border-radius: 30px;
-						box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.59);
-						color: #fff;
-						cursor: pointer;
-						font-size: 12px;
-						line-height: 15px;
-						min-width: 120px;
-						padding: 1em;
-						transform: translateY(-2px);
-						transition: all 0.2s;
+					@include mq-sp {
+						width: 100%;
+					}
 
-						&.active,
-						&:hover {
-							box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.79);
-							transform: none;
-						}
+					li {
+						width: 20%;
 
-						&.active {
-							background: #15366d;
+						button {
+							position: relative;
+							appearance: none;
+							background: #000;
+							border: 1px solid #fff;
+							box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.59);
+							color: #fff;
+							cursor: pointer;
+							font-size: 1.4rem;
+							line-height: 15px;
+							width: 100%;
+							height: 5rem;
+							transform: skewX(-25deg);
+							transition: all 0.2s;
+
+							&.active,
+							&:hover {
+								box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.79);
+							}
+
+							span {
+								transform: skewX(25deg) translate(-50%, -50%);
+								position: absolute;
+								top: 50%;
+								left: 50%;
+							}
+
+							&.active {
+								background: #fff;
+								color: #000;
+							}
 						}
 					}
+
 				}
 
 				// 表示/非表示
@@ -238,6 +264,7 @@
 					@include mq-sp {
 						width: 100%;
 						margin: auto;
+						justify-content: center;
 					}
 
 					li {
@@ -421,11 +448,11 @@
 	}
 
 	&__movie {
-		height: 100vh;
+		// height: 100vh;
 		width: 100%;
 
 		@include mq-sp {
-			height: 40vh;
+			// height: 40vh;
 
 		}
 
@@ -498,7 +525,7 @@
 	}
 
 	&__log {
-		height: 60vh;
+		// height: 60vh;
 		width: 100%;
 
 		&__container {
@@ -578,7 +605,7 @@
 	}
 
 	&__profile {
-		height: 60vh;
+		// height: 60vh;
 		width: 100%;
 
 		&__container {
@@ -598,11 +625,13 @@
 				@include mq-sp {
 					width: 100%;
 					flex-direction: column;
+					justify-content: center;
 				}
 
 				&--img {
 					position: relative;
 					width: 40%;
+					margin: auto;
 
 					img {
 						display: block;
@@ -620,6 +649,7 @@
 				&--text {
 					width: 60%;
 					text-align: left;
+					margin: auto;
 					color: #FFF;
 
 					h3 {

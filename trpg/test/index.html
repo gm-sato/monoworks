@@ -1,164 +1,29 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang=en>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="./assets/js/script.js"></script>
-    <title>Document</title>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=robots content=index>
+    <meta name=keywords content="SEVEN's CODE,セブンスコード,音楽ゲーム,音ゲー,オトゲー,unlimited studio,naoki maeda,前田尚紀,ゲーム">
+    <meta name=description content="音楽は僕の「心」を、「肉体」を、揺らす。ー世界を暴くリズムアクション「SEVEN's CODE」">
+    <meta property=fb:app_id content="">
+    <meta property=og:type content=website>
+    <meta property=og:title content="SEVEN's CODE">
+    <meta property=og:description content="音楽は僕の「心」を、「肉体」を、揺らす。ー世界を暴くリズムアクション「SEVEN's CODE」">
+    <meta property=og:site_name content="SEVEN's CODE">
+    <meta property=og:url content=https://www.sevenscode.jp/> <meta property=og:image content=https://www.sevenscode.jp/img_sevenscode_ogimage_001.png> <meta property=twitter:card content=summary_large_image>
+    <meta property=twitter:image content=https://www.sevenscode.jp/img_sevenscode_ogimage_001.png> <!--[if IE]>
+    <link rel="icon" href="/favicon.png">
+    <![endif]-->
+    <link rel=stylesheet href=/css/reset.css><link rel=stylesheet href=/css/blockanime.css><title>SEVEN's CODE</title><script src="//webfont.fontplus.jp/accessor/script/fontplus.js?EIlwaCam2W4%3D&box=NvDIqPKjK4k%3D&aa=1&ab=2" charset=utf-8></script><link href=/css/app.c018a2b0.css rel=preload as=style><link href=/css/chunk-vendors.ca67379b.css rel=preload as=style><link href=/js/app.61bdf732.js rel=preload as=script><link href=/js/chunk-vendors.c25c4720.js rel=preload as=script><link href=/css/chunk-vendors.ca67379b.css rel=stylesheet><link href=/css/app.c018a2b0.css rel=stylesheet><link rel=icon type=image/png sizes=32x32 href=/img/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/img/icons/favicon-16x16.png><link rel=manifest href=/manifest.json><meta name=theme-color content=#4DBA87><meta name=apple-mobile-web-app-capable content=no><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content=rebellion-officialsite><link rel=apple-touch-icon href=/img/icons/apple-touch-icon-152x152.png><link rel=mask-icon href=/img/icons/safari-pinned-tab.svg color=#4DBA87><meta name=msapplication-TileImage content=/img/icons/msapplication-icon-144x144.png><meta name=msapplication-TileColor content=#000000>
 </head>
-
-<body>
-    <ul class="filters">
-        <li>
-            <button class="js-item-term" data-term="お菓子">お菓子</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="酒">酒</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="調味料">調味料</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="ANIMAL">ANIMAL</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="肉">肉</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="ニンニク">ニンニク</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="魚">魚</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="野菜">野菜</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="卵">卵</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="お寿司">お寿司</button>
-        </li>
-        <li>
-            <button class="js-item-term" data-term="嬉しい">嬉しい</button>
-        </li>
-    </ul>
-
-    <ul class="products">
-        <li class="js-item" data-tag="魚,お寿司,ANIMAL, 嬉しい">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">えんがわ握り</span>
-                <ul class="products__box--tags">
-                    <li>魚</li>
-                    <li>お寿司</li>
-                    <li>ANIMAL</li>
-                    <li>嬉しい</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="野菜">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">もやし</span>
-                <ul class="products__box--tags">
-                    <li>野菜</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="お菓子, 嬉しい">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">グミ</span>
-                <ul class="products__box--tags">
-                    <li>お菓子</li>
-                    <li>嬉しい</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="調味料">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">塩</span>
-                <ul class="products__box--tags">
-                    <li>調味料</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="肉,ANIMAL, 嬉しい">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">焼肉</span>
-                <ul class="products__box--tags">
-                    <li>肉</li>
-                    <li>ANIMAL</li>
-                    <li>嬉しい</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="酒, 嬉しい">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">スト缶</span>
-                <ul class="products__box--tags">
-                    <li>酒</li>
-                    <li>嬉しい</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="酒, 嬉しい">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">ビール</span>
-                <ul class="products__box--tags">
-                    <li>酒</li>
-                    <li>嬉しい</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="ニンニク, 嬉しい">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">ニンニク</span>
-                <ul class="products__box--tags">
-                    <li>ニンニク</li>
-                    <li>嬉しい</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="嬉しい">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">現金</span>
-                <ul class="products__box--tags">
-                    <li>嬉しい</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="肉">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">お惣菜</span>
-                <ul class="products__box--tags">
-                    <li>肉</li>
-                </ul>
-            </div>
-        </li>
-        <li class="js-item" data-tag="肉, ANIMAL, 嬉しい">
-            <div class="products__box">
-                <img src="https://placehold.jp/150x100.png" alt="" />
-                <span class="products__box--title">鶏皮ポン酢</span>
-                <ul class="products__box--tags">
-                    <li>肉</li>
-                    <li>ANIMAL</li>
-                    <li>嬉しい</li>
-                </ul>
-            </div>
-        </li>
-    </ul>
-</body>
-
-</html>
+    <body>
+        <div id=app></div>
+        <script src=/js/anime.min.js charset=utf-8 defer></script>
+        <script src=/js/scrollMonitor.js charset=utf-8 defer></script>
+        <script src=/js/main.js charset=utf-8 defer>
+        </script><script src=/js/chunk-vendors.c25c4720.js></script>
+        <script src=/js/app.61bdf732.js></script>
+    </body></html>
