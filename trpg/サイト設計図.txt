@@ -4,3 +4,6 @@ TOP　※デザインOK
 　→session-log_list
    →session
 　→movie_list
+　→scenario_list
+   →scenario
+   
