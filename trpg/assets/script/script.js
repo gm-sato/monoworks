@@ -111,6 +111,13 @@ const character = new Swiper('.chara_slide', {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  pagination: {
+    el: "#pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + ["立ち絵1", "立ち絵2", "立ち絵3", ][index] + '</span>';
+    },
+  },
   slidesPerView: 1,
   loop: true,
 });

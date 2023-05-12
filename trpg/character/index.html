@@ -14,6 +14,7 @@
 	<header>
 		<nav class="mwtrpg_header mwtrpg-font_imp">
 			<ul>
+
 				<li><a href="#top">TOP</a></li>
 				<li><a href="#chara">CHARACTER</a></li>
 				<li><a href="#movie">MOVIE</a></li>
@@ -24,49 +25,29 @@
 	</header>
 
 	<main class="mwCharacter">
+		<section class="mwCharacter__head">
+			<div class="mwCharacter__head--ttl">
+				<h1 class="mwtrpg-font_imp">CHARACTER</h1>
+				<span>キャラクター</span>
+			</div>
+		</section>
 		<section class="mwCharacter__top">
 			<div class="mwCharacter__top__wrapper">
 				<div class="mwCharacter__top__wrapper__text">
-					<h2>ここに名前が入ります</h2>
-
-					<ul class="mwCharacter__top__wrapper__text__tab-list">
-						<li class="tab-item active">プロフィール</li>
-						<li class="tab-item">補足</li>
-					</ul>
-					<div class="mwCharacter__top__wrapper__text__container">
-						<div class=" tab-content active">
-							<div class="mwCharacter__top__wrapper__text__container--data">
-								<ul class="profile">
-									<li><span>SEX:</span>
-										<p>Man</p>
-									</li>
-									<li><span>JOB:</span>
-										<p>都市伝説課職員</p>
-									</li>
-									<li><span>AGE:</span>
-										<p>27</p>
-									</li>
-									<li><span>SYSTEM:</span>
-										<p>CoC</p>
-									</li>
-									<li><span>ILLUSTRATOR:</span>
-										<p>心肺停止</p>
-									</li>
-								</ul>
-								<div class="status">
-									<!-- ここにグラフ -->
-									<canvas id="myRadarChart" width="300" height="300"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="tab-content">
-							<div class="mwCharacter__top__wrapper__text__container--deco">
-								<h3>「ここにセリフが入ります。ここにセリフが入ります。」</h3>
-								<p>ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。ここに紹介テキストが入ります。</p>
-								<!-- ここに補足説明(文章系) -->
-							</div>
-						</div>
+					<div class="mwCharacter__top__wrapper__text--ttl">
+						<h2>龍宮 冴子</h2>
+						<span>Saeko Tathumiya</span>
+						<h3>illustrator:<a href="" target="_blank">もぎゃこづ</a></h3>
 					</div>
+					<div class="mwCharacter__top__wrapper__text--deco">
+						<p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+					</div>
+					<div class="mwCharacter__top__wrapper__text--slideBtn">
+						<div id="pagination" class="swiper-pagination"></div>
+					</div>
+					<!-- <div class="mwCharacter__top__wrapper__text--status">
+						<canvas id="myRadarChart"></canvas>
+					</div> -->
 				</div>
 				<div class="mwCharacter__top__wrapper__img chara_slide">
 					<!-- ここに立ち絵 -->
@@ -74,97 +55,12 @@
 						<img class="swiper-slide" src="../assets/images/chara/kabane_01.png">
 						<img class="swiper-slide" src="../assets/images/chara/kabane_02.png">
 					</div>
+					<div class="chara_lines">
+						<p></p>
+					</div>
 				</div>
 			</div>
 		</section>
-		<section id="log" class="mwCharacter__sessionlog">
-			<div class="mwCharacter__sessionlog__container">
-				<h2 class="section-ttl mwtrpg-font_imp">SESSION LOG</h2>
-				<div class="log_slider">
-					<ul class="mwCharacter__sessionlog__container__warpper swiper-wrapper">
-						<li class="mwCharacter__sessionlog__container__warpper__box swiper-slide">
-							<div class="mwCharacter__sessionlog__container__warpper__box__img">
-								<img src="/assets/images/bash.webp">
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__text">
-								<h3>B'ASH</h3>
-								<ul>
-									<li>KP:ごま飯</li>
-									<li>PL:山田/みり/ちあり/けにあ</li>
-								</ul>
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__info">
-								<p>2022/00/00</p><a href="" target="_top">more →</a>
-							</div>
-						</li>
-						<li class="mwCharacter__sessionlog__container__warpper__box swiper-slide">
-							<div class="mwCharacter__sessionlog__container__warpper__box__img">
-								<img src="/assets/images/Hallows.webp">
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__text">
-								<h3>かいぶつたちとマホラカルト</h3>
-								<ul>
-									<li>KP:きりぅ</li>
-									<li>PL:けにあ/ばきょむ/ごま飯/みずしー</li>
-								</ul>
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__info">
-								<p>2022/00/00</p><a href="" target="_top">more →</a>
-							</div>
-						</li>
-						<li class="mwCharacter__sessionlog__container__warpper__box swiper-slide">
-							<div class="mwCharacter__sessionlog__container__warpper__box__img">
-								<img src="/assets/images/Hallows.webp">
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__text">
-								<h3>かいぶつたちとマホラカルト</h3>
-								<ul>
-									<li>KP:きりぅ</li>
-									<li>PL:けにあ/ばきょむ/ごま飯/みずしー</li>
-								</ul>
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__info">
-								<p>2022/00/00</p><a href="" target="_top">more →</a>
-							</div>
-						</li>
-						<li class="mwCharacter__sessionlog__container__warpper__box swiper-slide">
-							<div class="mwCharacter__sessionlog__container__warpper__box__img">
-								<img src="/assets/images/Hallows.webp">
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__text">
-								<h3>かいぶつたちとマホラカルト</h3>
-								<ul>
-									<li>KP:きりぅ</li>
-									<li>PL:けにあ/ばきょむ/ごま飯/みずしー</li>
-								</ul>
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__info">
-								<p>2022/00/00</p><a href="" target="_top">more →</a>
-							</div>
-						</li>
-						<li class="mwCharacter__sessionlog__container__warpper__box swiper-slide">
-							<div class="mwCharacter__sessionlog__container__warpper__box__img">
-								<img src="/assets/images/Hallows.webp">
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__text">
-								<h3>かいぶつたちとマホラカルト</h3>
-								<ul>
-									<li>KP:きりぅ</li>
-									<li>PL:けにあ/ばきょむ/ごま飯/みずしー</li>
-								</ul>
-							</div>
-							<div class="mwCharacter__sessionlog__container__warpper__box__info">
-								<p>2022/00/00</p><a href="" target="_top">more →</a>
-							</div>
-						</li>
-					</ul>
-					<div class="swiper-scrollbar"></div>
-				</div>
-			</div>
-		</section>
-
-
-
 	</main>
 
 
