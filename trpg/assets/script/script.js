@@ -115,7 +115,7 @@ const character = new Swiper('.chara_slide', {
     el: "#pagination",
     clickable: true,
     renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + ["立ち絵1", "立ち絵2", "立ち絵3", ][index] + '</span>';
+      return '<p class="' + className + '">' + '<span>' + ["001", "002", "003", ][index] + '</span>' + '</p>';
     },
   },
   slidesPerView: 1,

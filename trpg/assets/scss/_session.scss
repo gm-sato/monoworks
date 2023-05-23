@@ -1,0 +1,54 @@
+.mwSession {
+    &__top {
+        display: block;
+        width: 90%;
+        height: 80vh;
+        margin: auto;
+
+        &__wrapper {
+            display: grid;
+            // grid-template-rows: 80px 1fr 40px;
+            grid-template-columns: 1.618fr 1fr;
+            gap: 1rem;
+            grid-template-areas:
+                "img text";
+            width: 100%;
+
+            &--img {
+                grid-area: img;
+
+                img {
+                    width: 100%;
+                    background-color: #ddd;
+                }
+            }
+
+            &--text {
+                grid-area: text;
+
+                h2 {}
+
+                ul {
+                    li {}
+                }
+
+            }
+        }
+    }
+
+    &__log {
+        &__wrapper {
+            display: block;
+            width: 70%;
+            margin: auto;
+
+            h3 {
+                font-size: 2.4rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

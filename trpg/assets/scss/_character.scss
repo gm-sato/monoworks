@@ -45,6 +45,11 @@
                 margin: 0 auto;
                 padding: 30px;
 
+                h4 {
+                    color: #fff;
+                    font-size: 2rem;
+                }
+
                 &--ttl {
                     color: #fff;
 
@@ -53,7 +58,7 @@
                     }
 
                     h3 {
-                        font-size: 3.5rem;
+                        font-size: 3rem;
                     }
 
                     span {
@@ -66,10 +71,12 @@
                 &--deco {
                     color: #fff;
                     font-size: 2rem;
+                    margin-top: 2rem;
                 }
 
                 &--slideBtn {
                     width: 100%;
+                    margin-top: 5rem;
 
                     .swiper-pagination {
                         display: flex;
@@ -78,22 +85,78 @@
                     }
 
                     .swiper-pagination-bullet {
+                        display: inline-block;
+                        position: relative;
                         border-radius: 0% !important;
                         width: 15rem !important;
-                        height: 8rem !important;
+                        height: auto !important;
+                        padding: 2rem 1rem;
                         border: 1px solid #fff;
-                        background: #fff !important;
+                        color: #fff;
+                        font-size: 1.6rem;
+                        // background: #fff !important;
                         opacity: 1 !important;
+
+                        &:before {
+                            border-bottom: 15px solid transparent;
+                            border-left: 15px solid #fff;
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                        }
+
+                        &::after {
+                            border-left: 15px solid transparent;
+                            border-bottom: 15px solid #fff;
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            bottom: 0px;
+                            right: 0px;
+                        }
                     }
 
                     .swiper-pagination-bullet-active {
-                        background: #01B9F5 !important;
+                        color: #000;
+                        background: #fff !important;
+
+                    }
+                }
+
+                &--status {
+                    display: block;
+                    margin-top: 5rem;
+
+                    .chart-size {
+                        display: block;
+                        width: 70%;
+                        margin: auto;
                     }
                 }
             }
 
             &__img {
+                position: relative;
                 width: 45rem;
+                overflow: hidden;
+
+                .swiper-wrapper {}
+
+                .chara_lines {
+                    position: absolute;
+                    top: 20%;
+                    right: 20%;
+                    writing-mode: vertical-rl;
+                    z-index: 3;
+
+                    p {
+                        background-color: #fff;
+                        color: #000;
+                        font-size: 3rem;
+                    }
+                }
             }
         }
     }

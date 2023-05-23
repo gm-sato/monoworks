@@ -1616,10 +1616,6 @@ nav ul li:last-of-type {
   margin: 0 auto;
   padding: 30px;
 }
-.mwCharacter__top__wrapper__text h4 {
-  color: #fff;
-  font-size: 2rem;
-}
 .mwCharacter__top__wrapper__text--ttl {
   color: #fff;
 }
@@ -1627,7 +1623,7 @@ nav ul li:last-of-type {
   font-size: 5rem;
 }
 .mwCharacter__top__wrapper__text--ttl h3 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 .mwCharacter__top__wrapper__text--ttl span {
   background-color: #fff;
@@ -1636,11 +1632,9 @@ nav ul li:last-of-type {
 .mwCharacter__top__wrapper__text--deco {
   color: #fff;
   font-size: 2rem;
-  margin-top: 2rem;
 }
 .mwCharacter__top__wrapper__text--slideBtn {
   width: 100%;
-  margin-top: 5rem;
 }
 .mwCharacter__top__wrapper__text--slideBtn .swiper-pagination {
   display: flex;
@@ -1648,97 +1642,21 @@ nav ul li:last-of-type {
   margin-top: 20px !important;
 }
 .mwCharacter__top__wrapper__text--slideBtn .swiper-pagination-bullet {
-  display: inline-block;
-  position: relative;
   border-radius: 0% !important;
   width: 15rem !important;
-  height: auto !important;
-  padding: 2rem 1rem;
+  height: 8rem !important;
   border: 1px solid #fff;
-  color: #fff;
-  font-size: 1.6rem;
+  background: #fff !important;
   opacity: 1 !important;
 }
-.mwCharacter__top__wrapper__text--slideBtn .swiper-pagination-bullet:before {
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid #fff;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-.mwCharacter__top__wrapper__text--slideBtn .swiper-pagination-bullet::after {
-  border-left: 15px solid transparent;
-  border-bottom: 15px solid #fff;
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-}
 .mwCharacter__top__wrapper__text--slideBtn .swiper-pagination-bullet-active {
-  color: #000;
-  background: #fff !important;
+  background: #01B9F5 !important;
 }
 .mwCharacter__top__wrapper__text--status {
-  display: block;
-  margin-top: 5rem;
-}
-.mwCharacter__top__wrapper__text--status .chart-size {
-  display: block;
+  display: inline-block;
   width: 70%;
   margin: auto;
 }
 .mwCharacter__top__wrapper__img {
-  position: relative;
   width: 45rem;
-  overflow: hidden;
-}
-.mwCharacter__top__wrapper__img .chara_lines {
-  position: absolute;
-  top: 20%;
-  right: 20%;
-  writing-mode: vertical-rl;
-  z-index: 3;
-}
-.mwCharacter__top__wrapper__img .chara_lines p {
-  background-color: #fff;
-  color: #000;
-  font-size: 3rem;
-}
-
-.mwSession__top {
-  display: block;
-  width: 90%;
-  height: 80vh;
-  margin: auto;
-}
-.mwSession__top__wrapper {
-  display: grid;
-  grid-template-columns: 1.618fr 1fr;
-  gap: 1rem;
-  grid-template-areas: "img text";
-  width: 100%;
-}
-.mwSession__top__wrapper--img {
-  grid-area: img;
-}
-.mwSession__top__wrapper--img img {
-  width: 100%;
-  background-color: #ddd;
-}
-.mwSession__top__wrapper--text {
-  grid-area: text;
-}
-.mwSession__log__wrapper {
-  display: block;
-  width: 70%;
-  margin: auto;
-}
-.mwSession__log__wrapper h3 {
-  font-size: 2.4rem;
-}
-.mwSession__log__wrapper p {
-  font-size: 1.6rem;
 }/*# sourceMappingURL=trpg_style.css.map */

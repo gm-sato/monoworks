@@ -14,7 +14,6 @@
 	<header>
 		<nav class="mwtrpg_header mwtrpg-font_imp">
 			<ul>
-
 				<li><a href="#top">TOP</a></li>
 				<li><a href="#chara">CHARACTER</a></li>
 				<li><a href="#movie">MOVIE</a></li>
@@ -42,21 +41,30 @@
 					<div class="mwCharacter__top__wrapper__text--deco">
 						<p>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
 					</div>
+
 					<div class="mwCharacter__top__wrapper__text--slideBtn">
+						<h4>IMAGE</h4>
 						<div id="pagination" class="swiper-pagination"></div>
 					</div>
-					<!-- <div class="mwCharacter__top__wrapper__text--status">
-						<canvas id="myRadarChart"></canvas>
-					</div> -->
+
+					<div class="mwCharacter__top__wrapper__text--status">
+						<h4>STATUS</h4>
+						<div class="chart-size">
+							<canvas id="myRadarChart"></canvas>
+						</div>
+					</div>
 				</div>
+
+
 				<div class="mwCharacter__top__wrapper__img chara_slide">
 					<!-- ここに立ち絵 -->
 					<div class="swiper-wrapper">
-						<img class="swiper-slide" src="../assets/images/chara/kabane_01.png">
-						<img class="swiper-slide" src="../assets/images/chara/kabane_02.png">
+						<img class="swiper-slide" src="../assets/images/chara/test.png">
+						<img class="swiper-slide" src="../assets/images/chara/test.png">
 					</div>
 					<div class="chara_lines">
-						<p></p>
+						<p>「ここに台詞が入ります」</p>
+						<p>「ここに台詞が入ります」</p>
 					</div>
 				</div>
 			</div>
@@ -120,40 +128,8 @@
 						display: false
 					}
 				}
-
 			},
 		});
-
-
-		// 要素の取得
-		const tabItem = document.querySelectorAll(".tab-item");
-		const tabContent = document.querySelectorAll(".tab-content");
-
-		// tabItemに対してクリックイベントを追加
-		// クリックした時にtabToggle関数を発火
-		for (let i = 0; i < tabItem.length; i++) {
-			tabItem[i].addEventListener("click", tabToggle);
-		}
-
-		function tabToggle() {
-			// tabItemとtabContentの.activeを削除する 
-			for (let i = 0; i < tabItem.length; i++) {
-				tabItem[i].classList.remove("active");
-			}
-			for (let i = 0; i < tabContent.length; i++) {
-				tabContent[i].classList.remove("active");
-			}
-			// クリックしたtabItemに.activeを追加
-			this.classList.add("active");
-			// tabItemを配列にする 
-			const aryTabs = Array.prototype.slice.call(tabItem);
-
-			// 配列に格納したキーワードと最初一致したインデックスを格納
-			const index = aryTabs.indexOf(this);
-
-			// インデックスに対応したtabContentに.activeを追加
-			tabContent[index].classList.add("active");
-		}
 	</script>
 
 </body>
