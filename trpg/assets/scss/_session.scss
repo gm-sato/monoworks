@@ -1,9 +1,55 @@
+//----個別ページ----//
 .mwSession {
+    background-color: #0f1419;
+
+    &__head {
+        width: 100%;
+        height: 25vh;
+        position: relative;
+        background: #fff;
+
+        &--ttl {
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            width: 28rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            h1 {
+                width: fit-content;
+                color: #000;
+                font-size: 6rem;
+            }
+
+            span {
+                display: block;
+                width: fit-content;
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 3.6rem;
+    }
+
+    section {
+        margin-top: 5rem;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
     &__top {
         display: block;
-        width: 90%;
-        height: 80vh;
+        width: 80%;
         margin: auto;
+        padding: 5rem 0;
 
         &__wrapper {
             display: grid;
@@ -25,13 +71,138 @@
 
             &--text {
                 grid-area: text;
+                display: block;
+                position: relative;
+                padding: 3rem 2rem;
 
-                h2 {}
-
-                ul {
-                    li {}
+                h2 {
+                    font-size: 3rem;
                 }
 
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 3rem;
+
+                    li {
+                        font-size: 2.6rem;
+                    }
+                }
+
+                span {
+                    display: block;
+                    position: absolute;
+                    bottom: 5rem;
+                    right: 2rem;
+                    width: fit-content;
+                    margin-right: 0;
+                }
+
+            }
+        }
+    }
+
+    &__list {
+        &__wrapper {
+            display: block;
+            width: 70%;
+            margin: auto;
+
+            &__container {
+                display: flex;
+                width: 90%;
+                margin: 2.5rem auto 0;
+
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                &__item {
+                    display: inline-block;
+                    width: 47%;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 47%;
+                    }
+
+                    &:nth-of-type(-n+2) {
+                        margin-top: 0;
+                    }
+
+                    .item-deco {
+                        width: 100%;
+                        padding: 3rem;
+                        margin-top: 5rem;
+                        position: relative;
+
+                        &::before {
+                            border-top: 2px solid #fff;
+                            border-left: 2px solid #fff;
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: -2px;
+                            left: -2px;
+                            width: 20px;
+                            height: 20px;
+                            z-index: 1;
+                        }
+
+                        &::after {
+                            border-bottom: 2px solid #fff;
+                            border-right: 2px solid #fff;
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            bottom: -2px;
+                            right: -2px;
+                            width: 20px;
+                            height: 20px;
+                            z-index: 1;
+                        }
+                    }
+
+                    &--thum {
+                        display: block;
+                        width: 40rem;
+                        height: 40rem;
+                        margin: auto;
+                        object-fit: cover;
+                        object-position: top center;
+                    }
+
+                    &--name {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 2.5rem;
+
+                        h4 {
+                            font-size: 2.6rem;
+                        }
+
+                        .yomi {
+                            display: inline-block;
+                            width: fit-content;
+                            background-color: #fff;
+                            color: #000;
+                        }
+
+                        .player {
+                            margin-top: .5rem;
+                            font-size: 1.6rem;
+                        }
+                    }
+
+                    &--text {
+                        display: inline-block;
+                        margin-top: 1rem;
+
+                        p {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
             }
         }
     }
@@ -42,11 +213,8 @@
             width: 70%;
             margin: auto;
 
-            h3 {
-                font-size: 2.4rem;
-            }
-
             p {
+                margin-top: 2.5rem;
                 font-size: 1.6rem;
             }
         }
