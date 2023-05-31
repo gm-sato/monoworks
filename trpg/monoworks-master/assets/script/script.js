@@ -111,15 +111,8 @@ const character = new Swiper('.chara_slide', {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  pagination: {
-    el: "#pagination",
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<p class="' + className + '">' + '<span>' + ["001", "002", "003", ][index] + '</span>' + '</p>';
-    },
-  },
   slidesPerView: 1,
-  loop: false,
+  loop: true,
 });
 
 

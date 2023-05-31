@@ -71,6 +71,7 @@
             outline: none;
             border: none;
             box-sizing: border-box;
+            color: #fff;
 
             &::before,
             &::after {
@@ -173,12 +174,17 @@
 
 
 //----個別ページ----//
+
 .mwCharacter {
     &__head {
         width: 100%;
         height: 25vh;
         position: relative;
         background: #fff;
+
+        @include mq-sp {
+            height: 15vh;
+        }
 
         &--ttl {
             position: absolute;
@@ -211,18 +217,27 @@
 
         &__wrapper {
             display: flex;
-            width: 156rem;
+            width: 128rem;
             margin: auto;
             justify-content: space-between;
 
+            @include mq-sp {
+                width: 100%;
+                flex-direction: column-reverse;
+            }
+
             &__text {
-                width: 80rem;
+                width: 60rem;
                 margin: 0 auto;
-                padding: 30px;
+                padding: 10rem 3rem;
 
                 h4 {
-                    color: #fff;
-                    font-size: 2rem;
+                    color: #666;
+                    font-size: 1.4rem;
+                    font-family: "alternate-gothic-atf", sans-serif;
+                    font-weight: 700;
+                    font-style: normal;
+                    -webkit-font-smoothing: antialiased;
                 }
 
                 &--ttl {
@@ -230,20 +245,35 @@
 
                     h2 {
                         font-size: 5rem;
+                        font-family: '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho Pro', serif;
                     }
 
                     h3 {
                         font-size: 3rem;
+
+                        a {
+                            font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+                        }
+
                     }
 
                     span {
-                        background-color: #fff;
+                        display: inline-block;
+                        padding: 1px 1px 0;
+                        font-size: 1.4rem;
+                        letter-spacing: .2em;
+                        line-height: .8;
                         color: #000;
+                        background: #fff;
+                        font-family: "alternate-gothic-atf", sans-serif;
+                        font-weight: 700;
+                        font-style: normal;
                     }
 
                 }
 
                 &--deco {
+                    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
                     color: #fff;
                     font-size: 2rem;
                     margin-top: 2rem;
@@ -263,13 +293,12 @@
                         display: inline-block;
                         position: relative;
                         border-radius: 0% !important;
-                        width: 15rem !important;
+                        width: 10rem !important;
                         height: auto !important;
-                        padding: 2rem 1rem;
+                        padding: 1rem 0.5rem;
                         border: 1px solid #fff;
                         color: #fff;
                         font-size: 1.6rem;
-                        // background: #fff !important;
                         opacity: 1 !important;
 
                         &:before {
@@ -306,23 +335,35 @@
 
                     .chart-size {
                         display: block;
-                        width: 70%;
-                        margin: auto;
+                        width: 60%;
+
+                        @include mq-sp {
+                            width: 90%;
+                            margin: auto;
+                        }
                     }
                 }
             }
 
             &__img {
                 position: relative;
-                width: 45rem;
+                width: 48rem;
                 overflow: hidden;
 
-                .swiper-wrapper {}
+                @include mq-sp {
+                    margin: auto;
+                }
+
+                .swiper-wrapper {
+                    img {
+                        object-fit: cover;
+                    }
+                }
 
                 .chara_lines {
                     position: absolute;
-                    top: 20%;
-                    right: 20%;
+                    top: 20rem;
+                    right: 0;
                     writing-mode: vertical-rl;
                     z-index: 3;
 
@@ -330,6 +371,11 @@
                         background-color: #fff;
                         color: #000;
                         font-size: 3rem;
+                        margin: 1rem;
+
+                        &:first-of-type {
+                            margin-right: 0;
+                        }
                     }
                 }
             }

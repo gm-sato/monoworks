@@ -1,0 +1,179 @@
+@-webkit-keyframes animate {
+    35% {
+        filter: none
+    }
+
+    45% {
+        filter: url(#filterDistortFirst)
+    }
+
+    48% {
+        filter: url(#distort)
+    }
+
+    52% {
+        filter: url(#filterDistortSecond)
+    }
+
+    56% {
+        filter: none
+    }
+
+    90% {
+        filter: url(#distort)
+    }
+
+    92% {
+        filter: url(#filterDistortFirst)
+    }
+
+    97% {
+        filter: url(#filterDistortSecond)
+    }
+}
+
+@keyframes animate {
+    35% {
+        filter: none
+    }
+
+    45% {
+        filter: url(#filterDistortFirst)
+    }
+
+    48% {
+        filter: url(#distort)
+    }
+
+    52% {
+        filter: url(#filterDistortSecond)
+    }
+
+    56% {
+        filter: none
+    }
+
+    90% {
+        filter: url(#distort)
+    }
+
+    92% {
+        filter: url(#filterDistortFirst)
+    }
+
+    97% {
+        filter: url(#filterDistortSecond)
+    }
+}
+
+@-webkit-keyframes animateLarge {
+    35% {
+        filter: none;
+        transform: skew(0)
+    }
+
+    45% {
+        filter: url(#filterDistortFirst);
+        transform: skew(75deg) rotate(5deg)
+    }
+
+    48% {
+        filter: url(#distort);
+        transform: skew(0) rotate(0)
+    }
+
+    52% {
+        filter: url(#filterDistortSecond);
+        transform: skew(0)
+    }
+
+    56% {
+        filter: none;
+        transform: skew(0)
+    }
+
+    90% {
+        filter: url(#distort);
+        transform: skew(-10deg)
+    }
+
+    92% {
+        filter: url(#filterDistortFirst);
+        transform: skew(-5deg)
+    }
+
+    97% {
+        filter: url(#filterDistortSecond);
+        transform: skew(0)
+    }
+}
+
+@keyframes animateLarge {
+    35% {
+        filter: none;
+        transform: skew(0)
+    }
+
+    45% {
+        filter: url(#filterDistortFirst);
+        transform: skew(75deg) rotate(5deg)
+    }
+
+    48% {
+        filter: url(#distort);
+        transform: skew(0) rotate(0)
+    }
+
+    52% {
+        filter: url(#filterDistortSecond);
+        transform: skew(0)
+    }
+
+    56% {
+        filter: none;
+        transform: skew(0)
+    }
+
+    90% {
+        filter: url(#distort);
+        transform: skew(-10deg)
+    }
+
+    92% {
+        filter: url(#filterDistortFirst);
+        transform: skew(-5deg)
+    }
+
+    97% {
+        filter: url(#filterDistortSecond);
+        transform: skew(0)
+    }
+}
+
+.LpGlitchText {
+    -webkit-animation: animate 3s .2s infinite;
+    -webkit-animation-timing-function: step-end;
+    animation: animate 3s .2s infinite;
+    animation-timing-function: step-end;
+    color: var(--white);
+    display: inline-block;
+    position: relative
+}
+
+.LpGlitchText:after {
+    color: var(--white);
+    /* content:attr(data-duplicate); */
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.LpGlitchText.--Large {
+    -webkit-animation: animateLarge 4s .8s infinite;
+    -webkit-animation-timing-function: step-end;
+    animation: animateLarge 4s .8s infinite;
+    animation-timing-function: step-end;
+    perspective: 1000
+}
