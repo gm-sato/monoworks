@@ -783,6 +783,7 @@ dd,
 dt {
   padding: 0;
   margin: 0;
+  color: #fff;
 }
 
 ul,
@@ -848,6 +849,33 @@ html body.backgroundfix {
   width: 100%;
 }
 
+section {
+  display: block;
+  width: 124rem;
+  margin: auto;
+  padding-bottom: 10rem;
+}
+section:last-of-type {
+  padding-bottom: 0;
+}
+section .section-ttl {
+  color: #fff;
+  font-size: 4.883rem;
+  margin-bottom: 10rem;
+}
+@media only screen and (max-width: 750px) {
+  section .section-ttl {
+    font-size: 6.5rem;
+    margin-left: 1rem;
+  }
+}
+@media only screen and (max-width: 750px) {
+  section {
+    width: 100%;
+    margin: auto;
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -889,32 +917,6 @@ nav ul li:last-of-type {
   display: block;
   max-width: 192.8rem;
   width: 100%;
-}
-.mwtrpg section {
-  display: block;
-  width: 124rem;
-  margin: auto;
-  padding-bottom: 10rem;
-}
-.mwtrpg section:last-of-type {
-  padding-bottom: 0;
-}
-.mwtrpg section .section-ttl {
-  color: #fff;
-  font-size: 4.883rem;
-  margin-bottom: 10rem;
-}
-@media only screen and (max-width: 750px) {
-  .mwtrpg section .section-ttl {
-    font-size: 6.5rem;
-    margin-left: 1rem;
-  }
-}
-@media only screen and (max-width: 750px) {
-  .mwtrpg section {
-    width: 100%;
-    margin: auto;
-  }
 }
 .mwtrpg__top {
   width: 100vw !important;
@@ -1361,6 +1363,7 @@ nav ul li:last-of-type {
 }
 .mwtrpg__log__container__warpper__box__text h3 {
   font-size: 2.6rem;
+  color: #000;
 }
 .mwtrpg__log__container__warpper__box__text ul {
   display: block;
@@ -1368,6 +1371,7 @@ nav ul li:last-of-type {
 }
 .mwtrpg__log__container__warpper__box__text ul li {
   font-size: 1.8rem;
+  color: #000;
 }
 .mwtrpg__log__container__warpper__box__info {
   display: flex;
@@ -1574,6 +1578,117 @@ nav ul li:last-of-type {
   perspective: 1000;
 }
 
+.mwCharacter-list {
+  width: 100%;
+  background-color: #000;
+}
+.mwCharacter-list__head {
+  width: 100%;
+  height: 25vh;
+  position: relative;
+  background: #fff;
+}
+.mwCharacter-list__head-ttl {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.mwCharacter-list__head-ttl h1 {
+  width: 100%;
+  color: #000;
+  font-size: 6rem;
+}
+.mwCharacter-list__head-ttl span {
+  display: block;
+  width: 15rem;
+  background-color: #000;
+  color: #fff;
+}
+.mwCharacter-list__wrap {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mwCharacter-list__wrap-outer {
+  width: 32%;
+}
+.mwCharacter-list__wrap-outer:after {
+  display: block;
+  content: "";
+  width: 32%;
+}
+.mwCharacter-list__wrap-inner {
+  padding: 3rem;
+  margin-top: 5rem;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.mwCharacter-list__wrap-inner::before, .mwCharacter-list__wrap-inner::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+  z-index: 1;
+}
+.mwCharacter-list__wrap-inner:hover::before, .mwCharacter-list__wrap-inner:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.mwCharacter-list__wrap-inner::before {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #566473;
+  border-right-color: #566473;
+}
+.mwCharacter-list__wrap-inner::after {
+  top: 0;
+  left: 0;
+  border-top-color: #566473;
+  border-left-color: #566473;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+}
+.mwCharacter-list__wrap-thumb {
+  width: 90%;
+  margin: auto;
+}
+.mwCharacter-list__wrap-name {
+  font-size: 2.6rem;
+}
+.mwCharacter-list__wrap-cat {
+  display: flex;
+  justify-content: left;
+}
+.mwCharacter-list__wrap-tag {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 1.5rem;
+  border: 1px solid #fff;
+}
+.mwCharacter-list__wrap-text {
+  font-size: 1.6rem;
+}
+.mwCharacter-list__wrap-link {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
 .mwCharacter__head {
   width: 100%;
   height: 25vh;
@@ -1616,6 +1731,10 @@ nav ul li:last-of-type {
   margin: 0 auto;
   padding: 30px;
 }
+.mwCharacter__top__wrapper__text h4 {
+  color: #fff;
+  font-size: 2rem;
+}
 .mwCharacter__top__wrapper__text--ttl {
   color: #fff;
 }
@@ -1623,7 +1742,7 @@ nav ul li:last-of-type {
   font-size: 5rem;
 }
 .mwCharacter__top__wrapper__text--ttl h3 {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 .mwCharacter__top__wrapper__text--ttl span {
   background-color: #fff;
@@ -1632,9 +1751,11 @@ nav ul li:last-of-type {
 .mwCharacter__top__wrapper__text--deco {
   color: #fff;
   font-size: 2rem;
+  margin-top: 2rem;
 }
 .mwCharacter__top__wrapper__text--slideBtn {
   width: 100%;
+  margin-top: 5rem;
 }
 .mwCharacter__top__wrapper__text--slideBtn .swiper-pagination {
   display: flex;
@@ -1642,21 +1763,249 @@ nav ul li:last-of-type {
   margin-top: 20px !important;
 }
 .mwCharacter__top__wrapper__text--slideBtn .swiper-pagination-bullet {
+  display: inline-block;
+  position: relative;
   border-radius: 0% !important;
   width: 15rem !important;
-  height: 8rem !important;
+  height: auto !important;
+  padding: 2rem 1rem;
   border: 1px solid #fff;
-  background: #fff !important;
+  color: #fff;
+  font-size: 1.6rem;
   opacity: 1 !important;
 }
+.mwCharacter__top__wrapper__text--slideBtn .swiper-pagination-bullet:before {
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.mwCharacter__top__wrapper__text--slideBtn .swiper-pagination-bullet::after {
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
 .mwCharacter__top__wrapper__text--slideBtn .swiper-pagination-bullet-active {
-  background: #01B9F5 !important;
+  color: #000;
+  background: #fff !important;
 }
 .mwCharacter__top__wrapper__text--status {
-  display: inline-block;
+  display: block;
+  margin-top: 5rem;
+}
+.mwCharacter__top__wrapper__text--status .chart-size {
+  display: block;
   width: 70%;
   margin: auto;
 }
 .mwCharacter__top__wrapper__img {
+  position: relative;
   width: 45rem;
+  overflow: hidden;
+}
+.mwCharacter__top__wrapper__img .chara_lines {
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  writing-mode: vertical-rl;
+  z-index: 3;
+}
+.mwCharacter__top__wrapper__img .chara_lines p {
+  background-color: #fff;
+  color: #000;
+  font-size: 3rem;
+}
+
+.mwSession {
+  background-color: #0f1419;
+}
+.mwSession__head {
+  width: 100%;
+  height: 25vh;
+  position: relative;
+  background: #fff;
+}
+.mwSession__head--ttl {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.mwSession__head--ttl h1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #000;
+  font-size: 6rem;
+}
+.mwSession__head--ttl span {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #000;
+  color: #fff;
+}
+.mwSession h3 {
+  font-size: 3.6rem;
+}
+.mwSession section {
+  margin-top: 5rem;
+}
+.mwSession section:first-of-type {
+  margin-top: 0;
+}
+.mwSession__top {
+  display: block;
+  width: 80%;
+  margin: auto;
+  padding: 5rem 0;
+}
+.mwSession__top__wrapper {
+  display: grid;
+  grid-template-columns: 1.618fr 1fr;
+  gap: 1rem;
+  grid-template-areas: "img text";
+  width: 100%;
+}
+.mwSession__top__wrapper--img {
+  grid-area: img;
+}
+.mwSession__top__wrapper--img img {
+  width: 100%;
+  background-color: #ddd;
+}
+.mwSession__top__wrapper--text {
+  grid-area: text;
+  display: block;
+  position: relative;
+  padding: 3rem 2rem;
+}
+.mwSession__top__wrapper--text h2 {
+  font-size: 3rem;
+}
+.mwSession__top__wrapper--text ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.mwSession__top__wrapper--text ul li {
+  font-size: 2.6rem;
+}
+.mwSession__top__wrapper--text span {
+  display: block;
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 0;
+}
+.mwSession__list__wrapper {
+  display: block;
+  width: 70%;
+  margin: auto;
+}
+.mwSession__list__wrapper__container {
+  display: flex;
+  width: 90%;
+  margin: 2.5rem auto 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mwSession__list__wrapper__container__item {
+  display: inline-block;
+  width: 47%;
+}
+.mwSession__list__wrapper__container__item::after {
+  content: "";
+  display: block;
+  width: 47%;
+}
+.mwSession__list__wrapper__container__item:nth-of-type(-n+2) {
+  margin-top: 0;
+}
+.mwSession__list__wrapper__container__item .item-deco {
+  width: 100%;
+  padding: 3rem;
+  margin-top: 5rem;
+  position: relative;
+}
+.mwSession__list__wrapper__container__item .item-deco::before {
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+}
+.mwSession__list__wrapper__container__item .item-deco::after {
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+}
+.mwSession__list__wrapper__container__item--thum {
+  display: block;
+  width: 40rem;
+  height: 40rem;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+}
+.mwSession__list__wrapper__container__item--name {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+}
+.mwSession__list__wrapper__container__item--name h4 {
+  font-size: 2.6rem;
+}
+.mwSession__list__wrapper__container__item--name .yomi {
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #fff;
+  color: #000;
+}
+.mwSession__list__wrapper__container__item--name .player {
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+}
+.mwSession__list__wrapper__container__item--text {
+  display: inline-block;
+  margin-top: 1rem;
+}
+.mwSession__list__wrapper__container__item--text p {
+  font-size: 1.4rem;
+}
+.mwSession__log__wrapper {
+  display: block;
+  width: 70%;
+  margin: auto;
+}
+.mwSession__log__wrapper p {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
 }/*# sourceMappingURL=trpg_style.css.map */

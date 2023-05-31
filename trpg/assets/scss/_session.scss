@@ -1,3 +1,6 @@
+//----一覧ページ----//
+
+
 //----個別ページ----//
 .mwSession {
     background-color: #0f1419;
@@ -105,7 +108,6 @@
     &__list {
         &__wrapper {
             display: block;
-            width: 70%;
             margin: auto;
 
             &__container {
@@ -119,6 +121,7 @@
                 &__item {
                     display: inline-block;
                     width: 47%;
+                    margin-top: 5rem;
 
                     &::after {
                         content: "";
@@ -131,10 +134,10 @@
                     }
 
                     .item-deco {
+                        position: relative;
                         width: 100%;
                         padding: 3rem;
-                        margin-top: 5rem;
-                        position: relative;
+                        box-sizing: border-box;
 
                         &::before {
                             border-top: 2px solid #fff;
@@ -210,7 +213,6 @@
     &__log {
         &__wrapper {
             display: block;
-            width: 70%;
             margin: auto;
 
             p {
