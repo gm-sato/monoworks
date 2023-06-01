@@ -1,3 +1,5 @@
+// Scss Document
+
 @-webkit-keyframes animate {
     35% {
         filter: none
@@ -155,13 +157,13 @@
     -webkit-animation-timing-function: step-end;
     animation: animate 3s .2s infinite;
     animation-timing-function: step-end;
-    color: var(--white);
+    color: #fff;
     display: inline-block;
     position: relative
 }
 
 .LpGlitchText:after {
-    color: var(--white);
+    color: #fff;
     /* content:attr(data-duplicate); */
     height: 100%;
     left: 0;

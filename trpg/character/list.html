@@ -24,8 +24,8 @@
 	</header>
 
 	<main class="mwCharacter-list">
-		<section class="mwCharacter-list__head">
-			<div class="mwCharacter-list__head-ttl">
+		<section class="contents_head">
+			<div class="contents_head-ttl">
 				<h1 class="mwtrpg-font_imp">CHARACTER</h1>
 				<span>キャラクター</span>
 			</div>
@@ -113,9 +113,19 @@
 					</div>
 				</div>
 			</div>
-			<div class="mwCharacter-list__wrap-sidebar">.
-				<aside>
-					<h2>サイドバー</h2>
+			<div class="mwCharacter-list__wrap-sidebar">
+				<aside class="sarch-list">
+					<form class="sarch-list__form" action="cgi-bin/example.cgi" method="post">
+						<input type="search" name="search" class="sarch-list__form-keyword" placeholder="キーワードを入力">
+						<input type="submit" name="sabmit" class="sarch-list__form-submit" value="検索">
+					</form>
+					<ul class="sarch-list__taglist">
+						<li><button data-term="woman"><span>woman</span></button></li>
+						<li><button data-term="man"><span>man</span></button></li>
+						<li><button data-term="villain"><span>villain</span></button></li>
+						<li><button data-term="justice"><span>justice</span></button></li>
+						<li><button data-term="normal"><span>normal</span></button></li>
+					</ul>
 				</aside>
 			</div>
 		</section>

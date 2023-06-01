@@ -1,11 +1,4 @@
 // Scss Document
 @charset "utf-8";
-@import "_swiper/swiper-bundle";
 
-@import 'base';
-@import 'test';
-@import 'header';
-@import 'content';
-@import 'gliddi';
-@import 'character';
-@import 'session'
+@use "import";

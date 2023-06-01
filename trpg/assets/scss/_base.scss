@@ -116,33 +116,6 @@ html {
 	}
 }
 
-section {
-	display: block;
-	width: 124rem;
-	margin: auto;
-	padding-bottom: 10rem;
-
-	&:last-of-type {
-		padding-bottom: 0;
-	}
-
-	.section-ttl {
-		color: #fff;
-		font-size: 4.883rem;
-		margin-bottom: 10rem;
-
-		@include mq-sp {
-			font-size: 6.5rem;
-			margin-left: 1rem;
-		}
-	}
-
-	@include mq-sp {
-		width: 100%;
-		margin: auto;
-	}
-}
-
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
