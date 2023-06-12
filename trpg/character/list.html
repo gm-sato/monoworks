@@ -26,8 +26,8 @@
 	<main class="mwCharacter-list">
 		<section class="contents_head">
 			<div class="contents_head-ttl">
-				<h1 class="mwtrpg-font_imp">CHARACTER</h1>
-				<span>キャラクター</span>
+				<h1 class="mwtrpg-font_imp">CHARACTER LIST</h1>
+				<span>キャラクター一覧</span>
 			</div>
 		</section>
 		<section class="mwCharacter-list__wrap">
@@ -115,10 +115,14 @@
 			</div>
 			<div class="mwCharacter-list__wrap-sidebar">
 				<aside class="sarch-list">
-					<form class="sarch-list__form" action="cgi-bin/example.cgi" method="post">
-						<input type="search" name="search" class="sarch-list__form-keyword" placeholder="キーワードを入力">
-						<input type="submit" name="sabmit" class="sarch-list__form-submit" value="検索">
+					<h3>Sarch</h3>
+					<form action="#" class="sarch-list__form">
+						<label>
+							<input type="text" name="search" class="sarch-list__form-keyword" placeholder="キーワードを入力">
+						</label>
+						<button type="submit" class="sarch-list__form-submit" aria-label="検索"></button>
 					</form>
+					<h3>TAG</h3>
 					<ul class="sarch-list__taglist">
 						<li><button data-term="woman"><span>woman</span></button></li>
 						<li><button data-term="man"><span>man</span></button></li>

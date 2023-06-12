@@ -14,6 +14,10 @@
         &:first-of-type {
             margin-top: 0;
         }
+
+        .section-ttl {
+            margin-bottom: 5rem;
+        }
     }
 
     &__top {
@@ -47,8 +51,8 @@
                 padding: 3rem 2rem;
                 color: #fff;
 
-                h2 {
-                    font-size: 3rem;
+                h1 {
+                    font-size: 4.5rem;
                 }
 
                 ul {
@@ -151,14 +155,22 @@
                         margin-top: 2.5rem;
 
                         h4 {
-                            font-size: 2.6rem;
+                            font-size: 3rem;
                         }
 
                         .yomi {
                             display: inline-block;
                             width: fit-content;
+                            padding: 1px 1px 0;
+                            font-size: 1.4rem;
                             background-color: #fff;
                             color: #000;
+                            letter-spacing: .2em;
+                            line-height: .8;
+                            font-family: "alternate-gothic-atf",
+                                sans-serif;
+                            font-weight: 700;
+                            font-style: normal;
                         }
 
                         .player {

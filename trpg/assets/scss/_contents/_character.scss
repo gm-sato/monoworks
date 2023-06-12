@@ -1,4 +1,4 @@
-@use '../base';
+@use '../mixin';
 
 .mwCharacter-list {
     width: 100%;
@@ -45,7 +45,7 @@
             grid-column: col-start / span 9;
             display: flex;
             width: 90%;
-            margin: auto;
+            margin: 5rem auto 0;
             flex-wrap: wrap;
             justify-content: space-between;
         }
@@ -80,8 +80,8 @@
                 content: '';
                 display: block;
                 position: absolute;
-                width: 20%;
-                height: 20%;
+                width: 3rem;
+                height: 3rem;
                 border: 2px solid;
                 transition: all 0.6s ease;
                 border-radius: 2px;
@@ -143,7 +143,7 @@
         &-tag {
             display: block;
             width: fit-content;
-            padding: 1rem 1.5rem;
+            padding: .5rem 1rem;
             border: 1px solid #fff;
         }
 
@@ -157,7 +157,7 @@
             width: 50%;
             margin: auto;
             margin-top: 1.5rem;
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             font-size: 1.8rem;
             text-align: center;
             border: 2px solid #05d5fc;
@@ -166,9 +166,49 @@
 
         &-sidebar {
             grid-column: col-start 10/ span 3;
-            background-color: #37ddfd;
+            margin-top: 10rem;
 
             .sarch-list {
+                h3 {
+                    font-size: 3rem;
+                }
+
+                &__form {
+                    display: flex;
+                    width: 80%;
+                    justify-content: space-between;
+                    align-items: center;
+                    overflow: hidden;
+                    border: 1px solid #a3a3a3;
+                    border-radius: 3px;
+
+                    &-keyword {
+                        width: 250px;
+                        padding: 5px 15px;
+                        border: none;
+                        box-sizing: border-box;
+                        font-size: 1em;
+                        outline: none;
+                    }
+
+                    &-submit {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 50px;
+                        border: none;
+                        background-color: transparent;
+                        cursor: pointer;
+
+                        &::after {
+                            width: 20px;
+                            height: 20px;
+                            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23767d83%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E');
+                            background-repeat: no-repeat;
+                            content: '';
+                        }
+                    }
+                }
 
                 &__taglist {
                     display: flex;
@@ -178,31 +218,13 @@
                         button {
                             position: relative;
                             width: fit-content;
-                            padding: 1rem 2rem;
-                            border: 1px solid #fff;
+                            padding: .5rem 4rem;
+                            margin: 1rem;
+                            border: 2px solid #fff;
                             color: #fff;
                             font-size: 1.6rem;
                             background-color: unset;
-
-                            &:before {
-                                border-bottom: 15px solid transparent;
-                                border-left: 15px solid #fff;
-                                content: '';
-                                display: block;
-                                position: absolute;
-                                top: 0px;
-                                left: 0px;
-                            }
-
-                            &::after {
-                                border-left: 15px solid transparent;
-                                border-bottom: 15px solid #fff;
-                                content: '';
-                                display: block;
-                                position: absolute;
-                                bottom: 0px;
-                                right: 0px;
-                            }
+                            border-radius: 2.5rem;
                         }
                     }
                 }
@@ -225,7 +247,7 @@
             margin: auto;
             justify-content: space-between;
 
-            @include base.mq-sp {
+            @include mixin.mq-sp {
                 width: 100%;
                 flex-direction: column-reverse;
             }
@@ -249,7 +271,6 @@
 
                     h2 {
                         font-size: 5rem;
-                        font-family: '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho Pro', serif;
                     }
 
                     h3 {
@@ -341,7 +362,7 @@
                         display: block;
                         width: 60%;
 
-                        @include base.mq-sp {
+                        @include mixin.mq-sp {
                             width: 90%;
                             margin: auto;
                         }
@@ -354,7 +375,7 @@
                 width: 48rem;
                 overflow: hidden;
 
-                @include base.mq-sp {
+                @include mixin.mq-sp {
                     margin: auto;
                 }
 
