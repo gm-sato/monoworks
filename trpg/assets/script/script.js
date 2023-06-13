@@ -210,3 +210,47 @@ window.addEventListener("load", function () {
     });
   }
 });
+
+/* ========================================================
+animation
+======================================================== */
+function fade() {
+  $('.fade_trigger').each(function () {
+    let elemT = $(this).offset().top,
+      scroll = $(window).scrollTop(),
+      winH = $(window).height();
+    if (scroll >= elemT - winH) {
+      $(function () {
+        $('.fade').each(function (i) {
+          $(this).delay(i * 200).queue(function () {
+            $(this).addClass('active');
+          });
+        });
+      });
+    } else {
+      $(this).removeClass('fade');
+    }
+  });
+}
+
+function fadeUp() {
+  $('.fade_up_trigger').each(function () {
+    let elemT = $(this).offset().top,
+      scroll = $(window).scrollTop(),
+      winH = $(window).height();
+    if (scroll >= elemT - winH) {
+      $(this).addClass('fade_up');
+    } else {
+      $(this).removeClass('fade_up');
+    }
+  });
+}
+$(window).on('load', function () {
+  fade();
+  fadeUp();
+  accordion()
+});
+$(window).scroll(function () {
+  fade();
+  fadeUp();
+});

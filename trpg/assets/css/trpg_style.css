@@ -855,6 +855,53 @@ nav ul li:last-of-type {
   padding-right: 0;
 }
 
+/*---footer----*/
+.mwtrpg_footer {
+  display: block;
+  width: 100%;
+  height: 20vh;
+}
+.mwtrpg_footer--list {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mwtrpg_footer--list li {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 2rem;
+  font-size: 1.4rem;
+  border-left: 1px solid #000;
+}
+.mwtrpg_footer--list li:first-of-type {
+  padding-left: 0;
+  border-left: none;
+}
+.mwtrpg_footer--list li:last-of-type {
+  padding-right: 0;
+}
+.mwtrpg_footer--list li a {
+  color: #000;
+}
+.mwtrpg_footer--logo {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  font-size: 3rem;
+  color: #000;
+}
+.mwtrpg_footer--copyr {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  font-size: 1rem;
+  color: #000;
+}
+
 /*---コンテンツ----*/
 html {
   font-size: 0.5208333333vw;
@@ -917,7 +964,7 @@ section .section-ttl {
 }
 
 .mwtrpg {
-  background-color: #050505;
+  background-color: #202123;
   position: relative;
   display: block;
   max-width: 192.8rem;
@@ -930,7 +977,7 @@ section .section-ttl {
 }
 .mwtrpg__top__mv {
   position: relative;
-  background-color: #000;
+  background-color: #202123;
 }
 .mwtrpg__top__mv img {
   width: 100%;
@@ -1728,9 +1775,11 @@ section .section-ttl {
   border-radius: 2.5rem;
 }
 
+.mwCharacter {
+  background-color: #202123;
+}
 .mwCharacter__top {
   width: 100%;
-  background-color: #000;
 }
 .mwCharacter__top__wrapper {
   display: flex;
@@ -1873,6 +1922,71 @@ section .section-ttl {
 }
 .mwCharacter__top__wrapper__img .chara_lines p:first-of-type {
   margin-right: 0;
+}
+.mwCharacter__session .section-ttl {
+  margin-bottom: 2.5rem;
+}
+.mwCharacter__session .log_slider {
+  position: relative;
+  overflow-x: hidden;
+}
+.mwCharacter__session--slider .swiper-wrapper .swiper-slide {
+  display: flex;
+  position: relative;
+  width: 50rem;
+  height: 32rem;
+  margin: 1rem 2.5rem;
+  background: #fff;
+}
+.mwCharacter__session--img {
+  position: absolute;
+  width: 23rem;
+  height: 20rem;
+  top: 4rem;
+  left: -1.5rem;
+}
+.mwCharacter__session--img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mwCharacter__session--text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  top: 4rem;
+  right: 3.5rem;
+}
+.mwCharacter__session--text h3 {
+  font-size: 2.6rem;
+  color: #000;
+}
+.mwCharacter__session--text ul {
+  display: block;
+  margin-top: auto;
+}
+.mwCharacter__session--text ul li {
+  font-size: 1.8rem;
+  color: #000;
+}
+.mwCharacter__session--more {
+  display: flex;
+  width: 45%;
+  position: absolute;
+  bottom: 2.5rem;
+  right: 3.5rem;
+  font-size: 1.28rem;
+  color: #000;
+  align-items: center;
+  justify-content: space-between;
+}
+.mwCharacter__session--more p {
+  color: #000;
+}
+.mwCharacter__session--more a {
+  color: #000;
 }
 
 .mwSession {
@@ -2271,4 +2385,32 @@ section .section-ttl {
   animation: animateLarge 4s 0.8s infinite;
   animation-timing-function: step-end;
   perspective: 1000;
+}
+
+.fade_trigger,
+.fade_up_trigger {
+  opacity: 0;
+}
+
+.fade {
+  animation: fade 0.5s ease-out forwards;
+}
+
+@keyframes fade {
+  100% {
+    opacity: 1;
+  }
+}
+.fade_up {
+  animation: fadeUp 1s 0.5s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }/*# sourceMappingURL=trpg_style.css.map */
