@@ -6,4 +6,10 @@ TOP　※デザインOK
 　→movie_list
 　→scenario_list
    →scenario
+
+   0620→movieページデザイン
+   0621→movieページコーディング
+   0622→全体SP調整
+   0623→php組み込み作業
+   ７月までに公開
    

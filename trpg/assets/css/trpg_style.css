@@ -946,14 +946,16 @@ section:last-of-type {
   padding-bottom: 0;
 }
 section .section-ttl {
+  max-width: 1200px;
   color: #fff;
   font-size: 4.883rem;
+  margin: auto;
   margin-bottom: 10rem;
 }
 @media only screen and (max-width: 750px) {
   section .section-ttl {
     font-size: 6.5rem;
-    margin-left: 1rem;
+    margin-left: 3rem;
   }
 }
 @media only screen and (max-width: 750px) {
@@ -1440,10 +1442,6 @@ section .section-ttl {
 }
 .mwtrpg__profile__container {
   margin: auto;
-}
-.mwtrpg__profile__container h2 {
-  color: #fff;
-  font-size: 3.125rem;
 }
 .mwtrpg__profile__container__warpper {
   display: flex;
@@ -2365,7 +2363,6 @@ section .section-ttl {
   animation: animate 3s 0.2s infinite;
   animation-timing-function: step-end;
   color: #fff;
-  display: inline-block;
   position: relative;
 }
 

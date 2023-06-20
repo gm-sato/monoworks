@@ -50,13 +50,15 @@ section {
 	}
 
 	.section-ttl {
+		max-width: 1200px;
 		color: #fff;
 		font-size: 4.883rem;
+		margin: auto;
 		margin-bottom: 10rem;
 
 		@include mixin.mq-sp {
 			font-size: 6.5rem;
-			margin-left: 1rem;
+			margin-left: 3rem;
 		}
 	}
 
@@ -644,11 +646,6 @@ section {
 
 		&__container {
 			margin: auto;
-
-			h2 {
-				color: #fff;
-				font-size: 3.125rem;
-			}
 
 			&__warpper {
 				display: flex;
