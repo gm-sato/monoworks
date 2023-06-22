@@ -11,13 +11,14 @@
 		display: flex;
 		width: 70%;
 		margin: auto;
+		margin-top: 2.5rem;
 		flex-wrap: wrap;
 		justify-content: center;
 
 		li {
 			width: fit-content;
 			padding: 0 2rem;
-			font-size: 1.4rem;
+			font-size: 1.8rem;
 			border-left: 1px solid #000;
 
 			&:first-of-type {
@@ -39,6 +40,7 @@
 		display: block;
 		width: fit-content;
 		margin: auto;
+		margin-top: 1rem;
 		font-size: 3.0rem;
 		color: #000;
 	}
@@ -47,6 +49,7 @@
 		display: block;
 		width: fit-content;
 		margin: auto;
+		margin-top: 1rem;
 		font-size: 1.0rem;
 		color: #000;
 	}

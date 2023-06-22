@@ -865,6 +865,7 @@ nav ul li:last-of-type {
   display: flex;
   width: 70%;
   margin: auto;
+  margin-top: 2.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -872,7 +873,7 @@ nav ul li:last-of-type {
   width: -moz-fit-content;
   width: fit-content;
   padding: 0 2rem;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   border-left: 1px solid #000;
 }
 .mwtrpg_footer--list li:first-of-type {
@@ -890,6 +891,7 @@ nav ul li:last-of-type {
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
+  margin-top: 1rem;
   font-size: 3rem;
   color: #000;
 }
@@ -898,6 +900,7 @@ nav ul li:last-of-type {
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
+  margin-top: 1rem;
   font-size: 1rem;
   color: #000;
 }
@@ -936,6 +939,10 @@ html body.backgroundfix {
     transform: translateX(0%) skewX(-25deg);
   }
 }
+main {
+  padding-bottom: 10rem;
+}
+
 section {
   display: block;
   width: 124rem;
@@ -2156,6 +2163,79 @@ section .section-ttl {
 .mwSession__log__wrapper p {
   margin-top: 2.5rem;
   font-size: 1.6rem;
+}
+
+.mwMovie {
+  background-color: #0f1419;
+}
+.mwMovie__top {
+  display: block;
+  width: 80%;
+  margin: auto;
+  padding: 5rem 0;
+}
+.mwMovie__top--wrapper {
+  display: grid;
+  grid-template-columns: 1.618fr 1fr;
+  gap: 1rem;
+  grid-template-areas: "date note";
+  width: 100%;
+}
+.mwMovie__top--date {
+  grid-area: date;
+}
+.mwMovie__top--date img {
+  width: 100%;
+  background-color: #ddd;
+}
+.mwMovie__top--note {
+  grid-area: note;
+  display: block;
+  position: relative;
+  padding: 3rem 2rem;
+  color: #fff;
+}
+.mwMovie__top--note h1 {
+  font-size: 4.5rem;
+}
+.mwMovie__top--note ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.mwMovie__top--note ul li {
+  display: flex;
+  justify-content: left;
+  font-size: 1.8rem;
+}
+.mwMovie__top--note ul li span {
+  font-weight: bold;
+}
+.mwMovie__concept--wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rem;
+}
+.mwMovie__concept--wrapper:first-of-type {
+  margin-top: 0;
+}
+.mwMovie__concept--wrapper:nth-of-type(2n) {
+  flex-direction: row-reverse;
+}
+.mwMovie__concept--img {
+  width: 40%;
+}
+.mwMovie__concept--img img {
+  width: 100%;
+}
+.mwMovie__concept--text {
+  width: 50%;
+}
+.mwMovie__concept--text h2 {
+  font-size: 2.8rem;
+}
+.mwMovie__concept--text p {
+  font-size: 1.8rem;
 }
 
 /* VARS */
