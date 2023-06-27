@@ -27,17 +27,6 @@ html {
 	}
 }
 
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-		transform: translateX(-100%) skewX(-25deg);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateX(0%) skewX(-25deg);
-	}
-}
 
 main {
 	padding-bottom: 10rem;
@@ -54,7 +43,7 @@ section {
 	}
 
 	.section-ttl {
-		max-width: 1200px;
+		max-width: 80vw;
 		color: #fff;
 		font-size: 4.883rem;
 		margin: auto;
@@ -321,44 +310,6 @@ section {
 
 						@include mixin.mq-sp {
 							width: 40%;
-						}
-
-						&.is-animated {
-							animation-name: fadeIn;
-							animation-duration: 1s;
-							animation-fill-mode: forwards;
-						}
-
-						&:nth-child(1) {
-							animation-delay: .2s;
-						}
-
-						&:nth-child(2) {
-							animation-delay: .3s;
-						}
-
-						&:nth-child(3) {
-							animation-delay: .4s;
-						}
-
-						&:nth-child(4) {
-							animation-delay: .5s;
-						}
-
-						&:nth-child(5) {
-							animation-delay: .6s;
-						}
-
-						&:nth-child(6) {
-							animation-delay: .7s;
-						}
-
-						&:nth-child(7) {
-							animation-delay: .8s;
-						}
-
-						&:nth-child(8) {
-							animation-delay: .9s;
 						}
 
 						img {
@@ -688,17 +639,21 @@ section {
 					color: #FFF;
 
 					h3 {
-						font-size: 2.5rem;
+						font-size: 4rem;
+					}
+
+					span {
+						font-size: 2.6rem;
 					}
 
 					p {
-						font-size: 1.6rem;
+						font-size: 2.6rem;
 					}
 
 					.sns_wrapper {
 						display: flex;
 						justify-content: space-between;
-						margin-top: 1rem;
+						margin-top: 2.5rem;
 
 						&--btn {
 							display: flex;
@@ -714,19 +669,23 @@ section {
 							text-align: center;
 
 							&.twitter {
-								background-color: #1688DF;
+								background: #1688DF;
 							}
 
 							&.youtube {
-								background: red;
+								background: #c4302b;
+							}
+
+							&.calendar {
+								background: rgb(86, 164, 166);
 							}
 						}
 
 					}
 
 					.job-address {
-						margin-top: 1rem;
-
+						margin-top: 2.5rem;
+						font-size: 2.6rem;
 					}
 
 					@include mixin.mq-sp {
@@ -759,38 +718,5 @@ section {
 		display: block;
 		height: 100%;
 		width: 1px;
-	}
-}
-
-.contents_head {
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: 5vh 20vh 5vh;
-	width: 100%;
-	background: #fff;
-	padding: 0;
-
-	&-ttl {
-		grid-column: 10 / span 3;
-		grid-row: 2;
-		width: fit-content;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		justify-content: center;
-
-		h1 {
-			width: fit-content;
-			color: #000;
-			font-size: 6rem;
-		}
-
-		span {
-			display: block;
-			width: fit-content;
-			background-color: #000;
-			color: #fff;
-			padding: 0 .5rem;
-		}
 	}
 }

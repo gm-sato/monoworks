@@ -2,9 +2,11 @@
 
 @forward 'reset';
 @forward 'mixin';
+@forward 'settings';
 @forward 'font';
 @forward 'header';
 @forward 'footer';
+@forward 'parts';
 @forward 'main';
 @forward '_contents/character';
 @forward '_contents/session';
