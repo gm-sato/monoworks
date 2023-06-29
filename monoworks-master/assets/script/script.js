@@ -1,4 +1,6 @@
-// スムーススクロール
+/* ========================================================
+スムーススクロール
+======================================================== */
 // headerの高さを取得し、headeHeightに代入
 const headerHeight = document.querySelector('header').offsetHeight;
 
@@ -29,7 +31,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-//モーダルウィンドウ
+/* ========================================================
+モーダルウィンドウ
+======================================================== */
 const body = document.body;
 const modalBtns = document.querySelectorAll(".js-modal-open");
 modalBtns.forEach(function (btn) {
@@ -59,8 +63,11 @@ window.onclick = function (event) {
     bodyFixedOff();
   }
 };
-//モーダルウィンドウここまで
 
+
+/* ========================================================
+動画スライダーループ
+======================================================== */
 
 const movieA = new Swiper('.movie_a', {
   loop: true,
@@ -111,10 +118,21 @@ const character = new Swiper('.chara_slide', {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  pagination: {
+    el: "#pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<p class="' + className + '">' + '<span>' + ["001", "002", "003", ][index] + '</span>' + '</p>';
+    },
+  },
   slidesPerView: 1,
-  loop: true,
+  loop: false,
 });
 
+
+/* ========================================================
+コンテンツ順番に表示
+======================================================== */
 
 const targets = document.querySelectorAll('.chara-box'); //アニメーションさせたい要素
 //スクロールイベント
@@ -129,6 +147,10 @@ window.addEventListener('scroll', function () {
   }
 });
 
+
+/* ========================================================
+タグ絞り込み
+======================================================== */
 
 window.addEventListener("load", function () {
   const d = document;
@@ -202,4 +224,123 @@ window.addEventListener("load", function () {
       }
     });
   }
+});
+
+/* ========================================================
+animation　※要JQuery
+======================================================== */
+function fade() {
+  $('.fade_trigger').each(function () {
+    let elemT = $(this).offset().top,
+      scroll = $(window).scrollTop(),
+      winH = $(window).height();
+    if (scroll >= elemT - winH) {
+      $(function () {
+        $('.fade').each(function (i) {
+          $(this).delay(i * 200).queue(function () {
+            $(this).addClass('active');
+          });
+        });
+      });
+    } else {
+      $(this).removeClass('fade');
+    }
+  });
+}
+
+function fadeUp() {
+  $('.fade_up_trigger').each(function () {
+    let elemT = $(this).offset().top,
+      scroll = $(window).scrollTop(),
+      winH = $(window).height();
+    if (scroll >= elemT - winH) {
+      $(this).addClass('fade_up');
+    } else {
+      $(this).removeClass('fade_up');
+    }
+  });
+}
+$(window).on('load', function () {
+  fade();
+  fadeUp();
+});
+$(window).scroll(function () {
+  fade();
+  fadeUp();
+});
+
+
+/* ========================================================
+画面遷移
+======================================================== */
+window.addEventListener('DOMContentLoaded', function () {
+  body.classList.remove("fadeout");
+});
+
+const pageTransitionDOMClass = 'jsPageTransition'; //pageTransitionを適用したい#つきのaタグにつけるクラス
+const linkEls = [
+  ...document.querySelectorAll('a:not([href*="#"]):not([target])'),
+  ...document.querySelectorAll('.jsPageTransition'),
+];
+
+const currentHostName = window.location.hostname; //URL内だったらと条件にする
+
+function addFadeout(url) {
+  body.classList.add("fadeout");
+  setTimeout(() => {
+    window.location = url;
+  }, 800);
+}
+
+// setTimeoutのdelayはbaseのwrapper::afterのtransitionと合わせる
+linkEls.forEach((linkEl) => {
+  linkEl.addEventListener("click", (e) => {
+    // command or control+クリックのときは処理しない
+    if ((e.ctrlKey && !e.metaKey) || (!e.ctrlKey && e.metaKey)) return;
+
+    e.preventDefault(); //cancel navigate
+    e.stopPropagation(); //menuなどに伝搬されて挙動が変わる場合があるので防止
+    let url = linkEl.getAttribute("href");
+    if (url !== "" && url.indexOf(currentHostName)) {
+      addFadeout(url);
+    }
+  }, false);
+});
+
+// SafariでブラウザバックするとJSなどが解除されていない問題【bfcache】の対策
+window.addEventListener('pageshow', function (event) {
+  if (event.persisted) {
+    // bfcache発動時の処理
+    window.location.reload();
+  }
+});
+
+/* ========================================================
+検索ボックス
+======================================================== */
+let cards = document.querySelectorAll('.mwCharacter-list__wrap-box')
+
+function liveSearch() {
+  let search_query = document.getElementById("searchbox").value;
+
+  //すべてのコンテンツが表示されている場合は innerText を使用。
+  //隠し要素を含む場合はtextContentを使用。
+  for (var i = 0; i < cards.length; i++) {
+    if (cards[i].textContent.toLowerCase()
+      .includes(search_query.toLowerCase())) {
+      cards[i].classList.remove("is-hidden");
+    } else {
+      cards[i].classList.add("is-hidden");
+    }
+  }
+}
+
+//少しだけ遅延
+let typingTimer;
+let typeInterval = 500;
+let searchInput = document.getElementById('searchbox');
+
+searchInput.addEventListener('keyup', () => {
+  clearTimeout(typingTimer);
+  typingTimer = setTimeout(liveSearch, typeInterval);
 });
