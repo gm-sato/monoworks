@@ -1,36 +1,37 @@
 <?php get_header(); ?>
 <main class="mwSession">
-		<section class="contents_head">
-			<div class="contents_head-ttl">
-				<h1 class="mwtrpg-font_imp">SESSION</h1>
-				<span>セッション</span>
+	<section class="contents_head">
+		<div class="contents_head-ttl">
+			<h1 class="mwtrpg-font_imp">SESSION</h1>
+			<span>セッション</span>
+		</div>
+	</section>
+	<section class="mwSession__top">
+		<div class="mwSession__top__wrapper">
+			<div class="mwSession__top__wrapper--img">
+				<img src="<?php $session_image = SCF::get('session_img');
+							echo wp_get_attachment_url($session_image); ?>">
 			</div>
-		</section>
-		<section class="mwSession__top">
-			<div class="mwSession__top__wrapper">
-				<div class="mwSession__top__wrapper--img">
-					<img src="<?php $session_image = SCF::get('session_img'); echo wp_get_attachment_url($session_image); ?>">
-				</div>
-				<div class="mwSession__top__wrapper--text">
-					<h1><?php the_title(); ?></h1>
-					<ul>
-						<li>KP:<?php echo SCF::get('session_kp'); ?></li>
-						<li>PL:<?php echo SCF::get('session_pl'); ?></li>
-					</ul>
-					<span><?php echo SCF::get('session_day'); ?></span>
-				</div>
+			<div class="mwSession__top__wrapper--text">
+				<h1><?php the_title(); ?></h1>
+				<ul>
+					<li>KP:<?php echo SCF::get('session_kp'); ?></li>
+					<li>PL:<?php echo SCF::get('session_pl'); ?></li>
+				</ul>
+				<span><?php echo SCF::get('session_day'); ?></span>
 			</div>
-		</section>
-		<section class="mwSession__list">
-			<div class="mwSession__list__wrapper">
-				<h2 class="section-ttl mwtrpg-font_imp">CHARACTER</h2>
-				<ul class="mwSession__list__wrapper__container">
-                    <?php
-    $session_list = SCF::get('session_list');
-    foreach ($session_list as $fields) {    
-        $images = wp_get_attachment_image_src($fields['session_pc-image'] , 'full');
-?>
-<li class="mwSession__list__wrapper__container__item">
+		</div>
+	</section>
+	<section class="mwSession__list">
+		<div class="mwSession__list__wrapper">
+			<h2 class="section-ttl mwtrpg-font_imp">CHARACTER</h2>
+			<ul class="mwSession__list__wrapper__container">
+				<?php
+				$session_list = SCF::get('session_list');
+				foreach ($session_list as $fields) {
+					$images = wp_get_attachment_image_src($fields['session_pc-image'], 'full');
+				?>
+					<li class="mwSession__list__wrapper__container__item">
 						<div class="item-deco">
 							<img class="mwSession__list__wrapper__container__item--thum" src="<?php echo $images[0]; ?>">
 							<div class="mwSession__list__wrapper__container__item--name">
@@ -43,17 +44,17 @@
 							</div>
 						</div>
 					</li>
-<?php } ?>
-				</ul>
+				<?php } ?>
+			</ul>
+		</div>
+	</section>
+	<section class="mwSession__log">
+		<div class="mwSession__log__wrapper">
+			<h2 class="section-ttl mwtrpg-font_imp">LOG</h2>
+			<div>
+				<?php the_content(); ?>
 			</div>
-		</section>
-		<section class="mwSession__log">
-			<div class="mwSession__log__wrapper">
-				<h2 class="section-ttl mwtrpg-font_imp">LOG</h2>
-                <div>
-                    <?php the_content(); ?>
-                </div>
-			</div>
-		</section>
-	</main>
+		</div>
+	</section>
+</main>
 <?php get_footer(); ?>

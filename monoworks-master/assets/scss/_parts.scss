@@ -73,3 +73,102 @@
         }
     }
 }
+
+.p-filter {
+    &__heading {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+
+        .main {
+            font-family: Nunito,
+                sans-serif;
+            font-size: 1.25rem;
+        }
+
+        .sub {
+            display: inline-block;
+            font-size: 14px;
+            font-size: 0.875rem;
+            padding-left: 10px;
+        }
+    }
+
+    &__block {
+        >label {
+            display: inline-block;
+            font-size: 2.6rem;
+            padding-top: 8px;
+            padding-right: 5px;
+        }
+    }
+
+    &__check {
+        display: none;
+
+        &-text {
+            padding-left: 24px;
+            position: relative;
+            display: block;
+
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 3px;
+                left: 0;
+                width: 16px;
+                height: 16px;
+                border: 1px solid #999;
+                background-color: #fff;
+            }
+        }
+
+        &:checked+&-text {
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: -2px;
+                left: 6px;
+                width: 8px;
+                height: 17px;
+                -webkit-transform: rotate(40deg);
+                transform: rotate(40deg);
+                border-bottom: 3px solid #555;
+                border-right: 3px solid #555
+            }
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: space-between;
+        width: 285px;
+        padding-top: 30px;
+
+        &-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(50% - 7px);
+            padding: 5px 10px;
+            font-size: 16px;
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 700;
+
+            &:hover {
+                transition: background-color .2s ease;
+            }
+
+            &--submit {
+                background-color: #e27d7d;
+            }
+
+            &--clear {
+                background-color: #ccd6da;
+            }
+        }
+    }
+}

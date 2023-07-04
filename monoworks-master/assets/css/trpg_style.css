@@ -1082,6 +1082,85 @@ nav ul li:last-of-type {
   color: #000;
 }
 
+.p-filter__heading {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.p-filter__heading .main {
+  font-family: Nunito, sans-serif;
+  font-size: 1.25rem;
+}
+.p-filter__heading .sub {
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding-left: 10px;
+}
+.p-filter__block > label {
+  display: inline-block;
+  font-size: 2.6rem;
+  padding-top: 8px;
+  padding-right: 5px;
+}
+.p-filter__check {
+  display: none;
+}
+.p-filter__check-text {
+  padding-left: 24px;
+  position: relative;
+  display: block;
+}
+.p-filter__check-text:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #999;
+  background-color: #fff;
+}
+.p-filter__check:checked + .p-filter__check-text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 6px;
+  width: 8px;
+  height: 17px;
+  transform: rotate(40deg);
+  border-bottom: 3px solid #555;
+  border-right: 3px solid #555;
+}
+.p-filter__button {
+  display: flex;
+  justify-content: space-between;
+  width: 285px;
+  padding-top: 30px;
+}
+.p-filter__button-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(50% - 7px);
+  padding: 5px 10px;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 700;
+}
+.p-filter__button-item:hover {
+  transition: background-color 0.2s ease;
+}
+.p-filter__button-item--submit {
+  background-color: #e27d7d;
+}
+.p-filter__button-item--clear {
+  background-color: #ccd6da;
+}
+
 /*---コンテンツ----*/
 html {
   font-size: 0.5208333333vw;
@@ -1100,6 +1179,9 @@ html {
   html {
     font-size: 1.3333333333vw;
   }
+}
+html body {
+  box-sizing: border-box;
 }
 html body.backgroundfix {
   position: fixed;
@@ -1263,7 +1345,7 @@ section .section-ttl {
 }
 @media only screen and (max-width: 750px) {
   .mwtrpg__chara__container__wrapper__filters {
-    width: 100%;
+    width: 90%;
   }
 }
 .mwtrpg__chara__container__wrapper__filters li {
@@ -1451,6 +1533,7 @@ section .section-ttl {
   }
   .mwtrpg__chara__container__modal--content--img {
     width: 100%;
+    height: 50rem;
   }
 }
 .mwtrpg__chara__container .js-modal.visible {
@@ -1514,7 +1597,12 @@ section .section-ttl {
 }
 .mwtrpg__movie__container #modal-video iframe {
   width: 64vw;
-  height: 36vw;
+  aspect-ratio: 16/9;
+}
+@media only screen and (max-width: 750px) {
+  .mwtrpg__movie__container #modal-video iframe {
+    width: 95%;
+  }
 }
 .mwtrpg__log {
   width: 100%;
@@ -1817,6 +1905,9 @@ section .section-ttl {
   padding: 0.5rem 1rem;
   border: 1px solid #fff;
 }
+.mwCharacter-list__wrap-tag--justice {
+  border: 1px solid #d2fa08;
+}
 .mwCharacter-list__wrap-text {
   flex-grow: 1;
   margin-top: 2rem;
@@ -1901,8 +1992,8 @@ section .section-ttl {
   padding: 10rem 3rem;
 }
 .mwCharacter__top__wrapper__text h4 {
-  color: #666;
-  font-size: 1.4rem;
+  color: #fff;
+  font-size: 3rem;
   font-family: "alternate-gothic-atf", sans-serif;
   font-weight: 700;
   font-style: normal;

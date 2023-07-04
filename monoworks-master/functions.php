@@ -95,5 +95,3 @@ register_taxonomy(
 flush_rewrite_rules( false );
 }
 add_action('init', 'trpg_custom_page');
-
-?>

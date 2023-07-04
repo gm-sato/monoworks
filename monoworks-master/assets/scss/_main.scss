@@ -20,6 +20,8 @@ html {
 	}
 
 	body {
+		box-sizing: border-box;
+
 		&.backgroundfix {
 			position: fixed;
 			width: 100%;
@@ -209,7 +211,7 @@ section {
 					margin: auto;
 
 					@include mixin.mq-sp {
-						width: 100%;
+						width: 90%;
 					}
 
 					li {
@@ -426,6 +428,7 @@ section {
 
 						&--img {
 							width: 100%;
+							height: 50rem;
 						}
 					}
 				}
@@ -510,7 +513,11 @@ section {
 
 				iframe {
 					width: 64vw;
-					height: 36vw;
+					aspect-ratio: 16 / 9;
+
+					@include mixin.mq-sp {
+						width: 95%;
+					}
 				}
 			}
 		}
