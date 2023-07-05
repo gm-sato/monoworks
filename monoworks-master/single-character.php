@@ -2,16 +2,16 @@
 <?php
 $pc_profile = get_field('pc_profile');
 $pc_status = get_field('pc_status');
-global $wp_query;
-$post_obj = $wp_query->get_queried_object('character-cat');
-$slug = $post_obj->post_name;  //投稿や固定ページのスラッグ
-$cat_slug = $post_obj->category_nicename;  //カテゴリーアーカイブページのスラッグ
-$tag_slug = $post_obj->slug;  //タグアーカイブページスラッグ
+if ($terms = get_the_terms($post->ID, 'character-tag')) {
+	foreach ($terms as $term) {
+		$chra_cat = $term->slug;
+	}
+}
 ?>
 <main class="mwCharacter">
 	<section class="contents_head">
 		<div class="contents_head-ttl">
-			<h1 class="mwtrpg-font_imp">CHARACTER<?php echo $tag_slug; ?></h1>
+			<h1 class="mwtrpg-font_imp">CHARACTER</h1>
 			<span>キャラクター</span>
 		</div>
 	</section>
@@ -71,7 +71,7 @@ $tag_slug = $post_obj->slug;  //タグアーカイブページスラッグ
 					array(
 						'post_type' => 'session',
 						'taxonomy' => 'session-tag',
-						'term' => $slug,
+						'term' => $chra_cat,
 						'posts_per_page' => 4,
 						'paged' => $paged,
 						'order' => 'DESC'

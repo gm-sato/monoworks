@@ -80,12 +80,12 @@
 										$chra_cat = $term->slug . ",";
 										echo "{$chra_cat}";
 									}
-								} ?>" data-modal="<?php $tags = get_the_tags();
-													if (!empty($tags)) : //タグがあったら
-														foreach ($tags as $tag) :
-															echo $tag->slug;
-														endforeach;
-													endif; ?>">
+								} ?>" data-modal="<?php if ($terms = get_the_terms($post->ID, 'character-tag')) {
+														foreach ($terms as $term) {
+															$chra_tag = $term->slug;
+															echo "{$chra_tag}";
+														}
+													} ?>">
 									<img src="<?php the_post_thumbnail_url("medium"); ?>">
 								</li>
 							<?php endforeach; ?>
@@ -104,12 +104,12 @@
 
 					if ($posts) : foreach ($posts as $post) : setup_postdata($post); ?>
 							<?php $pc_profile = get_field('pc_profile'); ?>
-							<div id="<?php $tags = get_the_tags();
-										if (!empty($tags)) : //タグがあったら
-											foreach ($tags as $tag) :
-												echo $tag->slug;
-											endforeach;
-										endif; ?>" class="mwtrpg__chara__container__modal js-modal">
+							<div id="<?php if ($terms = get_the_terms($post->ID, 'character-tag')) {
+											foreach ($terms as $term) {
+												$chra_tag = $term->slug;
+												echo "{$chra_tag}";
+											}
+										} ?>" class="mwtrpg__chara__container__modal js-modal">
 								<div class="mwtrpg__chara__container__modal--bg js-modal-close"></div>
 								<div class="mwtrpg__chara__container__modal--content">
 									<div class="mwtrpg__chara__container__modal--content--text">
