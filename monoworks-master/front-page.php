@@ -39,11 +39,11 @@
 				</div>
 			</div>
 		</section>
-		<section id="chara" class="mwtrpg__chara fade_up_trigger fade_up">
+		<section id="chara" class="mwtrpg__chara">
 			<div class="mwtrpg__chara__container">
-				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText">CHARACTER</h2>
+				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText fade_up_trigger fade_up">CHARACTER</h2>
 				<div class="mwtrpg__chara__container__wrapper">
-					<ul class="mwtrpg__chara__container__wrapper__filters">
+					<ul class="mwtrpg__chara__container__wrapper__filters fade_up_trigger fade_up">
 						<li>
 							<button class="js-item-term" data-term="woman">woman</button>
 						</li>
@@ -65,7 +65,7 @@
 					3.順番を入れ替え(表示を上部へ非表示を下部へ)
 					4.8つから下は非表示
 					5.8つ以上のデータ群はmoreボタンを追加し別ページへ飛ばす -->
-					<ul class="mwtrpg__chara__container__wrapper__list targets">
+					<ul class="mwtrpg__chara__container__wrapper__list targets fade_up_trigger fade_up">
 						<?php $args = array(
 							'numberposts' => 16,      //表示（取得）する記事の数
 							'post_type' => 'character'    //投稿タイプの指定
@@ -158,10 +158,10 @@
 			</div>
 		</section>
 
-		<section id="movie" class="mwtrpg__movie fade_up_trigger fade_up">
+		<section id="movie" class="mwtrpg__movie">
 			<div class="mwtrpg__movie__container">
-				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText">MOVIE</h2>
-				<div class="mwtrpg__movie__container__warpper movie_a">
+				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText fade_up_trigger fade_up">MOVIE</h2>
+				<div class="mwtrpg__movie__container__warpper movie_a fade_up_trigger fade_up">
 					<div class="swiper-wrapper">
 						<div class="js-modal-video-open swiper-slide" data-url="https://www.youtube.com/watch?v=Bic8Db7WiSQ">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/aegis_TeamsD.webp" />
@@ -189,7 +189,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="mwtrpg__movie__container__warpper movie_b">
+				<div class="mwtrpg__movie__container__warpper movie_b fade_up_trigger fade_up">
 					<div class="swiper-wrapper">
 						<div class="js-modal-video-open swiper-slide" data-url="https://www.youtube.com/watch?v=SzrOCUnZL_E">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/nobady.webp" />
@@ -224,11 +224,11 @@
 			</div>
 		</section>
 
-		<section id="log" class="mwtrpg__log fade_up_trigger fade_up">
+		<section id="log" class="mwtrpg__log">
 			<div class="mwtrpg__log__container">
-				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText">SESSION LOG</h2>
+				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText fade_up_trigger fade_up">SESSION LOG</h2>
 				<div class="log_slider">
-					<ul class="mwtrpg__log__container__warpper swiper-wrapper">
+					<ul class="mwtrpg__log__container__warpper swiper-wrapper fade_up_trigger fade_up">
 
 						<?php $args = array(
 							'numberposts' => 12,      //表示（取得）する記事の数
@@ -267,14 +267,14 @@
 				</div>
 			</div>
 		</section>
-		<section id="profile" class="mwtrpg__profile fade_up_trigger fade_up">
+		<section id="profile" class="mwtrpg__profile">
 			<div class="mwtrpg__profile__container">
-				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText">PROFILE</h2>
+				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText fade_up_trigger fade_up">PROFILE</h2>
 				<div class="mwtrpg__profile__container__warpper">
-					<div class="mwtrpg__profile__container__warpper--img">
+					<div class="mwtrpg__profile__container__warpper--img fade_up_trigger fade_up">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile.png">
 					</div>
-					<div class="mwtrpg__profile__container__warpper--text">
+					<div class="mwtrpg__profile__container__warpper--text fade_up_trigger fade_up">
 						<h3>ごま飯</h3>
 						<span>所持ルルブ：CoC6th Dx3rd ネクロニカ シノビガミ</span>
 						<p>主にCoCとDx3rdをメインに活動しています。自陣やKP卓の動画をたまに作ったりしています。最近卓用の個別webページ制作にはまっています。</p>
