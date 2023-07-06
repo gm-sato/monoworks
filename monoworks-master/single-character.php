@@ -61,7 +61,7 @@ if ($terms = get_the_terms($post->ID, 'character-tag')) {
 		</div>
 	</section>
 	<section class="mwCharacter__session">
-		<h2 class="section-ttl mwtrpg-font_imp fade_up_trigger fade_up">LOG</h2>
+		<h2 class="section-ttl mwtrpg-font_imp mwGlitchText fade_up_trigger fade_up">LOG</h2>
 		<div class="contents_slide--slider log_slider">
 			<ul class="swiper-wrapper">
 				<?php

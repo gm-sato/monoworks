@@ -288,31 +288,26 @@ section {
 				}
 
 				&__list {
-					display: flex;
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr 1fr;
 					width: 108rem;
 					margin: 0 auto;
-					flex-wrap: wrap;
-					justify-content: left;
 
 					@include mixin.mq-sp {
-						width: 100%;
+						grid-template-columns: 1fr 1fr;
+						width: 75%;
 						margin: auto;
-						justify-content: center;
 					}
 
 					li {
 						margin: 0;
-						width: 25%;
+						width: 100%;
 						height: auto;
 						transform: translateX(-150%) skewX(-25deg);
 						opacity: 0;
 						background: #333333;
 						overflow: hidden;
 						cursor: pointer;
-
-						@include mixin.mq-sp {
-							width: 40%;
-						}
 
 						img {
 							display: block;
@@ -370,6 +365,8 @@ section {
 					width: 60%;
 
 					&--text {
+						display: flex;
+						flex-direction: column;
 						width: 50%;
 
 						h3 {
@@ -635,7 +632,7 @@ section {
 					}
 
 					@include mixin.mq-sp {
-						width: 70%;
+						width: 60%;
 					}
 				}
 
@@ -658,8 +655,10 @@ section {
 					}
 
 					.sns_wrapper {
-						display: flex;
-						justify-content: space-between;
+						display: grid;
+						grid-template-columns: 1fr 1fr 1fr;
+						row-gap: 20px;
+						column-gap: 20px;
 						margin-top: 2.5rem;
 
 						&--btn {
@@ -672,8 +671,9 @@ section {
 							text-decoration: none;
 							padding: 6px 12px;
 							font-size: 2.0rem;
-							width: 20rem;
+							width: 100%;
 							text-align: center;
+							box-sizing: border-box;
 
 							&.twitter {
 								background: #1688DF;
@@ -696,7 +696,7 @@ section {
 					}
 
 					@include mixin.mq-sp {
-						width: 70%;
+						width: 85%;
 					}
 				}
 

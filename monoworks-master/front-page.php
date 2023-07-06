@@ -39,9 +39,9 @@
 				</div>
 			</div>
 		</section>
-		<section id="chara" class="mwtrpg__chara">
+		<section id="chara" class="mwtrpg__chara fade_up_trigger fade_up">
 			<div class="mwtrpg__chara__container">
-				<h2 class="section-ttl mwtrpg-font_imp LpGlitchText">CHARACTER</h2>
+				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText">CHARACTER</h2>
 				<div class="mwtrpg__chara__container__wrapper">
 					<ul class="mwtrpg__chara__container__wrapper__filters">
 						<li>
@@ -67,7 +67,7 @@
 					5.8つ以上のデータ群はmoreボタンを追加し別ページへ飛ばす -->
 					<ul class="mwtrpg__chara__container__wrapper__list targets">
 						<?php $args = array(
-							'numberposts' => 12,      //表示（取得）する記事の数
+							'numberposts' => 16,      //表示（取得）する記事の数
 							'post_type' => 'character'    //投稿タイプの指定
 						);
 						$posts = get_posts($args);
@@ -113,7 +113,7 @@
 								<div class="mwtrpg__chara__container__modal--bg js-modal-close"></div>
 								<div class="mwtrpg__chara__container__modal--content">
 									<div class="mwtrpg__chara__container__modal--content--text">
-										<h3>「<?php echo $pc_profile['pc_voice_01']; ?><?php if (get_field('pc_profile')['pc_voice_02']) : ?><br><?php echo $pc_profile['pc_voice_02']; ?><?php endif; ?>」</h3>
+										<h3>「<?php echo $pc_profile['pc_voice_01']; ?><?php if (get_field('pc_profile')['pc_voice_02']) : ?><?php echo $pc_profile['pc_voice_02']; ?><?php endif; ?>」</h3>
 										<ul>
 											<li><span>NAME:</span>
 												<p><?php echo $pc_profile['pc_name']; ?></p>
@@ -128,8 +128,8 @@
 												<a href="<?php echo $pc_profile['pc_illustrator-link']; ?>" target="_blank"><?php echo $pc_profile['pc_illustrator']; ?></a>
 											</li>
 										</ul>
-										<p><?php echo $pc_profile['pc_note']; ?></p>
-										<div>
+										<p><?php echo mb_strimwidth($pc_profile['pc_note'], 0, 200, '…'); ?></p>
+										<div class="link_more">
 											<a href="<?php the_permalink(); ?>" target="top">more</a>
 										</div>
 									</div>
@@ -158,9 +158,9 @@
 			</div>
 		</section>
 
-		<section id="movie" class="mwtrpg__movie">
+		<section id="movie" class="mwtrpg__movie fade_up_trigger fade_up">
 			<div class="mwtrpg__movie__container">
-				<h2 class="section-ttl mwtrpg-font_imp">MOVIE</h2>
+				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText">MOVIE</h2>
 				<div class="mwtrpg__movie__container__warpper movie_a">
 					<div class="swiper-wrapper">
 						<div class="js-modal-video-open swiper-slide" data-url="https://www.youtube.com/watch?v=Bic8Db7WiSQ">
@@ -224,9 +224,9 @@
 			</div>
 		</section>
 
-		<section id="log" class="mwtrpg__log">
+		<section id="log" class="mwtrpg__log fade_up_trigger fade_up">
 			<div class="mwtrpg__log__container">
-				<h2 class="section-ttl mwtrpg-font_imp">SESSION LOG</h2>
+				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText">SESSION LOG</h2>
 				<div class="log_slider">
 					<ul class="mwtrpg__log__container__warpper swiper-wrapper">
 
@@ -267,9 +267,9 @@
 				</div>
 			</div>
 		</section>
-		<section id="profile" class="mwtrpg__profile">
+		<section id="profile" class="mwtrpg__profile fade_up_trigger fade_up">
 			<div class="mwtrpg__profile__container">
-				<h2 class="section-ttl mwtrpg-font_imp">PROFILE</h2>
+				<h2 class="section-ttl mwtrpg-font_imp mwGlitchText">PROFILE</h2>
 				<div class="mwtrpg__profile__container__warpper">
 					<div class="mwtrpg__profile__container__warpper--img">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/profile.png">
@@ -295,17 +295,17 @@
 
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
 			<defs>
-				<filter id="filterDistortFirst">
+				<filter id="filternoiseFirst">
 					<feTurbulence baseFrequency="0.8" numOctaves="7"></feTurbulence>
 					<feDisplacementMap in="SourceGraphic" scale="-10"></feDisplacementMap>
 				</filter>
 
-				<filter id="filterDistortSecond">
+				<filter id="filternoiseSecond">
 					<feTurbulence baseFrequency="0.2" numOctaves="15"></feTurbulence>
 					<feDisplacementMap in="SourceGraphic" scale="12"></feDisplacementMap>
 				</filter>
 
-				<filter id="distort">
+				<filter id="noise">
 					<feTurbulence baseFrequency="0.5" numOctaves="10"></feTurbulence>
 					<feDisplacementMap in="SourceGraphic" scale="8"></feDisplacementMap>
 				</filter>
@@ -313,8 +313,7 @@
 		</svg>
 	</main>
 
-	<footer>
-	</footer>
+	<?php get_footer(); ?>
 
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/script/youtube.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/script/lib/swiper-bundle.min.js"></script>
