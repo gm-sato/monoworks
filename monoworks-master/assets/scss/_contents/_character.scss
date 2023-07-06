@@ -272,6 +272,10 @@
                     font-weight: 700;
                     font-style: normal;
                     -webkit-font-smoothing: antialiased;
+
+                    @include mixin.mq-sp {
+                        font-size: 4.5rem;
+                    }
                 }
 
                 &--ttl {
@@ -303,6 +307,19 @@
                         font-style: normal;
                     }
 
+                    @include mixin.mq-sp {
+                        h2 {
+                            font-size: 7rem;
+                        }
+
+                        h3 {
+                            font-size: 4.5rem;
+                        }
+
+                        span {
+                            font-size: 3.4rem;
+                        }
+                    }
                 }
 
                 &--deco {
@@ -310,6 +327,10 @@
                     color: #fff;
                     font-size: 2rem;
                     margin-top: 2rem;
+
+                    @include mixin.mq-sp {
+                        font-size: 3.5rem;
+                    }
                 }
 
                 &--slideBtn {
@@ -400,6 +421,10 @@
                     writing-mode: vertical-rl;
                     z-index: 3;
 
+                    @include mixin.mq-sp {
+                        top: 10rem;
+                    }
+
                     p {
                         background-color: #fff;
                         color: #000;
@@ -416,6 +441,12 @@
     }
 
     &__session {
+        width: 124rem;
+
+        @include mixin.mq-sp {
+            width: 60rem;
+        }
+
         .section-ttl {
             margin-bottom: 2.5rem;
         }

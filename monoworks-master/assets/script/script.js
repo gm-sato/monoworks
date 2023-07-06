@@ -114,10 +114,6 @@ const log = new Swiper('.log_slider', {
 
 
 const character = new Swiper('.chara_slide', {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
   pagination: {
     el: "#pagination",
     clickable: true,

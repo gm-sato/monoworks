@@ -1677,13 +1677,12 @@ section .section-ttl {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 108rem;
-  margin: 0 auto;
+  margin: 5rem auto 0;
 }
 @media only screen and (max-width: 750px) {
   .mwtrpg__chara__container__wrapper__list {
     grid-template-columns: 1fr 1fr;
     width: 75%;
-    margin: auto;
   }
 }
 .mwtrpg__chara__container__wrapper__list li {
@@ -1736,11 +1735,16 @@ section .section-ttl {
   background: #333333;
   color: #FFF;
   left: 50%;
-  padding: 40px;
+  padding: 4rem;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
+}
+@media only screen and (max-width: 750px) {
+  .mwtrpg__chara__container__modal--content {
+    width: 80%;
+  }
 }
 .mwtrpg__chara__container__modal--content--text {
   display: flex;
@@ -1765,15 +1769,20 @@ section .section-ttl {
 .mwtrpg__chara__container__modal--content--text ul li {
   display: flex;
   align-items: center;
-  font-size: 1.6rem;
   width: 100%;
 }
 .mwtrpg__chara__container__modal--content--text ul li span {
-  width: 20%;
+  width: 40%;
+  font-size: 2.6rem;
 }
 .mwtrpg__chara__container__modal--content--text ul li p {
   margin-top: 0;
-  width: 80%;
+  width: 70%;
+  font-size: 2.6rem;
+}
+.mwtrpg__chara__container__modal--content--text ul li a {
+  width: 70%;
+  font-size: 2.6rem;
 }
 .mwtrpg__chara__container__modal--content--img {
   position: relative;
@@ -1931,6 +1940,12 @@ section .section-ttl {
   font-size: 1.28rem;
   align-items: center;
   justify-content: space-between;
+}
+.mwtrpg__log__container__warpper__box__info p {
+  color: #000;
+}
+.mwtrpg__log__container__warpper__box__info a {
+  color: #000;
 }
 .mwtrpg__profile {
   width: 100%;
@@ -2277,6 +2292,11 @@ section .section-ttl {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
 }
+@media only screen and (max-width: 750px) {
+  .mwCharacter__top__wrapper__text h4 {
+    font-size: 4.5rem;
+  }
+}
 .mwCharacter__top__wrapper__text--ttl {
   color: #fff;
 }
@@ -2301,11 +2321,27 @@ section .section-ttl {
   font-weight: 700;
   font-style: normal;
 }
+@media only screen and (max-width: 750px) {
+  .mwCharacter__top__wrapper__text--ttl h2 {
+    font-size: 7rem;
+  }
+  .mwCharacter__top__wrapper__text--ttl h3 {
+    font-size: 4.5rem;
+  }
+  .mwCharacter__top__wrapper__text--ttl span {
+    font-size: 3.4rem;
+  }
+}
 .mwCharacter__top__wrapper__text--deco {
   font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   color: #fff;
   font-size: 2rem;
   margin-top: 2rem;
+}
+@media only screen and (max-width: 750px) {
+  .mwCharacter__top__wrapper__text--deco {
+    font-size: 3.5rem;
+  }
 }
 .mwCharacter__top__wrapper__text--slideBtn {
   width: 100%;
@@ -2385,6 +2421,11 @@ section .section-ttl {
   writing-mode: vertical-rl;
   z-index: 3;
 }
+@media only screen and (max-width: 750px) {
+  .mwCharacter__top__wrapper__img .chara_lines {
+    top: 10rem;
+  }
+}
 .mwCharacter__top__wrapper__img .chara_lines p {
   background-color: #fff;
   color: #000;
@@ -2393,6 +2434,14 @@ section .section-ttl {
 }
 .mwCharacter__top__wrapper__img .chara_lines p:first-of-type {
   margin-right: 0;
+}
+.mwCharacter__session {
+  width: 124rem;
+}
+@media only screen and (max-width: 750px) {
+  .mwCharacter__session {
+    width: 60rem;
+  }
 }
 .mwCharacter__session .section-ttl {
   margin-bottom: 2.5rem;
@@ -2426,6 +2475,11 @@ section .section-ttl {
   grid-template-areas: "img text";
   width: 100%;
 }
+@media only screen and (max-width: 750px) {
+  .mwSession__top__wrapper {
+    grid-template-areas: "img img" "text text";
+  }
+}
 .mwSession__top__wrapper--img {
   grid-area: img;
 }
@@ -2435,8 +2489,8 @@ section .section-ttl {
 }
 .mwSession__top__wrapper--text {
   grid-area: text;
-  display: block;
-  position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 3rem 2rem;
   color: #fff;
 }
@@ -2453,34 +2507,34 @@ section .section-ttl {
 }
 .mwSession__top__wrapper--text span {
   display: block;
-  position: absolute;
-  bottom: 5rem;
-  right: 2rem;
   width: -moz-fit-content;
   width: fit-content;
-  margin-right: 0;
+  font-size: 2rem;
+  margin: auto auto 1rem 1rem;
 }
 .mwSession__list__wrapper {
   display: block;
   margin: auto;
 }
 .mwSession__list__wrapper__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   width: 90%;
   margin: 2.5rem auto 0;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 .mwSession__list__wrapper__container__item {
   display: inline-block;
-  width: 47%;
+  width: 100%;
   margin-top: 5rem;
   color: #fff;
 }
 .mwSession__list__wrapper__container__item::after {
   content: "";
   display: block;
-  width: 47%;
+  width: 100%;
 }
 .mwSession__list__wrapper__container__item:nth-of-type(-n+2) {
   margin-top: 0;
@@ -2488,7 +2542,7 @@ section .section-ttl {
 .mwSession__list__wrapper__container__item .item-deco {
   position: relative;
   width: 100%;
-  padding: 3rem;
+  padding: 1.5rem;
   box-sizing: border-box;
 }
 .mwSession__list__wrapper__container__item .item-deco::before {
@@ -2517,8 +2571,8 @@ section .section-ttl {
 }
 .mwSession__list__wrapper__container__item--thum {
   display: block;
-  width: 40rem;
-  height: 40rem;
+  width: 100%;
+  height: auto;
   margin: auto;
   -o-object-fit: cover;
      object-fit: cover;
@@ -2551,12 +2605,25 @@ section .section-ttl {
   margin-top: 0.5rem;
   font-size: 1.6rem;
 }
+@media only screen and (max-width: 750px) {
+  .mwSession__list__wrapper__container__item--name .yomi {
+    font-size: 1.8rem;
+  }
+  .mwSession__list__wrapper__container__item--name .player {
+    font-size: 2.4rem;
+  }
+}
 .mwSession__list__wrapper__container__item--text {
   display: inline-block;
   margin-top: 1rem;
 }
 .mwSession__list__wrapper__container__item--text p {
   font-size: 1.4rem;
+}
+@media only screen and (max-width: 750px) {
+  .mwSession__list__wrapper__container__item--text p {
+    font-size: 2.2rem;
+  }
 }
 .mwSession__log__wrapper {
   display: block;

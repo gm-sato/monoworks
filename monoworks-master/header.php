@@ -15,28 +15,28 @@
 </head>
 
 <body>
-<?php if ( is_home() || is_front_page() ) { ?>
-	<header>
-		<nav class="mwtrpg_header mwtrpg-font_imp">
-			<ul>
-				<li><a href="#top">TOP</a></li>
-				<li><a href="#chara">CHARACTER</a></li>
-				<li><a href="#movie">MOVIE</a></li>
-				<li><a href="#log">SESSION LOG</a></li>
-				<li><a href="#profile">PROFILE</a></li>
-			</ul>
-		</nav>
-	</header>
-    <?php } else { ?>
-    <header>
-        <nav class="mwtrpg_header mwtrpg-font_imp">
-			<ul>
-				<li><a href="/#top">TOP</a></li>
-				<li><a href="/character/">CHARACTER</a></li>
-				<li><a href="#movie">MOVIE</a></li>
-				<li><a href="#log">SESSION LOG</a></li>
-				<li><a href="#profile">PROFILE</a></li>
-			</ul>
-		</nav>
-	</header>
-    <?php } ?>
+	<?php if (is_home() || is_front_page()) { ?>
+		<header>
+			<nav class="mwtrpg_header mwtrpg-font_imp">
+				<ul>
+					<li><a href="#top">TOP</a></li>
+					<li><a href="#chara">CHARACTER</a></li>
+					<li><a href="#movie">MOVIE</a></li>
+					<li><a href="#log">SESSION LOG</a></li>
+					<li><a href="#profile">PROFILE</a></li>
+				</ul>
+			</nav>
+		</header>
+	<?php } else { ?>
+		<header>
+			<nav class="mwtrpg_header mwtrpg-font_imp">
+				<ul>
+					<li><a href="<?php echo esc_url(home_url('/')); ?>#top">TOP</a></li>
+					<li><a href="<?php echo esc_url(home_url('/')); ?>#chara">CHARACTER</a></li>
+					<li><a href="<?php echo esc_url(home_url('/')); ?>#movie">MOVIE</a></li>
+					<li><a href="<?php echo esc_url(home_url('/')); ?>#log">SESSION LOG</a></li>
+					<li><a href="<?php echo esc_url(home_url('/')); ?>#profile">PROFILE</a></li>
+				</ul>
+			</nav>
+		</header>
+	<?php } ?>
