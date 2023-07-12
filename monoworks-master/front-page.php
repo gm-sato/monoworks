@@ -51,18 +51,14 @@
 
 					if ($posts) : foreach ($posts as $post) : setup_postdata($post); ?>
 							<?php $pc_profile = get_field('pc_profile'); ?>
+							<?php $pc_tag = $post->post_name; ?>
 							<li class="js-modal-open chara-box js-item" data-tag="
 								<?php if ($terms = get_the_terms($post->ID, 'character-cat')) {
 									foreach ($terms as $term) {
 										$chra_cat = $term->slug . ",";
 										echo "{$chra_cat}";
 									}
-								} ?>" data-modal="<?php if ($terms = get_the_terms($post->ID, 'character-tag')) {
-														foreach ($terms as $term) {
-															$chra_tag = $term->slug;
-															echo "{$chra_tag}";
-														}
-													} ?>">
+								} ?>" data-modal="<?php echo $pc_tag; ?>">
 								<img src="<?php the_post_thumbnail_url("medium"); ?>">
 							</li>
 						<?php endforeach; ?>
@@ -81,33 +77,42 @@
 
 				if ($posts) : foreach ($posts as $post) : setup_postdata($post); ?>
 						<?php $pc_profile = get_field('pc_profile'); ?>
-						<div id="<?php if ($terms = get_the_terms($post->ID, 'character-tag')) {
-										foreach ($terms as $term) {
-											$chra_tag = $term->slug;
-											echo "{$chra_tag}";
-										}
-									} ?>" class="mwtrpg__chara__container__modal js-modal">
+						<?php $pc_tag = $post->post_name; ?>
+						<div id="<?php echo $pc_tag; ?>" class="mwtrpg__chara__container__modal js-modal">
 							<div class="mwtrpg__chara__container__modal--bg js-modal-close"></div>
-							<div class="mwtrpg__chara__container__modal--content">
+							<div class="mwtrpg__chara__container__modal--content fadeIn">
 								<div class="mwtrpg__chara__container__modal--content--text">
 									<h3>「<?php echo $pc_profile['pc_voice_01']; ?><?php if (get_field('pc_profile')['pc_voice_02']) : ?><?php echo $pc_profile['pc_voice_02']; ?><?php endif; ?>」</h3>
-									<ul>
-										<li><span>NAME:</span>
-											<p><?php echo $pc_profile['pc_name']; ?></p>
-										</li>
-										<li><span>AGE:</span>
-											<p><?php echo $pc_profile['pc_age']; ?></p>
-										</li>
-										<li><span>JOB</span>
-											<p><?php echo $pc_profile['pc_job']; ?></p>
-										</li>
-										<li><span>ILLUSTRATOR</span>
-											<a href="<?php echo $pc_profile['pc_illustrator-link']; ?>" target="_blank"><?php echo $pc_profile['pc_illustrator']; ?></a>
-										</li>
-									</ul>
-									<p><?php echo mb_strimwidth($pc_profile['pc_note'], 0, 200, '…'); ?></p>
-									<div class="link_more">
-										<a href="<?php the_permalink(); ?>" target="top">more</a>
+									<div class="mwtrpg__chara__container__modal--content--deco">
+										<div class="DateBlock__1col">
+											<div class="mwtrpg__chara__container__modal--content--date">
+												<span>Illustrator</span>
+												<a href="<?php echo $pc_profile['pc_illustrator-link']; ?>" target="_blank"><?php echo $pc_profile['pc_illustrator']; ?></a>
+											</div>
+										</div>
+										<div class="DateBlock__overcol">
+											<div class="mwtrpg__chara__container__modal--content--date">
+												<span>Age</span>
+												<p><?php echo $pc_profile['pc_age']; ?></p>
+											</div>
+											<div class="mwtrpg__chara__container__modal--content--date">
+												<span>Height</span>
+												<p><?php echo $pc_profile['pc_height']; ?></p>
+											</div>
+											<div class="mwtrpg__chara__container__modal--content--date">
+												<span>Job</span>
+												<p><?php echo $pc_profile['pc_job']; ?></p>
+											</div>
+										</div>
+										<div class="DateBlock__1col">
+											<div class="mwtrpg__chara__container__modal--content--date">
+												<span>Note</span>
+												<p><?php echo mb_strimwidth($pc_profile['pc_note'], 0, 200, '…'); ?></p>
+											</div>
+										</div>
+									</div>
+									<div>
+										<a class="link_more" href="<?php the_permalink(); ?>" target="_top">more</a>
 									</div>
 								</div>
 								<div class="mwtrpg__chara__container__modal--content--img chara_slide">
@@ -254,9 +259,9 @@
 					<span>所持ルルブ：CoC6th Dx3rd ネクロニカ シノビガミ</span>
 					<p>主にCoCとDx3rdをメインに活動しています。自陣やKP卓の動画をたまに作ったりしています。最近卓用の個別webページ制作にはまっています。</p>
 					<div class="sns_wrapper">
-						<a class="sns_wrapper--btn twitter" href=""><span class="fab fa-twitter fa-fw"></span><span>Twitter</span></a>
-						<a class="sns_wrapper--btn youtube" href=""><span class="fab fa-youtube fa-fw"></span><span>Youtube</span></a>
-						<a class="sns_wrapper--btn calendar" href=""><span class="fa-regular fa-calendar-check fa-fw"></span><span>フリカレ</span></a>
+						<a class="sns_wrapper--btn twitter" href="https://twitter.com/gomamesi_TRPG" target="_blank"><span class="fab fa-twitter fa-fw"></span><span>Twitter</span></a>
+						<a class="sns_wrapper--btn youtube" href="https://www.youtube.com/channel/UCk5Baeqp-PMA0S644W7W0VQ" target="_blank"><span class="fab fa-youtube fa-fw"></span><span>Youtube</span></a>
+						<a class="sns_wrapper--btn calendar" href="https://freecalend.com/close/mem95406/index" target="_blank"><span class="fa-regular fa-calendar-check fa-fw"></span><span>フリカレ</span></a>
 					</div>
 					<div class="job-address">
 						<p>WEBサイト・動画制作のご依頼はこちらからご連絡ください。</p>
@@ -267,25 +272,6 @@
 			</div>
 		</div>
 	</section>
-
-	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-		<defs>
-			<filter id="filternoiseFirst">
-				<feTurbulence baseFrequency="0.8" numOctaves="7"></feTurbulence>
-				<feDisplacementMap in="SourceGraphic" scale="-10"></feDisplacementMap>
-			</filter>
-
-			<filter id="filternoiseSecond">
-				<feTurbulence baseFrequency="0.2" numOctaves="15"></feTurbulence>
-				<feDisplacementMap in="SourceGraphic" scale="12"></feDisplacementMap>
-			</filter>
-
-			<filter id="noise">
-				<feTurbulence baseFrequency="0.5" numOctaves="10"></feTurbulence>
-				<feDisplacementMap in="SourceGraphic" scale="8"></feDisplacementMap>
-			</filter>
-		</defs>
-	</svg>
 </main>
 
 <?php get_footer(); ?>

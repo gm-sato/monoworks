@@ -2,11 +2,7 @@
 <?php
 $pc_profile = get_field('pc_profile');
 $pc_status = get_field('pc_status');
-if ($terms = get_the_terms($post->ID, 'character-tag')) {
-	foreach ($terms as $term) {
-		$chra_cat = $term->slug;
-	}
-}
+$pc_tag = $post->post_name;
 ?>
 <main class="mwCharacter">
 	<section class="contents_head">
@@ -18,21 +14,45 @@ if ($terms = get_the_terms($post->ID, 'character-tag')) {
 	<section class="mwCharacter__top">
 		<div class="mwCharacter__top__wrapper">
 			<div class="mwCharacter__top__wrapper__text">
-				<div class="mwCharacter__top__wrapper__text--ttl fade_up_trigger fade_up">
+				<div class="mwCharacter__top__wrapper__text--ttl fade_up_trigger">
 					<h2 class="mwtrpg-font_yumin"><?php echo $pc_profile['pc_name']; ?></h2>
-					<span><?php echo $pc_profile['pc_yomi']; ?></span>
-					<h3>illustrator:<a href="<?php echo $pc_profile['pc_illustrator-link']; ?>" target="_blank"><?php echo $pc_profile['pc_illustrator']; ?></a></h3>
+					<span class="mwText--obi"><?php echo $pc_profile['pc_yomi']; ?></span>
 				</div>
-				<div class="mwCharacter__top__wrapper__text--deco fade_up_trigger fade_up">
-					<p><?php echo $pc_profile['pc_note']; ?></p>
+				<div class="mwCharacter__top__wrapper__text--deco fade_up_trigger MgT-3">
+					<div class="DateBlock__1col">
+						<div class="mwCharacter__top__wrapper__text--date">
+							<h3>Illustrator</h3>
+							<a href="<?php echo $pc_profile['pc_illustrator-link']; ?>" target="_blank"><?php echo $pc_profile['pc_illustrator']; ?></a>
+						</div>
+					</div>
+					<div class="DateBlock__overcol">
+						<div class="mwCharacter__top__wrapper__text--date">
+							<h3>Age</h3>
+							<p><?php echo $pc_profile['pc_age']; ?></p>
+						</div>
+						<div class="mwCharacter__top__wrapper__text--date">
+							<h3>Height</h3>
+							<p><?php echo $pc_profile['pc_height']; ?></p>
+						</div>
+						<div class="mwCharacter__top__wrapper__text--date">
+							<h3>Job</h3>
+							<p><?php echo $pc_profile['pc_job']; ?></p>
+						</div>
+					</div>
+					<div class="DateBlock__1col">
+						<div class="mwCharacter__top__wrapper__text--date">
+							<h3>Note</h3>
+							<p><?php echo $pc_profile['pc_note']; ?></p>
+						</div>
+					</div>
 				</div>
 				<?php if (get_field('pc_image_02')) : ?>
-					<div class="mwCharacter__top__wrapper__text--slideBtn fade_up_trigger fade_up">
+					<div class="mwCharacter__top__wrapper__text--slideBtn fade_up_trigger">
 						<h4>IMAGE</h4>
 						<div id="pagination" class="swiper-pagination"></div>
 					</div>
 				<?php endif; ?>
-				<div class="mwCharacter__top__wrapper__text--status fade_up_trigger fade_up">
+				<div class="mwCharacter__top__wrapper__text--status fade_up_trigger">
 					<h4>STATUS</h4>
 					<div class="chart-size">
 						<canvas id="myRadarChart"></canvas>
@@ -41,7 +61,7 @@ if ($terms = get_the_terms($post->ID, 'character-tag')) {
 			</div>
 
 
-			<div class="mwCharacter__top__wrapper__img chara_slide fade_up_trigger fade_up">
+			<div class="mwCharacter__top__wrapper__img chara_slide fade_up_trigger">
 				<!-- ここに立ち絵 -->
 				<div class="swiper-wrapper">
 					<img class="swiper-slide" src="<?php the_field('pc_image_01'); ?>">
@@ -61,7 +81,7 @@ if ($terms = get_the_terms($post->ID, 'character-tag')) {
 		</div>
 	</section>
 	<section class="mwCharacter__session">
-		<h2 class="section-ttl mwtrpg-font_imp mwGlitchText fade_up_trigger fade_up">LOG</h2>
+		<h2 class="section-ttl mwtrpg-font_imp mwGlitchText fade_up_trigger">LOG</h2>
 		<div class="contents_slide--slider log_slider">
 			<ul class="swiper-wrapper">
 				<?php
@@ -71,8 +91,8 @@ if ($terms = get_the_terms($post->ID, 'character-tag')) {
 					array(
 						'post_type' => 'session',
 						'taxonomy' => 'session-tag',
-						'term' => $chra_cat,
-						'posts_per_page' => 4,
+						'term' => $pc_tag,
+						'posts_per_page' => 5,
 						'paged' => $paged,
 						'order' => 'DESC'
 					)

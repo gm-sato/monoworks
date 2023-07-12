@@ -253,7 +253,7 @@
             display: flex;
             width: 128rem;
             margin: auto;
-            justify-content: space-between;
+            justify-content: center;
 
             @include mixin.mq-sp {
                 width: 100%;
@@ -262,19 +262,21 @@
 
             &__text {
                 width: 60rem;
-                margin: 0 auto;
                 padding: 10rem 3rem;
+                margin: auto;
 
                 h4 {
                     color: #fff;
                     font-size: 3rem;
-                    font-family: "alternate-gothic-atf", sans-serif;
-                    font-weight: 700;
-                    font-style: normal;
-                    -webkit-font-smoothing: antialiased;
+                    font-family: 'Noto Sans JP', sans-serif;
 
-                    @include mixin.mq-sp {
-                        font-size: 4.5rem;
+
+                }
+
+                @include mixin.mq-sp {
+
+                    h4 {
+                        font-size: 3.6rem;
                     }
                 }
 
@@ -282,29 +284,8 @@
                     color: #fff;
 
                     h2 {
-                        font-size: 5rem;
-                    }
-
-                    h3 {
-                        font-size: 3rem;
-
-                        a {
-                            font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
-                        }
-
-                    }
-
-                    span {
-                        display: inline-block;
-                        padding: 1px 1px 0;
-                        font-size: 1.4rem;
-                        letter-spacing: .2em;
-                        line-height: .8;
-                        color: #000;
-                        background: #fff;
-                        font-family: "alternate-gothic-atf", sans-serif;
-                        font-weight: 700;
-                        font-style: normal;
+                        font-size: 7rem;
+                        line-height: 1.2;
                     }
 
                     @include mixin.mq-sp {
@@ -312,24 +293,65 @@
                             font-size: 7rem;
                         }
 
-                        h3 {
-                            font-size: 4.5rem;
-                        }
-
                         span {
-                            font-size: 3.4rem;
+                            font-size: 2.8rem;
                         }
                     }
                 }
 
                 &--deco {
-                    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
                     color: #fff;
-                    font-size: 2rem;
-                    margin-top: 2rem;
+
+                    &>div {
+                        margin-top: 1.5rem;
+
+                        &:first-of-type {
+                            margin-top: 0;
+                        }
+                    }
 
                     @include mixin.mq-sp {
                         font-size: 3.5rem;
+                    }
+                }
+
+                &--date {
+                    text-align: left;
+                    margin-left: 3rem;
+                    font-family: 'Noto Serif JP', serif;
+
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+
+                    h3 {
+                        font-size: 2.2rem;
+                        color: #7a7b7b;
+
+                    }
+
+                    a {
+                        font-size: 3.2rem;
+                        line-height: 1.2;
+                    }
+
+                    p {
+                        font-size: 2.4rem;
+                        line-height: 1.4;
+                    }
+
+                    @include mixin.mq-sp {
+                        h3 {
+                            font-size: 2.4rem;
+                        }
+
+                        a {
+                            font-size: 3rem;
+                        }
+
+                        p {
+                            font-size: 2.8rem;
+                        }
                     }
                 }
 

@@ -39,6 +39,22 @@ body.fadeout article {
     }
 }
 
+@keyframes modal_fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: modal_fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
 .chara-box {
     &.is-animated {
         animation-name: fadeIn;

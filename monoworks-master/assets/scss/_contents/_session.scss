@@ -211,7 +211,7 @@
         }
     }
 
-    &__log {
+    &__comment {
         &__wrapper {
             display: block;
             width: 100%;
@@ -222,6 +222,10 @@
                 margin-top: 2.5rem;
                 font-size: 1.6rem;
             }
+        }
+
+        &__inner {
+            h2 {}
         }
     }
 }
