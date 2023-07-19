@@ -220,8 +220,12 @@
 
 							<li class="mwtrpg__log__container__warpper__box swiper-slide">
 								<div class="mwtrpg__log__container__warpper__box__img">
-									<img src="<?php $session_image = SCF::get('session_img');
-												echo wp_get_attachment_url($session_image); ?>">
+									<?php $session_image = SCF::get('session_img'); ?>
+									<?php if (empty($session_image)) { ?>
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage_session.png">
+									<?php } else { ?>
+										<img src="<?php echo wp_get_attachment_url($session_image); ?>">
+									<?php } ?>
 								</div>
 								<div class="mwtrpg__log__container__warpper__box__text">
 									<h3><?php the_title(); ?></h3>

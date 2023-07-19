@@ -102,8 +102,12 @@ $pc_tag = $post->post_name;
 				?>
 						<li class="swiper-slide fade_up_trigger fade_up">
 							<div class="contents_slide--img">
-								<img src="<?php $session_image = SCF::get('session_img');
-											echo wp_get_attachment_url($session_image); ?>">
+								<?php $session_image = SCF::get('session_img'); ?>
+								<?php if (empty($session_image)) { ?>
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage_session.png">
+								<?php } else { ?>
+									<img src="<?php echo wp_get_attachment_url($session_image); ?>">
+								<?php } ?>
 							</div>
 							<div class="contents_slide--text">
 								<h3><?php the_title(); ?></h3>

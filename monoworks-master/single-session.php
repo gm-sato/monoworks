@@ -8,11 +8,15 @@
 	</section>
 	<section class="mwSession__top">
 		<div class="mwSession__top__wrapper">
-			<div class="mwSession__top__wrapper--img fade_up_trigger">
-				<img src="<?php $session_image = SCF::get('session_img');
-							echo wp_get_attachment_url($session_image); ?>">
+			<div class="mwSession__top__wrapper--img">
+				<?php $session_image = SCF::get('session_img'); ?>
+				<?php if (empty($session_image)) { ?>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage_session.png">
+				<?php } else { ?>
+					<img src="<?php echo wp_get_attachment_url($session_image); ?>">
+				<?php } ?>
 			</div>
-			<div class="mwSession__top__wrapper--text fade_up_trigger">
+			<div class="mwSession__top__wrapper--text">
 				<h1><?php the_title(); ?></h1>
 				<ul>
 					<li>KP:<?php echo SCF::get('session_kp'); ?></li>
@@ -24,8 +28,8 @@
 	</section>
 	<section class="mwSession__list">
 		<div class="mwSession__list__wrapper">
-			<h2 class="section-ttl mwtrpg-font_imp fade_up_trigger">CHARACTER</h2>
-			<ul class="mwSession__list__wrapper__container fade_up_trigger">
+			<h2 class="section-ttl mwtrpg-font_imp">CHARACTER</h2>
+			<ul class="mwSession__list__wrapper__container">
 				<?php
 				$session_list = SCF::get('session_list');
 				foreach ($session_list as $fields) {
@@ -33,7 +37,11 @@
 				?>
 					<li class="mwSession__list__wrapper__container__item">
 						<div class="item-deco">
-							<img class="mwSession__list__wrapper__container__item--thum" src="<?php echo $images[0]; ?>">
+							<?php if (empty($images[0])) { ?>
+								<img class="mwSession__list__wrapper__container__item--thum" src="<?php echo get_template_directory_uri(); ?>/assets/images/noimage.png">
+							<?php } else { ?>
+								<img class="mwSession__list__wrapper__container__item--thum" src="<?php echo $images[0]; ?>">
+							<?php } ?>
 							<div class="mwSession__list__wrapper__container__item--name">
 								<h4 class="mwtrpg-font_yumin"><?php echo $fields['session_pc-name']; ?></h4>
 								<span class="yomi"><?php echo $fields['session_pc-yomi']; ?></span>
@@ -48,13 +56,15 @@
 			</ul>
 		</div>
 	</section>
-	<section class="mwSession__comment">
-		<div class="mwSession__comment__wrapper">
-			<h2 class="section-ttl mwtrpg-font_imp fade_up_trigger">COMMENT</h2>
-			<div class="mwSession__comment__inner fade_up_trigger">
-				<?php the_content(); ?>
+	<?php if (!empty($post->post_content)) { ?>
+		<section class="mwSession__log">
+			<div class="mwSession__log__wrapper">
+				<h2 class="section-ttl mwtrpg-font_imp">LOG</h2>
+				<div>
+					<?php the_content(); ?>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	<?php } ?>
 </main>
 <?php get_footer(); ?>
