@@ -23,6 +23,7 @@
 		</nav>
 	</header>
 	<main class="mwHH">
+		<div class="mwHH--gradient"></div>
 		<section id="Top" class="mwHH__Top">
 			<img src="">
 		</section>
@@ -46,20 +47,20 @@
 				<span>キャラクター</span>
 			</div>
 			<div class="mwHH__Chara--wrapper">
-				<div class="mwHH__Chara--container">
+				<div id="pc_ho01" class="mwHH__Chara--container">
 					<h3><span>HO1</span>ロスト探索者</h3>
-					<p>ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。</p>
-					<span>MORE</span>
+					<p></p>
+					<span class="mwHH__Chara--more">MORE</span>
 				</div>
-				<div class="mwHH__Chara--container">
+				<div id="pc_ho02" class="mwHH__Chara--container">
 					<h3><span>HO2</span>SAN値0探索者</h3>
-					<p>ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。</p>
-					<span>MORE</span>
+					<p></p>
+					<span class="mwHH__Chara--more">MORE</span>
 				</div>
-				<div class="mwHH__Chara--container">
+				<div id="pc_ho03" class="mwHH__Chara--container">
 					<h3><span>HO3</span>生存探索者</h3>
-					<p>ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。ここに説明が入ります。</p>
-					<span>MORE</span>
+					<p></p>
+					<span class="mwHH__Chara--more">MORE</span>
 				</div>
 			</div>
 		</section>
@@ -68,40 +69,59 @@
 				<h2>EPISODE</h2>
 				<span>エピソード</span>
 			</div>
-			<ul>
-				<li>
+			<ul class="mwHH__Episode--list">
+				<li class="mwHH__Episode--container">
 					<h3><span>第一話</span>ヒーローと眠り姫</h3>
-					<div>
-						<p></p>
-					</div>
-					<img src="">
+					<ul>
+						<li><span>難易度</span>★★★★</li>
+						<li><span>所要時間</span>15～30時間</li>
+						<li><span>推奨技能</span>目星/聞き耳/回避/戦闘技能</li>
+					</ul>
 				</li>
-				<li>
+				<li class="mwHH__Episode--container">
 					<h3><span>第二話</span>白雪姫は小人に会えない</h3>
-					<img src="">
+					<ul>
+						<li><span>難易度</span>★★★★</li>
+						<li><span>所要時間</span>15～30時間</li>
+						<li><span>推奨技能</span>目星/聞き耳/回避/戦闘技能</li>
+					</ul>
 				</li>
-				<li>
+				<li class="mwHH__Episode--container">
 					<h3><span>第三話</span>天使と灰被り姫</h3>
-					<img src="">
+					<ul>
+						<li><span>難易度</span>★★★★</li>
+						<li><span>所要時間</span>15～30時間</li>
+						<li><span>推奨技能</span>目星/聞き耳/回避/戦闘技能</li>
+					</ul>
 				</li>
-				<li>
+				<li class="mwHH__Episode--container">
 					<h3><span>第四話</span>秘密の絵本はアリスを笑う</h3>
-					<img src="">
+					<ul>
+						<li><span>難易度</span>★★★★</li>
+						<li><span>所要時間</span>15～30時間</li>
+						<li><span>推奨技能</span>目星/聞き耳/回避/戦闘技能</li>
+					</ul>
 				</li>
-				<li>
+				<li class="mwHH__Episode--container">
 					<h3><span>最終話</span>ハロー、君がいた世界</h3>
-					<img src="">
+					<ul>
+						<li><span>難易度</span>★★★★</li>
+						<li><span>所要時間</span>15～30時間</li>
+						<li><span>推奨技能</span>目星/聞き耳/回避/戦闘技能</li>
+					</ul>
 				</li>
 			</ul>
 		</section>
 
 		<section id="Last" class="mwHH__Last">
-			<div class="">
+			<div class="mwHH__Last--wrapper">
 				<h4>「これは、ちっぽけなヒーローの物語」</h4>
-				<img src="">
-				<img src="">
-				<img src="">
-				<img src="">
+				<ul>
+					<li><img src=""></li>
+					<li><img src=""></li>
+					<li><img src=""></li>
+					<li><img src=""></li>
+				</ul>
 			</div>
 		</section>
 
@@ -110,17 +130,17 @@
 				<h2>BOOK</h2>
 				<span>販売情報</span>
 			</div>
-			<div class="">
-				<div>
-					<img src="">
-				</div>
-				<div>
+			<div class="mwHH__Book--container">
+				<div class="mwHH__Book--note">
 					<ul>
 						<li><span>サークル</span>語部茶屋</li>
 						<li><span>シナリオ名</span>HELLO HERO</li>
 						<li><span>価格</span>4,400円(税込)</li>
 						<li><a href="" target="_blank">BOOTH</a></li>
 					</ul>
+				</div>
+				<div class="mwHH__Book--image">
+					<img src="./assets/images/noimage.png">
 				</div>
 			</div>
 		</section>

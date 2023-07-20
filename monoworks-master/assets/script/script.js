@@ -340,3 +340,34 @@ searchInput.addEventListener('keyup', () => {
   clearTimeout(typingTimer);
   typingTimer = setTimeout(liveSearch, typeInterval);
 });
+
+
+
+
+//--ハロヒ--//
+// スクロールイベントを監視
+window.addEventListener('scroll', function () {
+  // アニメーション対象の要素を取得
+  var lastHeroElement = document.querySelector('.last-hero');
+  var npcElements = document.querySelectorAll('.npc_01, .npc_02, .npc_03');
+
+  // 画面中央までの距離を計算
+  var windowHeight = window.innerHeight;
+  var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+  var lastHeroPosition = lastHeroElement.getBoundingClientRect().top + scrollPosition;
+
+  // 画面中央に到達した場合
+  if (lastHeroPosition <= windowHeight / 2) {
+    // last-hero要素にフェードアップ表示のアニメーションクラスを追加
+    lastHeroElement.classList.add('fade-up');
+  }
+
+  // npc要素にディレイをかけてフェードアップ表示のアニメーションクラスを追加
+  npcElements.forEach(function (element, index) {
+    var delay = index * 2; // ディレイ時間（秒）
+
+    setTimeout(function () {
+      element.classList.add('fade-up');
+    }, delay * 1000); // ディレイ時間をミリ秒に変換
+  });
+});
