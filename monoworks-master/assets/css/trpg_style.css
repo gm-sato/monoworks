@@ -1001,6 +1001,12 @@ nav ul li:last-of-type {
   flex-wrap: wrap;
   justify-content: center;
 }
+@media only screen and (max-width: 750px) {
+  .mwtrpg_footer--list {
+    width: 90%;
+    margin-top: 5rem;
+  }
+}
 .mwtrpg_footer--list li {
   width: -moz-fit-content;
   width: fit-content;
@@ -1864,6 +1870,9 @@ section .section-ttl {
 }
 .mwtrpg__chara__container__modal--content--date:first-of-type {
   margin-left: 0;
+}
+.mwtrpg__chara__container__modal--content--date h4 {
+  font-size: 3.125rem;
 }
 .mwtrpg__chara__container__modal--content--date span {
   display: block;
@@ -2790,5 +2799,126 @@ section .section-ttl {
   font-size: 2.8rem;
 }
 .mwMovie__concept--text p {
+  font-size: 1.8rem;
+}
+
+.mwHH {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.mwHH--gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #87ceeb, #ffd700, #000080);
+  z-index: -1;
+}
+.mwHH section {
+  max-width: 128rem;
+  margin: 5rem auto 0;
+}
+.mwHH section:first-of-type {
+  margin-top: 0;
+}
+.mwHH--ttl {
+  text-align: center;
+}
+.mwHH--ttl h2 {
+  font-size: 4rem;
+  line-height: 1;
+}
+.mwHH--ttl span {
+  font-size: 1.8rem;
+}
+.mwHH__Top {
+  max-width: 100%;
+  width: 100%;
+  height: 70vh;
+}
+.mwHH__Story--text {
+  display: block;
+  width: 100%;
+}
+.mwHH__Story--text p {
+  text-align: center;
+  font-size: 2rem;
+}
+.mwHH__Chara--wrapper {
+  display: grid;
+  width: 80%;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.mwHH__Chara--container {
+  display: block;
+  width: 100%;
+  border: 1px solid #000;
+}
+.mwHH__Episode--list {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0 2rem;
+  align-items: flex-start;
+  max-width: 50rem;
+  margin: auto;
+  color: #fff;
+}
+.mwHH__Episode--container {
+  padding: 0.25rem 0.25rem 0.38rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+}
+.mwHH__Episode--container:nth-of-type(2) {
+  margin: 2.6rem 0 -1.94rem;
+}
+.mwHH__Episode--container:nth-of-type(4) {
+  margin: 2.6rem 0 -3.2rem;
+}
+.mwHH__Episode--container:nth-of-type(5) {
+  margin: 0.6rem 0 -3.2rem;
+}
+.mwHH__Last--wrapper h4 {
+  font-size: 2.6rem;
+}
+.mwHH__Last--wrapper ul {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.mwHH__Last--wrapper ul li {
+  position: absolute;
+}
+.mwHH__Book--container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.mwHH__Book--image {
+  width: 100%;
+}
+.mwHH__Book--image img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mwHH__Book--note {
+  background-color: gray;
+}
+.mwHH__Book--note ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.mwHH__Book--note ul li {
+  font-size: 2.6rem;
+}
+.mwHH__Book--note ul li span {
+  display: block;
+  width: 100%;
   font-size: 1.8rem;
 }/*# sourceMappingURL=trpg_style.css.map */

@@ -86,6 +86,12 @@
 									<div class="mwtrpg__chara__container__modal--content--deco">
 										<div class="DateBlock__1col">
 											<div class="mwtrpg__chara__container__modal--content--date">
+												<span>Name</span>
+												<h4><?php echo $pc_profile['pc_name']; ?></h4>
+											</div>
+										</div>
+										<div class="DateBlock__1col">
+											<div class="mwtrpg__chara__container__modal--content--date">
 												<span>Illustrator</span>
 												<a href="<?php echo $pc_profile['pc_illustrator-link']; ?>" target="_blank"><?php echo $pc_profile['pc_illustrator']; ?></a>
 											</div>
@@ -261,14 +267,14 @@
 				<div class="mwtrpg__profile__container__warpper--text fade_up_trigger">
 					<h3>ごま飯</h3>
 					<span>所持ルルブ：CoC6th Dx3rd ネクロニカ シノビガミ</span>
-					<p>主にCoCとDx3rdをメインに活動しています。自陣やKP卓の動画をたまに作ったりしています。最近卓用の個別webページ制作にはまっています。</p>
+					<p>主にCoCとDx3rdをメインに活動しています。自陣やKP卓の動画をたまに作ったりしています。最近卓用のLP制作にはまっています。</p>
 					<div class="sns_wrapper">
 						<a class="sns_wrapper--btn twitter" href="https://twitter.com/gomamesi_TRPG" target="_blank"><span class="fab fa-twitter fa-fw"></span><span>Twitter</span></a>
 						<a class="sns_wrapper--btn youtube" href="https://www.youtube.com/channel/UCk5Baeqp-PMA0S644W7W0VQ" target="_blank"><span class="fab fa-youtube fa-fw"></span><span>Youtube</span></a>
 						<a class="sns_wrapper--btn calendar" href="https://freecalend.com/close/mem95406/index" target="_blank"><span class="fa-regular fa-calendar-check fa-fw"></span><span>フリカレ</span></a>
 					</div>
 					<div class="job-address">
-						<p>WEBサイト・動画制作のご依頼はこちらからご連絡ください。</p>
+						<p>個人サイト/LP/動画制作のご依頼はこちらからご連絡ください。</p>
 						<a href="mailto:monoworks1127@gmail.com">monoworks1127@gmail.com</a>
 					</div>
 

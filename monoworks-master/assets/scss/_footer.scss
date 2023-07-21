@@ -1,5 +1,5 @@
 // Scss Document
-
+@use './mixin';
 /*---footer----*/
 
 .mwtrpg_footer {
@@ -14,6 +14,11 @@
 		margin-top: 2.5rem;
 		flex-wrap: wrap;
 		justify-content: center;
+
+		@include mixin.mq-sp {
+			width: 90%;
+			margin-top: 5rem;
+		}
 
 		li {
 			width: fit-content;
