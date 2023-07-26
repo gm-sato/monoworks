@@ -22,55 +22,30 @@
 </head>
 
 <body>
-    <canvas id="inkCanvas"></canvas>
+    <input type="checkbox" id="checkbox1" onclick="handleCheckboxClick('checkbox1')">
+    <input type="checkbox" id="checkbox2" onclick="handleCheckboxClick('checkbox2')">
+    <input type="checkbox" id="checkbox3" onclick="handleCheckboxClick('checkbox3')">
+
+    <button id="myButton" disabled>ボタン</button>
 
     <script>
-        const canvas = document.getElementById("inkCanvas");
-        const ctx = canvas.getContext("2d");
+        var lockedCheckboxes = {};
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        function handleCheckboxClick(checkboxId) {
+            var checkbox = document.getElementById(checkboxId);
 
-        const inkDrops = [];
-
-        function createInkDrop(x, y) {
-            inkDrops.push({
-                x,
-                y,
-                size: Math.random() * 30 + 10,
-                color: `rgba(0, 0, 0, ${Math.random() * 0.7 + 0.3})`,
-                velocityY: Math.random() * 2 + 1
-            });
-        }
-
-        function drawInkDrop(inkDrop) {
-            ctx.beginPath();
-            ctx.arc(inkDrop.x, inkDrop.y, inkDrop.size, 0, Math.PI * 2);
-            ctx.fillStyle = inkDrop.color;
-            ctx.fill();
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            for (let i = 0; i < inkDrops.length; i++) {
-                inkDrops[i].y += inkDrops[i].velocityY;
-                drawInkDrop(inkDrops[i]);
-                // 画面下まで来たら新しい墨滴を生成
-                if (inkDrops[i].y - inkDrops[i].size > canvas.height) {
-                    inkDrops.splice(i, 1);
-                    i--;
-                }
+            // チェックが入っている場合にロックする
+            if (checkbox.checked) {
+                lockedCheckboxes[checkboxId] = true;
             }
 
-            requestAnimationFrame(animate);
+            // ロックされたチェックボックスにチェックが入っていない場合、再度チェックを外させないようにする
+            for (const id in lockedCheckboxes) {
+                var lockedCheckbox = document.getElementById(id);
+                lockedCheckbox.disabled = true;
+                lockedCheckbox.checked = true;
+            }
         }
-
-        document.addEventListener("mousemove", (e) => {
-            createInkDrop(e.clientX, e.clientY);
-        });
-
-        animate();
     </script>
 
 </body>
