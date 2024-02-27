@@ -1,0 +1,94 @@
+extends _include/base/_layout
+
+
+//- -----------------------------------------
+//- head
+block append PARAM
+	-
+		//- 上書きする場合
+		//- siteTitle       = ""
+		//- siteDescription = ""
+		//- siteKeywords    = ""
+		root = ".";
+		let myClass         = "mwZS"
+
+block append JS
+	//- jsの追加読み込み
+	//- script(src=root+"")
+
+block append BREADCRUMB
+	//- パンくずリスト
+	li: span.text-buttons.text-buttons-s: a(href="/top.html") TOP
+	//- li: span: a(href=root+'/')=siteTitle
+	li.current: span=siteTitle
+
+//- block append HEADER
+//- 	include _include/ui/_contentHeader.pug
+
+block append MAIN
+	//- mainの内容
+
+
+	.main_wrap
+		article(class=myClass)
+			section#Top.Top
+				img(src="../../images/section_bg.png", alt="")
+			section#Story.Story
+				.main_ttl
+					h2 STORY
+					span ストーリー
+				.Story-text
+					p あなた達は 超高校級の才能を持つと評価されている<br>あなた達は 全員がそれを表の顔だと認識している<br>あなた達は 優秀な■■■である
+					p あなたの使命は この学校を卒業することだけだ<br>あなたの願いは 自由の身になることだけだ
+			section#Character.Chara
+				.main_ttl
+					h2 CHARACTER
+					span キャラクター
+				.Chara-wrapper
+					.Chara-hexagons
+						.Chara-hexagon
+							span
+								img(src="../../images/chara/丑.png", alt="")
+				.Chara-modal.js-modal
+					.Chara-modal-bg.js-modal-close
+					.Chara-modal-inner
+						.Chara-modal-text
+							h3 「ここにセリフが入ります。ここにセリフが入ります。」
+							ul
+								li
+									span NAME:
+									p ムスビメ ホドキ
+								li
+									span AGE:
+									p 27
+								li
+									span JOB
+									p ハッカー
+							p
+						.Chara-modal-img
+
+			section#Scenario.Scenario
+				.main_ttl
+					h2 CHARACTER
+					span キャラクター
+				.Scenario-img
+					img(src="", alt="")
+				.Scenario-note
+					h3 ZODIAC SCHOOL
+					ul
+						li
+							span KP
+							p ???
+						li
+							span PL
+							p ???
+						li
+							span day
+							p 2022/12/24
+					a(href="" target="_top") MORE
+			section.Movie
+				.Movie-wrapper
+					.Movie-slider
+						.Movie-box
+
+	include _include/ui/_contentFooter.pug

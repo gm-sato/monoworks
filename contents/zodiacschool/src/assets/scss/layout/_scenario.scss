@@ -1,0 +1,58 @@
+.mwZS__Scenario {
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 1.618fr 1fr;
+    gap: 1rem;
+    grid-template-areas: "img text";
+    width: 100%;
+
+    @include mixin.mq-sp {
+      grid-template-areas: "img img"
+        "text text";
+    }
+
+    &:nth-of-type(2n) {
+      grid-template-columns: 1fr 1.618fr;
+      grid-template-areas: "text img";
+    }
+  }
+
+  &-img {
+    grid-area: img;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      background-color: #ddd;
+    }
+  }
+
+  &-note {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    color: #fff;
+
+    h1 {
+      font-size: 4.5rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin-top: 3rem;
+
+      li {
+        span {
+          font-size: 1.8rem;
+        }
+
+        p {
+          font-size: 2.6rem;
+        }
+
+      }
+    }
+  }
+}

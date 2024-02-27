@@ -1,0 +1,129 @@
+//アコーディオン
+.accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item {
+  position: relative;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.accordion-item-header {
+  position: relative;
+  cursor: pointer;
+
+  h3 {
+    display: block;
+    position: relative;
+    background: #CBB47E;
+    color: #fff;
+    font-size: var.px_vw(20px);
+    font-weight: 600;
+    text-align: center;
+    padding: var.px_vw(10px) 0;
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    background: url(../images/arrow.svg);
+    width: var.px_vw(20px);
+    height: var.px_vw(20px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    right: var.px_vw(20px);
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &.active {
+    &::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+}
+
+.accordion-item-content {
+  box-sizing: border-box;
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: max-height 0.3s ease-in-out,
+    padding 0.3s ease-in-out,
+    margin-top 0.3s ease-in-out;
+  padding: 0;
+  margin-top: 0;
+
+  ul {
+    padding: var.px_vw(20px);
+
+    li {
+      position: relative;
+      font-size: var.px_vw(18px);
+      margin-top: var.px_vw(20px);
+      padding-left: var.px_vw(20px);
+      line-height: 1.5;
+      color: #000;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &::before {
+        content: "※";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      a {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var.px_vw(5px);
+        width: fit-content;
+        margin-top: var.px_vw(5px);
+        color: #000;
+        align-items: center;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        .arrow {
+          position: relative;
+          display: block;
+          width: var.px_vw(15px);
+          height: var.px_vw(15px);
+          background: #04536F;
+          border-radius: 9999px
+        }
+
+        .arrow::before {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: var.px_vw(-2px);
+          width: var.px_vw(5px);
+          height: var.px_vw(5px);
+          margin: auto;
+          content: "";
+          border-top: .02rem solid #fff;
+          border-right: .02rem solid #fff;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg)
+        }
+      }
+    }
+  }
+}

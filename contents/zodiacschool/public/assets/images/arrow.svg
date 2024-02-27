@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+  <g id="arrow" transform="translate(956 -310) rotate(90)">
+    <circle id="楕円形_4" data-name="楕円形 4" cx="5" cy="5" r="5" transform="translate(310 946)" fill="#7a4b16"/>
+    <g id="グループ_1" data-name="グループ 1" transform="translate(0.407 -0.5)">
+      <path id="線_1" data-name="線 1" d="M2,2.4a.4.4,0,0,1-.283-.117l-2-2a.4.4,0,0,1,0-.566.4.4,0,0,1,.566,0l2,2A.4.4,0,0,1,2,2.4Z" transform="translate(313.893 949.5)" fill="#fff"/>
+      <path id="線_2" data-name="線 2" d="M0,2.4a.4.4,0,0,1-.283-.117.4.4,0,0,1,0-.566l2-2a.4.4,0,0,1,.566,0,.4.4,0,0,1,0,.566l-2,2A.4.4,0,0,1,0,2.4Z" transform="translate(313.893 951.5)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
