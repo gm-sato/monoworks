@@ -1,4 +1,6 @@
-.mwHH {
+@use '../mixin';
+
+.mwZS {
 
     // まきばフォント使用
     // 全体の色合いはグラデーションの上が青空中が夕方下が夜空
@@ -13,7 +15,10 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, #87ceeb, #ffd700, #000080);
+        background: url(/assets/images/zodiac/section_bg.png);
+        background-size: contain;
+        background-repeat: repeat-y;
+        background-position: center;
         z-index: -1;
     }
 
@@ -57,23 +62,6 @@
         }
     }
 
-    &__Chara {
-        &--wrapper {
-            display: grid;
-            width: 80%;
-            margin: auto;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1rem;
-
-        }
-
-        &--container {
-            display: block;
-            width: 100%;
-            border: 1px solid #000;
-        }
-    }
-
     &__Episode {
         &--list {
             display: grid;
@@ -105,4 +93,208 @@
 
     }
 
+    &__Chara {
+        &--wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            --wrapper-width: 100%;
+            width: var(--wrapper-width);
+            /* 全体の大きさを変更できる */
+            /* margin-right: calc(-1 * var(--wrapper-width) / 6 * 0.25 * 4 - var(--wrapper-width) / 6 * 0.05 * 2); */
+            /* margin-bottom: 20%; */
+            justify-content: center;
+            margin: auto;
+
+            @include mixin.mq-sp {
+                --wrapper-width: 100%;
+                font-size: 3vw;
+            }
+        }
+
+        &--hexagons {
+            width: calc(100% /6);
+
+            &:nth-of-type(n+2) {
+                margin-left: calc(-100% / 7.1* 0.25 - 100% / 6 * 0.05);
+            }
+
+            &:nth-of-type(2n) {
+                transform: translateY(calc(100% / 4.1));
+            }
+        }
+
+        &--hexagon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            aspect-ratio: 200 / 173;
+            /* 正六角形になる比率 */
+            background-color: #333;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            cursor: pointer;
+
+            >span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 95%;
+                height: 95%;
+                background-color: #fff;
+                clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &:nth-of-type(2) {
+                margin-top: -5%;
+            }
+        }
+
+        &--modal {
+            display: none;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            z-index: 2;
+
+            &-bg {
+                background: rgba(0, 0, 0, 0.8);
+                height: 100vh;
+                position: absolute;
+                width: 100vw;
+            }
+
+            &-inner {
+                display: flex;
+                justify-content: space-between;
+                background: #333333;
+                color: #FFF;
+                left: 50%;
+                padding: 4rem;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 60%;
+
+                @include mixin.mq-sp {
+                    width: 80%;
+                }
+            }
+
+            &-text {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+
+                h3 {
+                    font-family: 'Noto Serif JP', serif;
+                    margin: 10rem auto 0;
+                    font-size: 3.125rem;
+                }
+
+                p {
+                    margin-top: 1rem;
+                    font-size: 2.0rem;
+                }
+            }
+
+            &-img {
+                position: relative;
+                width: 40%;
+                height: 70rem;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            @include mixin.mq-sp {
+                flex-direction: column-reverse;
+
+                &-text {
+                    width: 100%;
+                }
+
+                &-img {
+                    width: 100%;
+                    height: 50rem;
+                }
+            }
+        }
+    }
+
+    &__Scenario {
+        &--wrapper {
+            display: grid;
+            grid-template-columns: 1.618fr 1fr;
+            gap: 1rem;
+            grid-template-areas: "img text";
+            width: 100%;
+
+            @include mixin.mq-sp {
+                grid-template-areas: "img img"
+                    "text text";
+            }
+
+            &:nth-of-type(2n) {
+                grid-template-columns: 1fr 1.618fr;
+                grid-template-areas: "text img";
+            }
+        }
+
+        &--img {
+            grid-area: img;
+
+            img {
+                width: 100%;
+                object-fit: contain;
+                background-color: #ddd;
+            }
+        }
+
+        &--note {
+            grid-area: text;
+            display: flex;
+            flex-direction: column;
+            padding: 3rem 2rem;
+            color: #fff;
+
+            h1 {
+                font-size: 4.5rem;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                margin-top: 3rem;
+
+                li {
+                    span {
+                        font-size: 1.8rem;
+                    }
+
+                    p {
+                        font-size: 2.6rem;
+                    }
+
+                }
+            }
+        }
+    }
+
+    &__Movie {
+        &--wrapper {
+            display: block;
+            width: 90%;
+            margin: auto;
+        }
+    }
 }

@@ -178,8 +178,7 @@ swiper-slide {
   scroll-snap-stop: always;
 }
 .swiper-centered.swiper-horizontal > .swiper-wrapper > .swiper-slide:first-child {
-  -webkit-margin-start: var(--swiper-centered-offset-before);
-          margin-inline-start: var(--swiper-centered-offset-before);
+  margin-inline-start: var(--swiper-centered-offset-before);
 }
 .swiper-centered.swiper-horizontal > .swiper-wrapper::before {
   height: 100%;
@@ -187,8 +186,7 @@ swiper-slide {
   width: var(--swiper-centered-offset-after);
 }
 .swiper-centered.swiper-vertical > .swiper-wrapper > .swiper-slide:first-child {
-  -webkit-margin-before: var(--swiper-centered-offset-before);
-          margin-block-start: var(--swiper-centered-offset-before);
+  margin-block-start: var(--swiper-centered-offset-before);
 }
 .swiper-centered.swiper-vertical > .swiper-wrapper::before {
   width: 100%;
@@ -2921,4 +2919,252 @@ section .section-ttl {
   display: block;
   width: 100%;
   font-size: 1.8rem;
+}
+
+.mwZS {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.mwZS--gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/assets/images/zodiac/section_bg.png);
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: center;
+  z-index: -1;
+}
+.mwZS section {
+  max-width: 128rem;
+  margin: 5rem auto 0;
+}
+.mwZS section:first-of-type {
+  margin-top: 0;
+}
+.mwZS--ttl {
+  text-align: center;
+}
+.mwZS--ttl h2 {
+  font-size: 4rem;
+  line-height: 1;
+}
+.mwZS--ttl span {
+  font-size: 1.8rem;
+}
+.mwZS__Top {
+  max-width: 100%;
+  width: 100%;
+  height: 70vh;
+}
+.mwZS__Story--text {
+  display: block;
+  width: 100%;
+}
+.mwZS__Story--text p {
+  text-align: center;
+  font-size: 2rem;
+}
+.mwZS__Episode--list {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0 2rem;
+  align-items: flex-start;
+  max-width: 50rem;
+  margin: auto;
+  color: #fff;
+}
+.mwZS__Episode--container {
+  padding: 0.25rem 0.25rem 0.38rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+}
+.mwZS__Episode--container:nth-of-type(2) {
+  margin: 2.6rem 0 -1.94rem;
+}
+.mwZS__Episode--container:nth-of-type(4) {
+  margin: 2.6rem 0 -3.2rem;
+}
+.mwZS__Episode--container:nth-of-type(5) {
+  margin: 0.6rem 0 -3.2rem;
+}
+.mwZS__Chara--wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  --wrapper-width: 100%;
+  width: var(--wrapper-width);
+  /* 全体の大きさを変更できる */
+  /* margin-right: calc(-1 * var(--wrapper-width) / 6 * 0.25 * 4 - var(--wrapper-width) / 6 * 0.05 * 2); */
+  /* margin-bottom: 20%; */
+  justify-content: center;
+  margin: auto;
+}
+@media only screen and (max-width: 750px) {
+  .mwZS__Chara--wrapper {
+    --wrapper-width: 100%;
+    font-size: 3vw;
+  }
+}
+.mwZS__Chara--hexagons {
+  width: 16.6666666667%;
+}
+.mwZS__Chara--hexagons:nth-of-type(n+2) {
+  margin-left: -4.3544600939%;
+}
+.mwZS__Chara--hexagons:nth-of-type(2n) {
+  transform: translateY(24.3902439024%);
+}
+.mwZS__Chara--hexagon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 200/173;
+  /* 正六角形になる比率 */
+  background-color: #333;
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+          clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  cursor: pointer;
+}
+.mwZS__Chara--hexagon > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 95%;
+  background-color: #fff;
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+          clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.mwZS__Chara--hexagon > span img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mwZS__Chara--hexagon:nth-of-type(2) {
+  margin-top: -5%;
+}
+.mwZS__Chara--modal {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
+}
+.mwZS__Chara--modal-bg {
+  background: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+}
+.mwZS__Chara--modal-inner {
+  display: flex;
+  justify-content: space-between;
+  background: #333333;
+  color: #FFF;
+  left: 50%;
+  padding: 4rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}
+@media only screen and (max-width: 750px) {
+  .mwZS__Chara--modal-inner {
+    width: 80%;
+  }
+}
+.mwZS__Chara--modal-text {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.mwZS__Chara--modal-text h3 {
+  font-family: "Noto Serif JP", serif;
+  margin: 10rem auto 0;
+  font-size: 3.125rem;
+}
+.mwZS__Chara--modal-text p {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+.mwZS__Chara--modal-img {
+  position: relative;
+  width: 40%;
+  height: 70rem;
+  overflow: hidden;
+}
+.mwZS__Chara--modal-img img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media only screen and (max-width: 750px) {
+  .mwZS__Chara--modal {
+    flex-direction: column-reverse;
+  }
+  .mwZS__Chara--modal-text {
+    width: 100%;
+  }
+  .mwZS__Chara--modal-img {
+    width: 100%;
+    height: 50rem;
+  }
+}
+.mwZS__Scenario--wrapper {
+  display: grid;
+  grid-template-columns: 1.618fr 1fr;
+  gap: 1rem;
+  grid-template-areas: "img text";
+  width: 100%;
+}
+@media only screen and (max-width: 750px) {
+  .mwZS__Scenario--wrapper {
+    grid-template-areas: "img img" "text text";
+  }
+}
+.mwZS__Scenario--wrapper:nth-of-type(2n) {
+  grid-template-columns: 1fr 1.618fr;
+  grid-template-areas: "text img";
+}
+.mwZS__Scenario--img {
+  grid-area: img;
+}
+.mwZS__Scenario--img img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #ddd;
+}
+.mwZS__Scenario--note {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  color: #fff;
+}
+.mwZS__Scenario--note h1 {
+  font-size: 4.5rem;
+}
+.mwZS__Scenario--note ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.mwZS__Scenario--note ul li span {
+  font-size: 1.8rem;
+}
+.mwZS__Scenario--note ul li p {
+  font-size: 2.6rem;
+}
+.mwZS__Movie--wrapper {
+  display: block;
+  width: 90%;
+  margin: auto;
 }/*# sourceMappingURL=trpg_style.css.map */
