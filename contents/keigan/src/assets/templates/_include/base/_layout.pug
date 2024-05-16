@@ -1,0 +1,47 @@
+block PARAM
+	-
+		let siteTitle       = "ZodiacSchool"
+		let siteDescription = "zodiacSchoolファンサイトです。"
+		let siteKeywords    = ""
+		let og_url          = "https://gm-trpg.com/zodiacschool"
+		let og_image        = "../../assets/images/ogp.jpg"
+		let myID            = "Monoworks_trpg"
+
+| <!DOCTYPE html>
+| <html lang="ja">
+
+include _head
+
+block BODY
+	|<body>
+	|	<div class="wrap">
+	|
+	|		<div class="contents-inner breadcrumb_area pc">
+	|			<!--{* ここにパンくずを入れてください PC *}-->
+	|	 			<div class="breadcrumb">
+	|				<ul class="inner">
+
+	block BREADCRUMB
+
+	|
+	|				</ul>
+	|			</div>
+	|			<!--{* /ここにパンくずを入れてください PC *}-->
+	|		</div>
+	|
+	|		<!--{* コンテンツエリア *}-->
+	|		<div class="pcWrap">
+	block HEADER
+
+	main(id=myID)
+		block MAIN
+
+
+block FOOTER
+	|		</div>
+	|		<!--{* /コンテンツエリア *}-->
+	|	</div>
+	|
+	|</body>
+	|
+	|</html>

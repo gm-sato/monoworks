@@ -1,0 +1,35 @@
+@use './base/variables'as var;
+
+$_myID: var.$myID;
+
+/*	reset
+-----------------------------------------*/
+@import './base/reset';
+@import 'base/setting';
+
+/*	plugin
+-----------------------------------------*/
+@import './plugin/_slick/slick';
+@import './plugin/_slick/slick-theme';
+@import './plugin/slick';
+
+
+/*	base
+-----------------------------------------*/
+
+// $_myIDの値でIDを定義
+##{$_myID} {
+
+  @include var.base;
+
+
+  //layout
+  @import 'layout/top';
+
+  //object
+}
+
+/*	UI
+-----------------------------------------*/
+@import 'ui/contentHeader';
+@import 'ui/contentFooter';

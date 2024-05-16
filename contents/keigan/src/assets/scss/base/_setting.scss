@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;600;700&display=swap');
+
+.pcWrap {
+  box-sizing: border-box;
+  background: url("../images/section_bg.png");
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: center;
+}
+
+/*---------------------------------------
+
+	margin
+
+-----------------------------------------*/
+.mb10 {
+  margin-bottom: var.px_vw(10px) !important;
+}
+
+.mb20 {
+  margin-bottom: var.px_vw(20px) !important;
+}
+
+.mb25 {
+  margin-bottom: var.px_vw(25px) !important;
+}
+
+.mb30 {
+  margin-bottom: var.px_vw(30px) !important;
+}
+
+.mt10 {
+  margin-top: var.px_vw(10px) !important;
+}
+
+.mt20 {
+  margin-top: var.px_vw(20px) !important;
+}
+
+.mt30 {
+  margin-top: var.px_vw(30px) !important;
+}
+
+hr {
+  border-color: #ECF1F4;
+}
+
+.f-bold {
+  font-weight: bold;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  pointer-events: none;
+  filter: brightness(0.8);
+}
