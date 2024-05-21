@@ -1,4 +1,4 @@
-extends _include/base/_layout
+extends ../_include/base/_layout
 
 
 //- -----------------------------------------
@@ -9,6 +9,7 @@ block append PARAM
 		//- siteTitle       = ""
 		//- siteDescription = ""
 		//- siteKeywords    = ""
+		og_image = "../../../assets/images/ogp.jpg"
 		root = ".";
 
 block append JS
@@ -26,17 +27,11 @@ block append BREADCRUMB
 
 block append MAIN
 	//- mainの内容
+
+
 	.main_wrap
 		article(class=myClass)
 			section#Top.Top
-				div
-					h1 慧眼の狩人
-					ul
-						li
-							a(href="/story/") STORY
-						li
-							a(href="/episode/") EPISODE
-						li
-							a(href="/character/") CHARACTER
 
-	include _include/ui/_contentFooter.pug
+
+	include ../_include/ui/_contentFooter.pug

@@ -1,4 +1,4 @@
-extends _include/base/_layout
+extends ../_include/base/_layout
 
 
 //- -----------------------------------------
@@ -9,8 +9,8 @@ block append PARAM
 		//- siteTitle       = ""
 		//- siteDescription = ""
 		//- siteKeywords    = ""
+		og_image = "../../../assets/images/ogp.jpg"
 		root = ".";
-		let myClass         = "mwZS"
 
 block append JS
 	//- jsの追加読み込み
@@ -34,4 +34,4 @@ block append MAIN
 			section#Top.Top
 
 
-	include _include/ui/_contentFooter.pug
+	include ../_include/ui/_contentFooter.pug

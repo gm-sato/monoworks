@@ -8,22 +8,28 @@ const {
 } = require('clean-webpack-plugin');
 const fs = require('fs');
 
-const generateHtmlPlugins = () => {
-  const templateFiles = fs.readdirSync(path.resolve(__dirname, 'src/assets/templates'));
-  return templateFiles
-    .filter((item) => !item.startsWith('_')) // _から始まるフォルダを除外
-    .map((item) => {
-      const parts = item.split('.');
-      const name = parts[0];
-      return new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, `src/assets/templates/${name}.pug`),
-        filename: `${name}.html`,
-        // exclude フォルダを指定して、_include フォルダを書き出し対象外にする
-        excludeChunks: ['_include'],
-        minify: false,
-      });
+const generateHtmlPlugins = (dir = '') => {
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, `src/assets/templates/${dir}`));
+  return templateFiles.flatMap((item) => {
+    const itemPath = path.join(dir, item);
+    if (fs.statSync(path.resolve(__dirname, `src/assets/templates/${itemPath}`)).isDirectory()) {
+      return generateHtmlPlugins(itemPath);
+    }
+    if (item.startsWith('_')) {
+      return [];
+    }
+    const parts = item.split('.');
+    const name = parts[0];
+    const outputPath = dir ? `${dir}/${name}.html` : `${name}.html`;
+    return new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, `src/assets/templates/${itemPath}`),
+      filename: outputPath,
+      excludeChunks: ['_include'],
+      minify: false,
     });
+  });
 };
+
 
 module.exports = {
   mode: 'development',
