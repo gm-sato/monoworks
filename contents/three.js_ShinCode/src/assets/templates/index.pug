@@ -1,0 +1,30 @@
+extends _include/base/_layout
+
+
+//- -----------------------------------------
+//- head
+block append PARAM
+	-
+		//- 上書きする場合
+		//- siteTitle       = ""
+		//- siteDescription = ""
+		//- siteKeywords    = ""
+		root = ".";
+
+block append JS
+	//- jsの追加読み込み
+	//- script(src=root+"")
+
+//- block append BREADCRUMB
+//- 	//- パンくずリスト
+//- 	li: span.text-buttons.text-buttons-s: a(href="/top.html") TOP
+//- 	//- li: span: a(href=root+'/')=siteTitle
+//- 	li.current: span=siteTitle
+
+//- block append HEADER
+//- 	include _include/ui/_contentHeader.pug
+
+block append MAIN
+	//- mainの内容
+	//- canvas#myCanvas
+	//- include _include/ui/_contentFooter.pug
