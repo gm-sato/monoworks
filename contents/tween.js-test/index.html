@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Spiral Carousel</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <div id="modals"></div>
+  <script>
+    let scene, camera, renderer, posters, rotationTween;
+    let posterTextures = [];
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+    let isRotating = true;
+    const descriptions = [
+      "Poster 1 description goes here.",
+      "Poster 2 description goes here.",
+      "Poster 3 description goes here.",
+      "Poster 4 description goes here.",
+      "Poster 5 description goes here.",
+      "Poster 6 description goes here.",
+      "Poster 7 description goes here.",
+      "Poster 8 description goes here.",
+      "Poster 9 description goes here.",
+      "Poster 10 description goes here."
+    ];
+
+    init();
+
+    function init() {
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xADD8E6); // Set background color to light blue
+
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 7; // Adjusted camera position
+
+      renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      const geometry = new THREE.PlaneGeometry(1, 1.5);
+
+      // Load poster textures
+      const loader = new THREE.TextureLoader();
+      for (let i = 1; i <= 10; i++) {
+        loader.load(`images/poster_${i}.jpg`, function (texture) {
+          posterTextures.push(texture);
+          if (posterTextures.length === 10) {
+            createPosters();
+            createModals();
+          }
+        });
+      }
+
+      window.addEventListener('mousemove', onMouseMove, false);
+      window.addEventListener('click', onMouseClick, false);
+    }
+
+    function createPosters() {
+      posters = new THREE.Group();
+      const radius = 3;
+      const heightIncrement = 0.5;
+
+      for (let i = 0; i < posterTextures.length; i++) {
+        const material = new THREE.MeshBasicMaterial({
+          map: posterTextures[i],
+          side: THREE.DoubleSide
+        });
+        const poster = new THREE.Mesh(new THREE.PlaneGeometry(1, 1.5), material);
+
+        const angle = (i / posterTextures.length) * Math.PI * 2;
+        poster.position.x = Math.cos(angle) * radius;
+        poster.position.z = Math.sin(angle) * radius;
+        poster.position.y = i * heightIncrement;
+        poster.lookAt(new THREE.Vector3(0, poster.position.y, 0));
+
+        poster.userData = {
+          id: i + 1
+        };
+        posters.add(poster);
+      }
+
+      scene.add(posters);
+
+      startRotation();
+      animate();
+    }
+
+    function createModals() {
+      const modalsContainer = document.getElementById('modals');
+      for (let i = 1; i <= 10; i++) {
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.id = `modal${i}`;
+        modal.innerHTML = `
+          <span class="modal-close" onclick="closeModal(${i})">&times;</span>
+          <img src="images/poster${i}.jpg" alt="Poster ${i}">
+          <p>${descriptions[i-1]}</p>
+        `;
+        modalsContainer.appendChild(modal);
+      }
+    }
+
+    function showModal(id) {
+      const modal = document.getElementById(`modal${id}`);
+      if (modal) {
+        modal.style.display = 'block';
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(`modal${id}`);
+      if (modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    function startRotation() {
+      rotationTween = gsap.to(posters.rotation, {
+        y: "+=6.28", // Rotate by 360 degrees (2 * Math.PI)
+        duration: 20,
+        repeat: -1,
+        ease: "linear"
+      });
+      isRotating = true;
+    }
+
+    function stopRotation() {
+      if (rotationTween) {
+        rotationTween.pause();
+        isRotating = false;
+      }
+    }
+
+    function onMouseMove(event) {
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(posters.children);
+
+      if (intersects.length > 0 && isRotating) {
+        stopRotation();
+      } else if (intersects.length === 0 && !isRotating) {
+        startRotation();
+      }
+    }
+
+    function onMouseClick(event) {
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(posters.children);
+
+      if (intersects.length > 0) {
+        const id = intersects[0].object.userData.id;
+        showModal(id);
+      }
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+head
+	|<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	|<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, user-scalable=no" />
+
+	block TITLE
+		title=siteTitle
+
+	block META
+		meta(name ="description" content=siteDescription)
+		|<!--ogp-->
+		meta(property="og:title" content=siteTitle)
+		|<meta property="og:type" content="website">
+
+		meta(property="og:url" content=og_url)
+		meta(property="og:image" content=og_image)
+		meta(property="og:description" content=siteDescription)
+
+		|
+		|<meta property="og:site_name" content="Monoworks">
+
+	block CSS
+
+	block JS
+		|<!--{* 汎用js *}-->
+		//- |<script type="text/javascript" src="./script.js"></script>
