@@ -1,0 +1,25 @@
+/* assets/styles.css */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+
+.page-enter,
+.page-leave-to
+
+/* .page-leave-active in <2.1.8 */
+  {
+  opacity: 0;
+}
+
+
+.list-item-enter-active,
+.list-item-leave-active {
+  transition: all 0.5s;
+}
+
+.list-item-enter,
+.list-item-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}

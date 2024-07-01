@@ -1,0 +1,20 @@
+#clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+.hand {
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: black;
+  top: 50%;
+  transform-origin: 100%;
+}
+
+.second-hand {
+  background-color: red;
+}
