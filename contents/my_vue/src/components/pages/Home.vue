@@ -3,9 +3,9 @@
   article.Top
     section.Topmv
       picture
-        source(media="(max-width: 768px)", :srcset="require('@/assets/images/sp/sp_topmv.jpg')")
-        source(media="(min-width: 769px)", :srcset="require('@/assets/images/topmv.webp')")
-        img(v-lazy="require('@/assets/images/topmv.webp')", width="100%", alt="")
+        source(media="(max-width: 768px)", src="./assets/images/sp/sp_topmv.jpg")
+        source(media="(min-width: 769px)", src="./assets/images/topmv.webp")
+        img(src="../assets/images/topmv.webp")
       .Topmv-ttl
         picture
           source(media="(max-width: 768px)", :srcset="require('@/assets/images/sp/sp_decoText.svg')")
@@ -23,8 +23,15 @@
 
 <script>
 
+import topImage from '@/assets/images/topmv.webp';
+
 export default {
   name: 'Home',
+  data() {
+    return {
+      topImage
+    };
+  },
 }
 </script>
 

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;600;700&display=swap');
+
+.pcWrap {
+  box-sizing: border-box;
+}
+
+/*---------------------------------------
+
+	margin
+
+-----------------------------------------*/
+.mb10 {
+  margin-bottom: px_vw(10px) !important;
+
+  @include spView {
+    margin-bottom: px_vw(10px, $w-sp) !important;
+  }
+}
+
+.mb20 {
+  margin-bottom: px_vw(20px) !important;
+
+  @include spView {
+    margin-bottom: px_vw(20vh, $w-sp) !important;
+  }
+}
+
+.mb25 {
+  margin-bottom: px_vw(25px) !important;
+
+  @include spView {
+    margin-bottom: px_vw(25px, $w-sp) !important;
+  }
+}
+
+.mb30 {
+  margin-bottom: px_vw(30px) !important;
+
+  @include spView {
+    margin-bottom: px_vw(30px, $w-sp) !important;
+  }
+}
+
+.mt10 {
+  margin-top: px_vw(10px) !important;
+
+  @include spView {
+    margin-top: px_vw(10px, $w-sp) !important;
+  }
+}
+
+.mt15 {
+  margin-top: px_vw(15px) !important;
+
+  @include spView {
+    margin-top: px_vw(15px, $w-sp) !important;
+  }
+}
+
+.mt20 {
+  margin-top: px_vw(20px) !important;
+
+  @include spView {
+    margin-top: px_vw(20px, $w-sp) !important;
+  }
+}
+
+.mt30 {
+  margin-top: px_vw(30px) !important;
+
+  @include spView {
+    margin-top: px_vw(30px, $w-sp) !important;
+  }
+}
+
+hr {
+  border-color: #ECF1F4;
+}
+
+.f-bold {
+  font-weight: 700;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  pointer-events: none;
+  filter: brightness(0.8);
+}
+
+.br_pc {
+  display: block;
+
+  @include spView {
+    display: none;
+  }
+}
+
+.br_sp {
+  display: none;
+
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+
+  @include spView {
+    display: block;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@include spView {
+
+  .more_container.hidden {
+    display: block;
+  }
+
+  #showMoreBtn {
+    display: block;
+  }
+}
+
+@keyframes fadeUpAnime {
+  from {
+    transform: translateY(20vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+//とりあえず避難
+.d_hair {
+  h5 {
+    margin: 2rem 0 1rem;
+    font-size: min(4vw, 18px);
+  }
+
+  p {
+    font-size: min(3.33333vw, 16px);
+  }
+
+  img {
+    margin: 1.5rem auto 0;
+  }
+}

@@ -1,0 +1,69 @@
+#contentFooter {
+	margin: px_vw(120px) 0;
+
+	@include spView {
+		margin: px_vw(100px, $w-sp) 0;
+	}
+
+	.contact {
+		display: block;
+		width: fit-content;
+		color: #707070;
+		margin: auto;
+		text-align: center;
+
+		h3 {
+			font-size: px_vw(18px);
+			font-weight: 400;
+		}
+
+		p {
+			margin-top: px_vw(13px);
+			font-size: px_vw(16px);
+		}
+
+		img {
+			display: block;
+			width: px_vw(80px);
+			margin: px_vw(15px) auto;
+		}
+
+		span {
+			display: block;
+			font-size: px_vw(12px);
+			margin-top: px_vw(10px);
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+
+		@include spView {
+			margin-top: px_vw(100px, $w-sp);
+
+			h3 {
+				font-size: px_vw(14px, $w-sp);
+			}
+
+			p {
+				margin-top: px_vw(13px, $w-sp);
+				font-size: px_vw(12px, $w-sp);
+			}
+
+			img {
+				display: block;
+				width: px_vw(100px, $w-sp);
+				margin: px_vw(15px, $w-sp) auto px_vw(15px, $w-sp);
+			}
+
+			span {
+				font-size: px_vw(12px, $w-sp);
+				margin-top: px_vw(10px, $w-sp);
+
+				&:first-of-type {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}

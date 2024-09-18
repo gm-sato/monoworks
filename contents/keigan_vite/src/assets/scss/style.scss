@@ -1,0 +1,39 @@
+@import './base/variables';
+
+/*	reset
+-----------------------------------------*/
+@import './base/reset';
+@import 'base/setting';
+
+/*	plugin
+-----------------------------------------*/
+// @import './plugin/_slick/slick';
+// @import './plugin/_slick/slick-theme';
+// @import './plugin/slick';
+
+@import 'object/loading';
+
+
+/*	base
+-----------------------------------------*/
+
+// $_myIDの値でIDを定義
+##{$myID} {
+
+  @include base;
+
+
+  //layout
+  @import 'layout/top';
+  @import 'layout/story';
+  @import 'layout/suspect';
+  @import 'layout/files';
+
+  //object
+  @import 'object/animation';
+}
+
+/*	UI
+-----------------------------------------*/
+@import 'ui/contentHeader';
+@import 'ui/contentFooter';

@@ -1,0 +1,953 @@
+.Audition {
+  &_mv {
+    position: relative;
+
+    img {
+      display: block;
+      width: 100%;
+      height: px_vw(980px);
+      object-fit: cover;
+
+      @include spView {
+        height: px_vw(535px, $w-sp);
+      }
+    }
+
+    &-ttl {
+      position: absolute;
+      display: block;
+      width: 100%;
+      bottom: px_vw(150px);
+
+
+      &-wrap {
+        display: block;
+        width: fit-content;
+        margin: auto;
+        padding: px_vw(5px);
+      }
+
+      &-bg {
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          mix-blend-mode: multiply;
+          z-index: 1;
+        }
+      }
+
+
+      h2 {
+        position: relative;
+        padding: px_vw(10px) px_vw(75px);
+        z-index: 2;
+
+        &::before {
+          position: absolute;
+          display: block;
+          background-size: contain;
+          background-repeat: no-repeat;
+          content: "";
+          top: px_vw(-125px);
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 0;
+        }
+
+        @include spView {
+          width: px_vw(250px, $w-sp);
+          font-size: px_vw(22px, $w-sp);
+          text-align: center;
+          padding: px_vw(5px, $w-sp) 0;
+
+          &::before {
+            top: px_vw(-80px, $w-sp);
+          }
+        }
+      }
+
+      &.character {
+
+        .Audition_mv-ttl-wrap {
+          border: #FD9AF2 3px solid;
+        }
+
+        .Audition_mv-ttl-bg {
+          &::before {
+            background-color: rgba(249, 55, 217, 1);
+          }
+        }
+
+        h2 {
+          border: #FD9AF2 3px solid;
+          font-weight: 500;
+
+          &::before {
+            background-image: url(../images/character/C-Top-ttl.svg);
+            width: px_vw(553px);
+            height: px_vw(112px);
+
+            @include spView {
+              background-image: url(../images/sp/character/sp_C-Top-ttl.svg);
+              width: px_vw(370px, $w-sp);
+              height: px_vw(75px, $w-sp);
+            }
+          }
+        }
+      }
+
+      &.dancer {
+
+        .Audition_mv-ttl-wrap {
+          border: #FFCE9D 3px solid;
+        }
+
+        .Audition_mv-ttl-bg {
+          &::before {
+            background-color: #FF691E;
+          }
+        }
+
+        h2 {
+          border: #FFCE9D 3px solid;
+          font-weight: 500;
+
+          &::before {
+            background-image: url(../images/dancer/D-Top-ttl.svg);
+            width: px_vw(428px);
+            height: px_vw(115px);
+
+            @include spView {
+              background-image: url(../images/sp/dancer/sp_D-Top-ttl.svg);
+              width: px_vw(286px, $w-sp);
+              height: px_vw(77px, $w-sp);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Message {
+    &.character {
+      .box1 {
+        background-image: url(../images/character/C-message_01.webp);
+        background-position: center center;
+
+        .textbox {
+          top: px_vw(35px);
+          bottom: initial;
+          right: 0;
+
+          p {
+            padding: px_vw(30px);
+            text-align: right;
+          }
+        }
+
+        @include spView {
+          background-image: url(../images/sp/character/sp_C-message_01.jpg);
+
+          .textbox {
+            top: px_vw(27px, $w-sp);
+
+            p {
+              font-size: px_vw(20px, $w-sp);
+              padding: px_vw(20px, $w-sp) px_vw(15px, $w-sp) px_vw(20px, $w-sp) px_vw(30px, $w-sp);
+            }
+          }
+        }
+
+        @media (min-width: 600px) and (max-width: 750px) {
+          .textbox {
+            top: clamp(320px, 52vw, 480px);
+          }
+        }
+
+        @media (min-width: 751px) and (max-width: 1500px) {
+          .textbox {
+            top: 640px;
+          }
+        }
+      }
+
+      .box2 {
+        background-image: url(../images/character/C-message_02.webp);
+        background-position: top right 10%;
+
+        .textbox {
+          bottom: px_vw(105px);
+          left: 0;
+
+          p {
+            padding: px_vw(30px);
+          }
+        }
+
+        @include spView {
+          background-image: url(../images/sp/character/sp_C-message_02.jpg);
+
+          .textbox {
+            bottom: px_vw(55px, $w-sp);
+
+            p {
+              font-size: px_vw(21px, $w-sp);
+              padding: px_vw(20px, $w-sp) px_vw(30px, $w-sp) px_vw(20px, $w-sp) px_vw(15px, $w-sp);
+            }
+          }
+        }
+      }
+
+      .box3 {
+        background-image: url(../images/character/C-message_03.webp);
+        background-position: center center;
+
+        @media (min-width: 520px) and (max-width: 750px) {
+          background-position: center top 30%;
+        }
+
+        .textbox {
+          bottom: px_vw(100px);
+          right: 0;
+
+          p {
+            padding: px_vw(30px);
+          }
+        }
+
+        @include spView {
+          background-image: url(../images/sp/character/sp_C-message_03.jpg);
+
+          .textbox {
+            bottom: px_vw(85px, $w-sp);
+
+            p {
+              font-size: px_vw(21px, $w-sp);
+              padding: px_vw(20px, $w-sp) px_vw(15px, $w-sp) px_vw(20px, $w-sp) px_vw(20px, $w-sp);
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+
+    &.dancer {
+      .box1 {
+        background-image: url(../images/dancer/D-message_01.webp);
+        background-position: center center;
+
+        .textbox {
+          top: px_vw(50px);
+          bottom: initial;
+          right: initial;
+          left: 0;
+
+          p {
+            padding: px_vw(30px);
+          }
+        }
+
+        &.fadeIn {
+          .textbox {
+            &::before {
+              animation: slideIn_reverse 1s forwards;
+            }
+
+            p {
+              animation: slideText_reverse 1s forwards;
+            }
+          }
+        }
+
+        @include spView {
+          background-image: url(../images/sp/dancer/sp_D-message_01.jpg);
+          background-position: center center;
+
+          .textbox {
+            top: px_vw(60px, $w-sp);
+
+            p {
+              font-size: px_vw(21px, $w-sp);
+              padding: px_vw(14px, $w-sp) px_vw(30px, $w-sp) px_vw(25px, $w-sp) px_vw(15px, $w-sp);
+            }
+          }
+        }
+      }
+
+      .box2 {
+        background-image: url(../images/dancer/D-message_02.webp);
+        background-position: top center;
+
+        .textbox {
+          bottom: px_vw(88px);
+          left: initial;
+          right: 0;
+
+          p {
+            padding: px_vw(30px);
+            text-align: right;
+          }
+        }
+
+        &.fadeIn {
+          .textbox {
+            &::before {
+              animation: slideIn 1s forwards;
+            }
+
+            p {
+              animation: slideText 1s forwards;
+            }
+          }
+        }
+
+        @include spView {
+          background-image: url(../images/sp/dancer/sp_D-message_02.jpg);
+          background-position: top center;
+
+          .textbox {
+            bottom: px_vw(60px, $w-sp);
+
+            p {
+              font-size: px_vw(21px, $w-sp);
+              padding: px_vw(20px, $w-sp) px_vw(15px, $w-sp) px_vw(20px, $w-sp) px_vw(30px, $w-sp);
+            }
+          }
+        }
+      }
+
+      .box3 {
+        background-image: url(../images/dancer/D-message_03.webp);
+        background-position: center center;
+
+        .textbox {
+          bottom: px_vw(85px);
+          right: initial;
+          left: 0;
+
+          p {
+            padding: px_vw(30px);
+            text-align: left;
+          }
+        }
+
+        &.fadeIn {
+          .textbox {
+            &::before {
+              animation: slideIn_reverse 1s forwards;
+            }
+
+            p {
+              animation: slideText_reverse 1s forwards;
+            }
+          }
+        }
+
+        @include spView {
+          background-image: url(../images/sp/dancer/sp_D-message_03.jpg);
+          background-position: top 20% center;
+
+          .textbox {
+            bottom: px_vw(65px, $w-sp);
+
+            p {
+              font-size: px_vw(21px, $w-sp);
+              padding: px_vw(20px, $w-sp) px_vw(35px, $w-sp) px_vw(20px, $w-sp) px_vw(15px, $w-sp);
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+
+    &_ttl {
+      position: absolute;
+      bottom: px_vw(-170px);
+      left: 50%;
+      transform: translateX(-50%);
+
+      &.character {
+        picture {
+          max-width: initial;
+
+          img {
+            @include spView {
+              max-width: initial;
+              width: px_vw(428px, $w-sp);
+            }
+          }
+        }
+      }
+
+      &.dancer {
+        picture {
+          max-width: initial;
+
+          img {
+            @include spView {
+              max-width: initial;
+              width: px_vw(428px, $w-sp);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .C-About {
+    padding-top: px_vw(400px);
+
+    @include spView {
+      padding-top: px_vw(190px, $w-sp);
+    }
+
+    &_container {
+      text-align: center;
+
+      p {
+        display: block;
+        margin-top: px_vw(60px);
+        font-size: px_vw(32px);
+        font-weight: 500;
+        line-height: 2;
+        color: #464646;
+
+        @include spView {
+          font-size: px_vw(20px, $w-sp);
+        }
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .Skil {
+    margin-top: px_vw(380px);
+
+    @include spView {
+      margin-top: px_vw(200px, $w-sp);
+    }
+
+    .mainttl {
+      &::before {
+        background-image: url(../images/dancer/D-skil-ttl.svg);
+        width: px_vw(568px);
+        height: px_vw(106px);
+
+        @include spView {
+          background-image: url(../images/sp/dancer/sp_D-skil-ttl.svg);
+          width: px_vw(379px, $w-sp);
+          height: px_vw(71px, $w-sp);
+        }
+      }
+    }
+
+    &_about {
+      text-align: center;
+      font-size: px_vw(18px);
+      font-weight: 500;
+      color: #464646;
+      margin-top: px_vw(70px);
+      line-height: 2;
+
+      @include spView {
+        margin-top: px_vw(40px, $w-sp);
+        font-size: px_vw(14px, $w-sp);
+      }
+    }
+
+    &_wrapper {
+      display: block;
+      max-width: px_vw(525px);
+      margin: px_vw(80px) auto 0;
+      color: #464646;
+
+      @include spView {
+        max-width: calc(100vw - px_vw(60px, $w-sp));
+        margin: px_vw(40px, $w-sp) auto 0;
+      }
+    }
+
+    &_container {
+      margin-top: px_vw(25px);
+
+      @include spView {
+        margin-top: px_vw(35px, $w-sp);
+      }
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      h4 {
+        position: relative;
+        font-size: px_vw(25px);
+
+        @include spView {
+          font-size: px_vw(18px, $w-sp);
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: px_vw(300px);
+          height: px_vw(15px);
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          background: repeating-linear-gradient(-45deg, rgba(255, 181, 247, 1), rgba(255, 181, 247, 1) px_vw(2px), rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 1) px_vw(7px));
+
+          @include spView {
+            width: px_vw(200px, $w-sp);
+            height: px_vw(10px, $w-sp);
+            right: px_vw(-30px, $w-sp);
+          }
+        }
+      }
+
+      p {
+        font-size: px_vw(19px);
+        margin-top: px_vw(20px);
+        font-weight: 500;
+        line-height: 2;
+
+        @include spView {
+          font-size: px_vw(14px, $w-sp);
+          margin-top: px_vw(10px, $w-sp);
+          line-height: 2;
+        }
+      }
+
+      &:nth-child(2n) {
+        text-align: right;
+
+        h4 {
+          &::after {
+            right: initial;
+            left: 0;
+
+            @include spView {
+              left: px_vw(-30px, $w-sp);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Entry {
+    overflow: hidden;
+
+    @include spView {
+      margin-top: px_vw(90px, $w-sp);
+    }
+
+    .mainttl {
+      &::before {
+        background-image: url(../images/character/C-entry-ttl.svg);
+        width: px_vw(224px);
+        height: px_vw(105px);
+
+        @include spView {
+          background-image: url(../images/sp/character/sp_C-entry-ttl.svg);
+          width: px_vw(149px, $w-sp);
+          height: px_vw(70px, $w-sp);
+        }
+      }
+    }
+
+    &_container {
+      text-align: center;
+
+
+      p {
+        font-size: px_vw(18px);
+        font-weight: 500;
+        margin-top: px_vw(60px);
+        color: #464646;
+        line-height: 1.5;
+      }
+
+      .entry_end {
+        font-size: px_vw(36px);
+        color: red;
+      }
+
+      a {
+        display: block;
+        width: fit-content;
+        margin: px_vw(60px) auto 0;
+        font-size: px_vw(36px);
+        font-weight: 500;
+        padding: px_vw(18px) px_vw(40px);
+        background-color: #89DB76;
+        color: #fff;
+      }
+
+      @include spView {
+        p {
+          font-size: px_vw(14px, $w-sp);
+        }
+
+        a {
+          margin: px_vw(40px, $w-sp) auto 0;
+          font-size: px_vw(24px, $w-sp);
+          padding: px_vw(15px, $w-sp) px_vw(12px, $w-sp);
+        }
+      }
+    }
+
+    &_deadline {
+      text-align: center;
+      color: #464646;
+      margin-top: px_vw(90px);
+
+      p {
+        font-size: px_vw(27px);
+        font-weight: 500;
+        line-height: 1.5;
+
+        span {
+          display: block;
+          position: relative;
+          width: fit-content;
+          margin: auto;
+          z-index: 1;
+
+          &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            background-color: #FDF07C;
+            width: 105%;
+            height: px_vw(30px);
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+          }
+        }
+      }
+
+      @include spView {
+        margin-top: px_vw(35px, $w-sp);
+
+        p {
+          font-size: px_vw(18px, $w-sp);
+
+          &::after {}
+        }
+      }
+    }
+  }
+
+  .Step {
+    display: block;
+    max-width: px_vw(960px);
+    margin: px_vw(150px) auto 0;
+
+    .mainttl {
+      &::before {
+        background-image: url(../images/character/C-step-ttl.svg);
+        width: px_vw(218px);
+        height: px_vw(105px);
+
+        @include spView {
+          background-image: url(../images/sp/character/sp_C-step-ttl.svg);
+          width: px_vw(145px, $w-sp);
+          height: px_vw(73px, $w-sp);
+        }
+      }
+    }
+
+
+    img {
+      width: 100%;
+    }
+
+    &_bg {
+      padding: 0 px_vw(20px);
+
+      &.character {
+        background: linear-gradient(180deg, rgba(137, 219, 118, 1) 0%, rgba(253, 154, 242, 1) 100%);
+      }
+
+      &.dancer {
+        background: linear-gradient(180deg, rgba(137, 219, 118, 1) 0%, rgba(193, 205, 121, 1) 50%, rgba(255, 190, 124, 1) 100%);
+      }
+
+      @include spView {
+        margin-top: px_vw(70px, $w-sp);
+      }
+    }
+
+    &_wrapper {
+      background-color: #fff;
+      padding: 0 px_vw(60px) px_vw(85px);
+
+      @include spView {
+        padding: 0 px_vw(30px, $w-sp) px_vw(40px, $w-sp);
+      }
+    }
+
+    &_container {
+      margin-top: px_vw(90px);
+      color: #464646;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &-ttl {
+        h4 {
+          display: block;
+          width: 100%;
+          font-size: px_vw(24px);
+          padding-bottom: px_vw(20px);
+          border-bottom: 1px solid #CCCCCC;
+
+          @include spView {
+            font-size: px_vw(18px, $w-sp);
+            padding-bottom: px_vw(15px, $w-sp);
+          }
+        }
+      }
+
+      &-box {
+        margin-top: px_vw(40px);
+
+        @include spView {
+          margin-top: px_vw(30px, $w-sp);
+        }
+
+        h5 {
+          font-size: px_vw(21px);
+          margin-top: px_vw(30px);
+
+          @include spView {
+            font-size: px_vw(16px, $w-sp);
+            margin-top: px_vw(30px, $w-sp);
+          }
+
+          &:first-of-type {
+            margin-top: 0;
+          }
+        }
+
+        p {
+          font-size: px_vw(18px);
+          margin-top: px_vw(10px);
+          line-height: 1.5;
+
+          @include spView {
+            font-size: px_vw(14px, $w-sp);
+            margin-top: px_vw(12px, $w-sp);
+          }
+        }
+
+        span {
+          display: block;
+          font-size: px_vw(16px);
+          margin-top: px_vw(10px);
+          line-height: 1.2;
+
+          @include spView {
+            font-size: px_vw(12px, $w-sp);
+            margin-top: px_vw(18px, $w-sp);
+          }
+        }
+      }
+
+      &-info {
+
+        h4 {
+          font-size: px_vw(21px);
+
+          @include spView {
+            font-size: px_vw(14px, $w-sp);
+          }
+        }
+
+        ul {
+          margin-top: px_vw(10px);
+
+          li {
+            position: relative;
+            padding-left: px_vw(20px);
+            font-size: px_vw(16px);
+            line-height: 1.5;
+
+            &::before {
+              content: "・";
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+
+          @include spView {
+            margin-top: px_vw(18px, $w-sp);
+
+            li {
+              margin-top: px_vw(5px, $w-sp);
+              font-size: px_vw(12px, $w-sp);
+
+              &:first-of-type {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .Requirements {
+    display: block;
+    max-width: px_vw(960px);
+    margin: 0 auto;
+    border-top: 1px solid transparent;
+
+    @include spView {
+      max-width: calc(100% - px_vw(35px, $w-sp));
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .mainttl {
+      &::before {
+        background-image: url(../images/character/C-Requirements-ttl.svg);
+        width: px_vw(505px);
+        height: px_vw(105px);
+
+        @include spView {
+          background-image: url(../images/sp/character/sp_C-Requirements-ttl.svg);
+          width: px_vw(337px, $w-sp);
+          height: px_vw(71px, $w-sp);
+        }
+      }
+    }
+
+    &_wrapper {
+      position: relative;
+      background-color: #fff;
+      margin-top: px_vw(70px);
+
+      @include spView {
+        margin-top: px_vw(55px, $w-sp);
+      }
+    }
+
+    &_container {
+      margin-top: px_vw(50px);
+      color: #464646;
+      font-weight: 500;
+
+      @include spView {
+        margin-top: px_vw(45px, $w-sp);
+      }
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      h4 {
+        display: block;
+        font-size: px_vw(24px);
+        margin-bottom: px_vw(20px);
+
+        @include spView {
+          font-size: px_vw(16px, $w-sp);
+          margin-bottom: px_vw(24px, $w-sp);
+        }
+      }
+
+      p {
+        font-size: px_vw(21px);
+        line-height: 1.5;
+
+        @include spView {
+          font-size: px_vw(14px, $w-sp);
+        }
+      }
+
+      .list-Notes {
+        margin-top: px_vw(10px);
+
+        @include spView {
+          margin-top: px_vw(18px, $w-sp);
+        }
+
+        li {
+          position: relative;
+          margin-top: px_vw(5px);
+          padding-left: px_vw(20px);
+          font-size: px_vw(16px);
+          font-weight: 400;
+          line-height: 1.5;
+
+          @include spView {
+            padding-left: px_vw(15px, $w-sp);
+            font-size: px_vw(12px, $w-sp);
+          }
+
+          &::before {
+            content: "※";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+
+      .list-Benefit {
+        li {
+          position: relative;
+          margin-top: px_vw(5px);
+          padding-left: px_vw(20px);
+          font-size: px_vw(18px);
+          line-height: 1.5;
+
+          @include spView {
+            margin-top: px_vw(5px, $w-sp);
+            padding-left: px_vw(15px, $w-sp);
+            font-size: px_vw(14px, $w-sp);
+          }
+
+          &::before {
+            content: "・";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          &:first-of-type {
+            margin-top: 0;
+          }
+
+          span {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+  }
+
+}

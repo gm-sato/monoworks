@@ -1,0 +1,66 @@
+.readmore {
+  position: relative;
+
+
+  @include spView {
+    padding: 0px 0px px_vw(100px);
+  }
+
+  &-hide {
+    margin-top: px_vw(50px);
+
+    @include spView {
+      height: 0;
+      margin-top: px_vw(45px, $w-sp);
+      overflow: hidden;
+      transition: all .4s;
+
+      &.is_open {
+        margin-bottom: px_vw(45px, $w-sp);
+      }
+    }
+  }
+
+  button {
+    display: none;
+
+    @include spView {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      padding: px_vw(15px, $w-sp) 0;
+      color: #464646;
+      font-size: px_vw(16px, $w-sp);
+      text-align: center;
+      border: 1px solid #464646;
+      background: #fff;
+      cursor: pointer;
+      transition: all .4s;
+
+      &::before {
+        position: absolute;
+        display: block;
+        content: "+";
+        font-size: px_vw(28px, $w-sp);
+        top: 50%;
+        left: px_vw(100px, $w-sp);
+        transform: translateY(-50%);
+        color: #464646;
+      }
+
+      &.close_btn {
+        &::before {
+          position: absolute;
+          display: block;
+          content: "－";
+          font-size: px_vw(28px, $w-sp);
+          top: 50%;
+          left: px_vw(100px, $w-sp);
+          transform: translateY(-50%);
+          color: #464646;
+        }
+      }
+    }
+  }
+}
