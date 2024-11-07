@@ -2,447 +2,225 @@
 HEADER
 ====================================== */
 #contentHeader {
-	.header {
-		&_inner {
-			display: block;
-			width: 100%;
-			height: px_vw(80px);
-			justify-content: space-between;
-			align-items: center;
-			z-index: 100;
-			background-color: #fff;
-			transition: top 0.5s;
-
-			&.is-fixed {
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				z-index: 999;
-			}
-
-			&.is-hidden {
-				transform: translateY(-100%);
-				transition: transform 0.3s ease-in-out;
-			}
-
-			@media screen and (max-width: 1024px) {
-				height: initial;
-			}
-
-			@include spView {
-				height: initial;
-			}
-		}
-
-		&_menu {
-			display: grid;
-			height: 100%;
-			font-weight: 500;
-			font-family: $ff-base;
-
-			grid-template-areas:
-				"title entry job faq nav";
-			grid-template-columns: auto px_vw(120px) px_vw(375px) px_vw(215px) px_vw(100px);
-
-			@media screen and (max-width: 1024px) {
-				grid-template-areas:
-					"title title entry nav"
-					"job job job job";
-				grid-template-columns: auto auto px_vw(160px) px_vw(250px);
-			}
-
-			@include spView {
-				grid-template-areas:
-					"title title entry nav"
-					"job job job job";
-				grid-template-columns: 1fr 1fr 1fr 1fr;
-			}
-
-			&-top {
-				display: block;
-				grid-area: title;
-				overflow: hidden;
-
-				h2 {
-					display: flex;
-					height: 100%;
-					padding: px_vw(15px);
-					align-items: center;
-
-					a {
-						font-size: px_vw(21px);
-						font-weight: 700;
-						color: #707070;
-					}
-				}
-
-				@media screen and (max-width: 1024px) {
-					height: px_vw(110px);
-
-					h2 {
-						padding: px_vw(30px);
-
-						a {
-							font-size: px_vw(28px);
-						}
-					}
-				}
-
-				@include spView {
-					height: px_vw(80px, $w-sp);
-
-					h2 {
-						padding: px_vw(15px, $w-sp);
-
-						a {
-							font-size: px_vw(14px, $w-sp);
-						}
-					}
-				}
-
-			}
-
-
-			&-entry {
-				display: flex;
-				grid-area: entry;
-				width: 100%;
-				align-items: center;
-				justify-content: center;
-				background-image: linear-gradient(-45deg, #89DB76 25%, #fff 25%, #fff 50%, #89DB76 50%, #89DB76 75%, #fff 75%, #fff);
-				background-size: 10px 10px;
-
-				@include spView {
-					background-size: px_vw(7px, $w-sp) px_vw(7px, $w-sp);
-				}
-
-
-				p {
-					background-color: #89DB76;
-					padding: px_vw(8px) px_vw(10px);
-					color: #fff;
-					text-align: center;
-				}
-
-				@media screen and (max-width: 1024px) {
-					p {
-						font-size: px_vw(21px);
-						padding: px_vw(12px);
-					}
-				}
-
-				@include spView {
-					p {
-						font-size: px_vw(13px, $w-sp);
-						padding: px_vw(12px, $w-sp) px_vw(8px, $w-sp);
-					}
-				}
-			}
-
-			&-job {
-				display: flex;
-				position: relative;
-				grid-area: job;
-				background: linear-gradient(125deg, rgba(253, 154, 242, 1) 0%, rgba(255, 190, 124, 1) 100%);
-				font-size: px_vw(14px);
-
-				@media screen and (max-width: 1024px) {
-					height: px_vw(100px);
-					font-size: px_vw(20px);
-				}
-
-				@include spView {
-					height: px_vw(60px, $w-sp);
-					font-size: px_vw(14px, $w-sp);
-				}
-
-				&::after {
-					display: block;
-					position: absolute;
-					content: "";
-					width: 1px;
-					height: px_vw(30px);
-					background: #fff;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-
-					@include spView {
-						height: px_vw(30px, $w-sp);
-					}
-				}
-
-				&-character {
-					display: flex;
-					width: 50%;
-					align-items: center;
-					justify-content: center;
-					color: #fff;
-				}
-
-				&-dancer {
-					display: flex;
-					width: 50%;
-					align-items: center;
-					justify-content: center;
-					color: #fff;
-				}
-			}
-
-			&-faq {
-				display: flex;
-				grid-area: faq;
-				width: 100%;
-				align-items: center;
-				justify-content: center;
-				color: #707070;
-
-				@media screen and (max-width: 1024px) {
-					display: none;
-				}
-
-				@include spView {
-					display: none;
-				}
-			}
-
-			&-nav {
-				background-color: #fff;
-				grid-area: nav;
-			}
-		}
-
-		&_navTrigger {
-			width: px_vw(100px);
-			height: px_vw(80px);
-			position: relative;
-			top: 0;
-			right: 0;
-			z-index: 1500;
-			background-color: #fff;
-
-			@media screen and (max-width: 1024px) {
-				width: px_vw(250px);
-				height: px_vw(110px);
-			}
-
-			@include spView {
-				width: 100%;
-				height: px_vw(80px, $w-sp);
-			}
-
-			a {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 100%;
-				height: 100%;
-				position: relative;
-			}
-
-			&_line {
-				position: absolute;
-				top: px_vw(20px);
-				left: 50%;
-				transform: translateX(-50%);
-				width: px_vw(36px);
-				height: px_vw(30px);
-
-				span {
-					position: absolute;
-					left: 0;
-					width: px_vw(36px);
-					height: px_vw(2px);
-					background-color: #464646;
-					transition: all 0.3s ease-in-out;
-
-					&:nth-of-type(1) {
-						top: 0;
-					}
-
-					&:nth-of-type(2) {
-						top: 50%;
-						transform: translateY(-50%)
-					}
-
-					&:nth-of-type(3) {
-						bottom: 0;
-					}
-				}
-
-				@media screen and (max-width: 1024px) {
-					top: px_vw(40px);
-					width: px_vw(60px);
-					height: px_vw(30px);
-
-					span {
-						width: px_vw(60px);
-						height: px_vw(3px);
-					}
-				}
-
-				@include spView {
-					top: px_vw(30px, $w-sp);
-					width: px_vw(36px, $w-sp);
-					height: px_vw(20px, $w-sp);
-
-					span {
-						width: px_vw(36px, $w-sp);
-						height: px_vw(2px, $w-sp);
-					}
-				}
-			}
-
-			&.active {
-				.header_navTrigger_line {
-					span {
-						top: 50%;
-
-						&:nth-of-type(1) {
-							transform: translateY(-50%) rotate(-45deg);
-						}
-
-						&:nth-of-type(2) {
-							opacity: 0;
-						}
-
-						&:nth-of-type(3) {
-							transform: translateY(-50%) rotate(45deg);
-						}
-					}
-				}
-			}
-
-			p {
-				text-transform: uppercase;
-				color: #ebcf74;
-				position: absolute;
-				bottom: px_vw(20px);
-				left: 50%;
-				transform: translateX(-50%);
-				font-size: px_vw(16px);
-				font-family: 'Noto Serif JP',
-					serif;
-			}
-		}
-
-		&_navOpen {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 1000;
-			background-color: #fff;
-			display: none;
-
-			&_inner {
-				width: 100vw;
-				height: 100vh;
-			}
-
-			&_lists {
-				display: block;
-				box-sizing: border-box;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				font-family: "Noto Sans JP", sans-serif;
-				transform: translate(-50%, -50%);
-				width: 100%;
-				height: 100%;
-				padding: px_vw(140px) px_vw(100px) px_vw(120px);
-				margin: 0 auto;
-				overflow: scroll;
-
-				&::-webkit-scrollbar {
-					display: none;
-				}
-
-				@include spView {
-					padding: px_vw(80px, $w-sp) px_vw(20px, $w-sp) px_vw(20px, $w-sp);
-				}
-			}
-
-			&_list {
-				display: block;
-				width: 100%;
-				margin-top: 15px;
-
-				a {
-					display: block;
-					position: relative;
-					width: 100%;
-					font-size: px_vw(22px);
-					font-weight: 500;
-					color: #464646;
-					padding-bottom: 15px;
-
-					&::after {
-						position: absolute;
-						display: block;
-						content: "";
-						width: 100%;
-						height: 4px;
-						bottom: 0;
-						left: 0;
-					}
-				}
-
-				ul {
-					margin: auto;
-					padding-left: px_vw(20px);
-
-					li {
-						a {
-							display: block;
-							position: relative;
-							width: 100%;
-							font-size: px_vw(22px);
-							padding-top: 15px;
-
-							&::after {
-								width: calc(100% + 20px);
-								height: 1px;
-								left: -20px;
-							}
-						}
-					}
-				}
-
-				&.top {
-					a {
-						&::after {
-							background: linear-gradient(90deg, rgba(253, 154, 242, 1) 0%, rgba(255, 190, 124, 1) 100%);
-						}
-					}
-				}
-
-				&.character {
-					a {
-						&::after {
-							background: #FD9AF2;
-						}
-					}
-				}
-
-				&.dancer {
-					a {
-						&::after {
-							background: #FFBE7C;
-						}
-					}
-				}
-
-				&.faq {
-					a {
-						&::after {
-							background: #62CFFF;
-						}
-					}
-				}
-			}
-		}
-	}
+  .header {
+    &_menu {
+      display: block;
+      width: px_vw(100px);
+      height: px_vw(80px);
+      z-index: 100;
+      transition: top 0.5s;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 999;
+    }
+    &_inner {
+      @media screen and (max-width: 1024px) {
+        height: initial;
+      }
+
+      @include spView {
+        height: initial;
+      }
+    }
+
+    &_navTrigger {
+      width: px_vw(100px);
+      height: px_vw(80px);
+      position: relative;
+      top: 0;
+      right: 0;
+      z-index: 1500;
+      background-color: #fff;
+
+      @media screen and (max-width: 1024px) {
+        width: px_vw(250px);
+        height: px_vw(110px);
+      }
+
+      @include spView {
+        width: 100%;
+        height: px_vw(80px, $w-sp);
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      &_line {
+        position: absolute;
+        top: px_vw(20px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: px_vw(36px);
+        height: px_vw(30px);
+
+        span {
+          position: absolute;
+          left: 0;
+          width: px_vw(36px);
+          height: px_vw(2px);
+          background-color: #464646;
+          transition: all 0.3s ease-in-out;
+
+          &:nth-of-type(1) {
+            top: 0;
+          }
+
+          &:nth-of-type(2) {
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &:nth-of-type(3) {
+            bottom: 0;
+          }
+        }
+
+        @media screen and (max-width: 1024px) {
+          top: px_vw(40px);
+          width: px_vw(60px);
+          height: px_vw(30px);
+
+          span {
+            width: px_vw(60px);
+            height: px_vw(3px);
+          }
+        }
+
+        @include spView {
+          top: px_vw(30px, $w-sp);
+          width: px_vw(36px, $w-sp);
+          height: px_vw(20px, $w-sp);
+
+          span {
+            width: px_vw(36px, $w-sp);
+            height: px_vw(2px, $w-sp);
+          }
+        }
+      }
+
+      &.active {
+        .header_navTrigger_line {
+          span {
+            top: 50%;
+
+            &:nth-of-type(1) {
+              transform: translateY(-50%) rotate(-45deg);
+            }
+
+            &:nth-of-type(2) {
+              opacity: 0;
+            }
+
+            &:nth-of-type(3) {
+              transform: translateY(-50%) rotate(45deg);
+            }
+          }
+        }
+      }
+
+      p {
+        text-transform: uppercase;
+        color: #ebcf74;
+        position: absolute;
+        bottom: px_vw(20px);
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: px_vw(16px);
+        font-family: "Noto Serif JP", serif;
+      }
+    }
+
+    &_navOpen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      background-color: #fff;
+      display: none;
+
+      &_inner {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      &_lists {
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-family: "Noto Sans JP", sans-serif;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        padding: px_vw(140px) px_vw(100px) px_vw(120px);
+        margin: 0 auto;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        @include spView {
+          padding: px_vw(80px, $w-sp) px_vw(20px, $w-sp) px_vw(20px, $w-sp);
+        }
+      }
+
+      &_list {
+        display: block;
+        width: 100%;
+        margin-top: 15px;
+
+        a {
+          display: block;
+          position: relative;
+          width: 100%;
+          font-size: px_vw(22px);
+          font-weight: 500;
+          color: #464646;
+          padding-bottom: 15px;
+
+          &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 4px;
+            bottom: 0;
+            left: 0;
+          }
+        }
+
+        ul {
+          margin: auto;
+          padding-left: px_vw(20px);
+
+          li {
+            a {
+              display: block;
+              position: relative;
+              width: 100%;
+              font-size: px_vw(22px);
+              padding-top: 15px;
+
+              &::after {
+                width: calc(100% + 20px);
+                height: 1px;
+                left: -20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

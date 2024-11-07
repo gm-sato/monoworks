@@ -6,10 +6,8 @@
 
 <script>
 export default {
-  name: 'Dancer'
-}
+  name: "Files",
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -1,7 +1,5 @@
-import {
-  defineConfig
-} from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   plugins: [vue()],
@@ -9,18 +7,18 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // additionalData: `@import "@/assets/scss/style.scss";`,
-        sourceMap: true
-      }
-    }
+        sourceMap: true, // 必要に応じてtrueに設定
+      },
+    },
   },
-  base: './',
-  build: {
-    outDir: 'dist',
-    sourcemap: true
-  },
+  base: "/", // デプロイ先に応じて適切に設定
+  // build: {
+  //   outDir: "keigan", // 出力ディレクトリ
+  //   sourcemap: true, // デバッグ時にはtrue、本番環境にはfalseが推奨
+  // },
   resolve: {
     alias: {
-      '@': '/src'
-    }
-  }
-})
+      "@": "/src",
+    },
+  },
+});

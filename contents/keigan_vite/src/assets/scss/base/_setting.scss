@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;600;700&display=swap");
 
 .pcWrap {
   box-sizing: border-box;
@@ -74,7 +74,7 @@
 }
 
 hr {
-  border-color: #ECF1F4;
+  border-color: #ecf1f4;
 }
 
 .f-bold {
@@ -122,7 +122,6 @@ hr {
 }
 
 @include spView {
-
   .more_container.hidden {
     display: block;
   }
@@ -139,22 +138,5 @@ hr {
 
   to {
     transform: translateY(0);
-  }
-}
-
-
-//とりあえず避難
-.d_hair {
-  h5 {
-    margin: 2rem 0 1rem;
-    font-size: min(4vw, 18px);
-  }
-
-  p {
-    font-size: min(3.33333vw, 16px);
-  }
-
-  img {
-    margin: 1.5rem auto 0;
   }
 }

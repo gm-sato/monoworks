@@ -3,16 +3,6 @@
 header#contentHeader
   .header_inner
     .header_menu
-      .header_menu-top
-        h2
-          router-link(to="/") エンターテイナー<br class="br_sp">オーディションサイト
-      a(href="https://mypage.3030.i-webs.jp/tdr-entertainer2024/" target="_blank").header_menu-entry
-        p マイページ<br>はこちら
-      .header_menu-job
-        router-link(to="/character").header_menu-job-character キャラクター
-        router-link(to="/dancer").header_menu-job-dancer ダンサー
-        router-link(to="/suspect/shimizu").header_menu-job-dancer テスト
-      router-link(to="/faq").header_menu-faq よくある質問
       .header_menu-nav
         .header_navTrigger
           a(href="javascript:void(0)")
@@ -55,7 +45,7 @@ header#contentHeader
 
 <script>
 export default {
-  name: 'Header'
+  name: 'AppHeader'
 }
 </script>
 

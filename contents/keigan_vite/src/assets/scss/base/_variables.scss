@@ -1,5 +1,5 @@
-@use 'sass:math';
-$myID: 'entertainer'; // main要素のID
+@use "sass:math";
+$myID: "insight"; // main要素のID
 
 //---padding---//
 
@@ -12,12 +12,10 @@ $pdng-v: 140px;
   // margin-right: $pdng * -1;
 }
 
-
 //---width---//
 
 $w-sp: 375px;
 $w-pc: $w-sp * 2;
-
 
 //---responsive---//
 
@@ -50,16 +48,14 @@ $bp: $w-pc;
 
   @if $vw>0 {
     @return min(unquote($vw + vw), $val);
-  }
-
-  @else {
+  } @else {
     @return max(unquote($vw + vw), $val);
   }
 }
 
 // 数値から単位を取り除く
 @function strip-unit($number) {
-  @if type-of($number)=='number'and not unitless($number) {
+  @if type-of($number) == "number" and not unitless($number) {
     //@return $number / ($number * 0 + 1);
     @return math.div($number, ($number * 0 + 1));
   }
@@ -69,8 +65,7 @@ $bp: $w-pc;
 
 //---font---//
 
-$ff-base: "Noto Sans JP",
-sans-serif;
+$ff-base: "Noto Sans JP", sans-serif;
 
 $fz-ttl: px_vw(46px);
 $fz-base: px_vw(30px);
@@ -79,14 +74,15 @@ $fz-price: 24px;
 
 //---color---//
 
-$c-main : #fff;
-$c-bg : #faf3ed;
+$c-main: #b5b5b6;
+$c-bg: #3b3b3b;
 
 //---ベースの設計---//
 
 @mixin base {
   margin: 0 auto;
   color: $c-main;
+  background: $c-bg;
   font-family: $ff-base;
   font-size: $fz-base;
   font-weight: normal;
@@ -95,28 +91,4 @@ $c-bg : #faf3ed;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 100%;
-    opacity: 0.1;
-    right: 100%;
-    background: linear-gradient(to left, #00051c, transparent);
-  }
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 20px;
-    height: 100%;
-    opacity: 0.1;
-    left: 100%;
-    background: linear-gradient(to right, #00051c, transparent);
-  }
 }

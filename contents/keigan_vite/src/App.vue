@@ -1,51 +1,48 @@
 <template lang="pug">
 div#app
-  Header
+  AppHeader
   template(v-if="isHomePage")
-    #splash
-      #splash_logo
-        //- img(src="@/assets/images/decoText.svg", alt="").fadeUp
   .pcWrap
-    main#entertainer
+    main#insight
       transition(name="custom" mode="out-in" @before-enter="beforeEnter" @enter="enter" @leave="leave")
         router-view
-  Footer
+  //- AppFooter
 </template>
 
 <script>
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import gsap from 'gsap'
+import { computed } from "vue";
+import { useRoute } from "vue-router";
+import AppHeader from "./components/Header.vue";
+import AppFooter from "./components/Footer.vue";
+import gsap from "gsap";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Header,
-    Footer
+    AppHeader,
+    AppFooter,
   },
   setup() {
-    const route = useRoute()
+    const route = useRoute();
     // 現在のルートが'/'または'Home.vue'に対応するパスの場合にチェック
-    const isHomePage = computed(() => route.name === 'Home')
+    const isHomePage = computed(() => route.name === "Home");
 
     return {
-      isHomePage
-    }
+      isHomePage,
+    };
   },
   methods: {
     beforeEnter(el) {
-      gsap.set(el, { opacity: 0 })
+      gsap.set(el, { opacity: 0 });
     },
     enter(el, done) {
-      gsap.to(el, { opacity: 1, duration: 0.5, onComplete: done })
+      gsap.to(el, { opacity: 1, duration: 0.5, onComplete: done });
     },
     leave(el, done) {
-      gsap.to(el, { opacity: 0, duration: 0.5, onComplete: done })
-    }
-  }
-}
+      gsap.to(el, { opacity: 0, duration: 0.5, onComplete: done });
+    },
+  },
+};
 </script>
 
 <style>

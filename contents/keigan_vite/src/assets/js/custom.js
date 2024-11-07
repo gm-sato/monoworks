@@ -87,50 +87,6 @@ $(function () {
       });
     });
   }
-
-  // ヘッダーの動き
-  function headerBehavior() {
-    var headerHeight = $('.header_inner').outerHeight();
-    var pageTop = $(".pageTop").offset().top;
-    let lastScrollTop = 0;
-    let scrollTimeout;
-    $(window).on("scroll", function () {
-      var pageScroll = $(window).scrollTop();
-
-      if (pageScroll > pageTop) {
-        if (!$('.header_inner').hasClass('is-fixed')) {
-          $('body').css('paddingTop', headerHeight + 'px');
-          $('.header_inner').addClass('is-fixed');
-        }
-      } else {
-        if ($('.header_inner').hasClass('is-fixed')) {
-          $('body').css('paddingTop', '0');
-          $('.header_inner').removeClass('is-fixed');
-        }
-      }
-
-      // ヘッダーを上に引っ込ませるアニメーション
-      if (pageScroll > pageTop + headerHeight) {
-        $('.header_inner').addClass('is-hidden');
-      } else {
-        $('.header_inner').removeClass('is-hidden');
-      }
-
-      // スクロールが上に戻った時、is-hiddenクラスを削除
-      if (pageScroll < lastScrollTop) {
-        $('.header_inner').removeClass('is-hidden').css('transition', 'transform 0.3s ease-in-out');
-      }
-
-      // スクロールが止まった時
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(function () {
-        $('.header_inner').removeClass('is-hidden').css('transition', 'transform 0.3s ease-in-out');
-      }, 2000); // 2秒後にis-hiddenクラスを削除
-
-      lastScrollTop = pageScroll;
-    });
-  }
-
   // モバイルメニューの表示
   function toggleMobileMenu() {
     function navShow() {
@@ -195,7 +151,6 @@ $(function () {
     fadeInElements();
     toggleReadMore();
     setupAccordion();
-    headerBehavior();
     toggleMobileMenu();
   }
 

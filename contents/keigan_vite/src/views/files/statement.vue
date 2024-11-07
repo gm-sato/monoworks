@@ -6,10 +6,7 @@
 
 <script>
 export default {
-  name: 'statement'
-}
+  name: "Statement",
+};
 </script>
-
-<style lang="statement" scoped>
-
-</style>
+<style lang="scss" scoped></style>
