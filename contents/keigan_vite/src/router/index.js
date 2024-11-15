@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 
-import Suspect from "../views/Suspect.vue";
-import Shimizu from "../views/Suspect/shimizu.vue";
-import Yanase from "../views/Suspect/yanase.vue";
-import Kimoto from "../views/Suspect/kimoto.vue";
-import Meiji from "../views/Suspect/meiji.vue";
+import Character from "../views/Character.vue";
+import Shimizu from "../views/Character/shimizu.vue";
+import Yanase from "../views/Character/yanase.vue";
+import Kimoto from "../views/Character/kimoto.vue";
+import Meiji from "../views/Character/meiji.vue";
 
 import Files from "../views/Files.vue";
 import Episode from "../views/Files/Episode.vue";
@@ -22,29 +22,29 @@ const routes = [
     name: "Home",
     component: Home,
   },
-  //suspect
+  //Character
   {
-    path: "/suspect",
-    name: "Suspect",
-    component: Suspect,
+    path: "/character",
+    name: "Character",
+    component: Character,
   },
   {
-    path: "/suspect/shimizu",
+    path: "/character/shimizu",
     name: "Shimizu",
     component: Shimizu,
   },
   {
-    path: "/suspect/yanase",
+    path: "/character/yanase",
     name: "Yanase",
     component: Yanase,
   },
   {
-    path: "/suspect/kimoto",
+    path: "/character/kimoto",
     name: "Kimoto",
     component: Kimoto,
   },
   {
-    path: "/suspect/meiji",
+    path: "/character/meiji",
     name: "Meiji",
     component: Meiji,
   },
@@ -87,7 +87,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/"), // ルートでホスティングする場合
+  history: createWebHistory("/dist/"), // ルートでホスティングする場合
   routes,
   scrollBehavior() {
     return {

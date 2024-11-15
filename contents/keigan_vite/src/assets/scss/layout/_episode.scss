@@ -1,0 +1,62 @@
+.Episode {
+  display: block;
+  max-width: px_vw(980px);
+  margin: auto;
+  h2 {
+    font-size: px_vw(60px);
+    text-align: center;
+  }
+  &_about {
+    display: flex;
+    flex-direction: column;
+    gap: px_vw(20px);
+    margin-top: px_vw(30px);
+    p {
+      text-align: center;
+    }
+  }
+  &_point {
+    display: block;
+    width: 70%;
+    margin: px_vw(30px) auto 0;
+    h3 {
+      display: block;
+      width: 100%;
+      padding: px_vw(5px);
+      text-align: center;
+      background-color: black;
+      font-size: px_vw(24px);
+      color: #fff;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: px_vw(10px);
+      padding: px_vw(20px);
+      background-color: #fff;
+
+      li {
+        display: block;
+        position: relative;
+        padding-left: 1.2em;
+        font-size: px_vw(24px);
+        color: #000;
+        &::before {
+          display: block;
+          position: absolute;
+          content: "・";
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &_victim {
+    margin-top: px_vw(30px);
+    &_wrapper {
+      display: block;
+      background-color: #fff;
+    }
+  }
+}

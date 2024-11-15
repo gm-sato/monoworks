@@ -16,16 +16,16 @@ header#contentHeader
           .header_navOpen_list.top
             router-link(to="/") TOP
           .header_navOpen_list.character
-            router-link(to="/suspect") キャラクター
+            router-link(to="/character") キャラクター
             ul
               li
-                router-link(to="/suspect/shimizu") 清水文香
+                router-link(to="/character/shimizu") 清水文香
               li
-                router-link(to="/suspect/yanase") 柳瀬称揚
+                router-link(to="/character/yanase") 柳瀬称揚
               li
-                router-link(to="/suspect/kimoto") 木元ゆか
+                router-link(to="/character/kimoto") 木元ゆか
               li
-                router-link(to="/suspect/meiji") 明治平一
+                router-link(to="/character/meiji") 明治平一
           .header_navOpen_list.dancer
             router-link(to="/files") 捜査資料
             ul
@@ -45,9 +45,8 @@ header#contentHeader
 
 <script>
 export default {
-  name: 'AppHeader'
-}
+  name: "AppHeader",
+};
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

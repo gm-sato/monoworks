@@ -3,14 +3,14 @@
   article.Top
     section.Top_mv
       .Top_ttl
-        h1 テスト
+        h1 慧眼の狩人
         ul
           li
             router-link(to="/story") STORY
           li
-            router-link(to="/files") EPISODE
+            router-link(to="/files/episode") EPISODE
           li
-            router-link(to="/suspect") CHARACTER
+            router-link(to="/character") CHARACTER
 </template>
 
 <script>

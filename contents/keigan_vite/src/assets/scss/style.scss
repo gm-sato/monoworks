@@ -1,9 +1,9 @@
-@import './base/variables';
+@import "./base/variables";
 
 /*	reset
 -----------------------------------------*/
-@import './base/reset';
-@import 'base/setting';
+@import "./base/reset";
+@import "base/setting";
 
 /*	plugin
 -----------------------------------------*/
@@ -11,29 +11,27 @@
 // @import './plugin/_slick/slick-theme';
 // @import './plugin/slick';
 
-@import 'object/loading';
-
+@import "object/loading";
 
 /*	base
 -----------------------------------------*/
 
 // $_myIDの値でIDを定義
 ##{$myID} {
-
   @include base;
 
-
   //layout
-  @import 'layout/top';
-  @import 'layout/story';
-  @import 'layout/suspect';
-  @import 'layout/files';
+  @import "layout/top";
+  @import "layout/story";
+  @import "layout/episode";
+  @import "layout/files";
+  @import "layout/character";
 
   //object
-  @import 'object/animation';
+  @import "object/animation";
 }
 
 /*	UI
 -----------------------------------------*/
-@import 'ui/contentHeader';
-@import 'ui/contentFooter';
+@import "ui/contentHeader";
+@import "ui/contentFooter";

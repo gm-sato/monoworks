@@ -2,6 +2,7 @@
 div#app
   AppHeader
   template(v-if="isHomePage")
+  #praticles-js
   .pcWrap
     main#insight
       transition(name="custom" mode="out-in" @before-enter="beforeEnter" @enter="enter" @leave="leave")
