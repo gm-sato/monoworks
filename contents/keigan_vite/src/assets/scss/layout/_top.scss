@@ -9,3 +9,27 @@
     margin: auto;
   }
 }
+
+.Top {
+  /* 背景グラデーションの作成 */
+  background: linear-gradient(
+    to bottom,
+    hsl(180, 80%, 40%),
+    hsl(240, 80%, 60%),
+    hsl(300, 80%, 40%)
+  );
+  background-size: 400% 400%;
+  animation: AnimationName 10s ease infinite;
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}

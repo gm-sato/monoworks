@@ -11,6 +11,7 @@
             router-link(to="/files/episode") EPISODE
           li
             router-link(to="/character") CHARACTER
+    canvas
 </template>
 
 <script>

@@ -11,7 +11,7 @@
   "dependencies": {
     "gsap": "^3.12.5",
     "jquery": "^3.7.1",
-    "vue": "^3.4.31",
+    "vue": "^3.5.13",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
