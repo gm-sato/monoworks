@@ -1,0 +1,351 @@
+.l-entertainment {
+  position: relative;
+  z-index: 1;
+}
+
+.AstroBlasters {
+  z-index: 0;
+
+  .deco_01 {
+    top: var.px_vw(129px*2);
+    left: var.px_vw(-74px*2);
+    width: var.px_vw(129px*2);
+  }
+
+  .deco_02 {
+    top: var.px_vw(301px*2);
+    right: var.px_vw(-68px*2);
+    width: var.px_vw(135px*2);
+  }
+
+  .deco_03 {
+    top: var.px_vw(150px*2);
+    right: var.px_vw(-60px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(240deg);
+  }
+
+  .deco_04 {
+    top: var.px_vw(465px*2);
+    left: var.px_vw(-45px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(30deg);
+  }
+
+  .deco_05 {
+    bottom: var.px_vw(72px*2);
+    left: 0;
+    width: var.px_vw(79.5px*2);
+  }
+
+  .deco_06 {
+    bottom: var.px_vw(15.6px*2);
+    right: var.px_vw(10px*2);
+    width: var.px_vw(62px*2);
+  }
+}
+
+
+.AstroHeroTime {
+  z-index: 1;
+
+  .deco_01 {
+    top: var.px_vw(-25px*2);
+    left: var.px_vw(-65px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(41deg);
+  }
+
+  .deco_02 {
+    top: var.px_vw(275px*2);
+    left: var.px_vw(11px*2);
+    width: var.px_vw(38px*2);
+  }
+
+  .deco_03 {
+    top: var.px_vw(320px*2);
+    right: var.px_vw(-80px*2);
+    width: var.px_vw(129px*2);
+    transform: rotate(240deg);
+  }
+
+  .deco_04 {
+    bottom: var.px_vw(35px*2);
+    left: var.px_vw(-45px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(-54deg);
+  }
+
+  .deco_05 {
+    bottom: var.px_vw(-10px*2);
+    right: var.px_vw(-20px*2);
+    width: var.px_vw(110px*2);
+  }
+
+}
+
+.Decoration {
+  z-index: 0;
+
+  .deco_01 {
+    top: var.px_vw(170px*2);
+    right: var.px_vw(5px*2);
+    width: var.px_vw(47.01px*2);
+    transform: rotate(72deg);
+
+  }
+
+  .deco_02 {
+    top: var.px_vw(230px*2);
+    left: var.px_vw(0);
+    width: var.px_vw(94.43px*2);
+  }
+
+  .deco_03 {
+    top: var.px_vw(225px*2);
+    right: var.px_vw(-50px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(-16deg);
+  }
+
+}
+
+.SpecialSticker {
+  z-index: 1;
+
+  .deco_01 {
+    top: var.px_vw(120px*2);
+    right: var.px_vw(5px*2);
+    width: var.px_vw(47.01px*2);
+    transform: rotate(72deg);
+
+  }
+
+  .deco_02 {
+    top: var.px_vw(70px*2);
+    left: var.px_vw(-70px*2);
+    width: var.px_vw(129.89px*2);
+  }
+
+  .deco_03 {
+    top: var.px_vw(70px*2);
+    right: var.px_vw(-50px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(150deg);
+  }
+
+  .deco_04 {
+    top: var.px_vw(300px*2);
+    left: var.px_vw(-50px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(35deg);
+  }
+
+}
+
+.contents_border {
+  position: relative;
+  z-index: 1;
+
+  .contents_border_bg {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contents_border_wrap {
+    position: relative;
+    z-index: 2;
+  }
+
+  .deco_01 {
+    top: var.px_vw(-50px*2);
+    right: var.px_vw(20px*2);
+    width: var.px_vw(41px*2);
+
+  }
+
+  .deco_02 {
+    top: var.px_vw(-70px*2);
+    left: var.px_vw(-80px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(25deg);
+
+  }
+}
+
+.Goods {
+  z-index: 0;
+
+  .deco_01 {
+    top: var.px_vw(-110px*2);
+    right: var.px_vw(-60px*2);
+    width: var.px_vw(142.41px*2);
+  }
+
+  .deco_02 {
+    top: var.px_vw(-60px*2);
+    left: var.px_vw(-40px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(-35deg);
+  }
+
+  .deco_03 {
+    top: var.px_vw(140px*2);
+    left: var.px_vw(-30px*2);
+    width: var.px_vw(97px*2);
+  }
+
+  .deco_04 {
+    top: var.px_vw(140px*2);
+    right: var.px_vw(0px*2);
+    width: var.px_vw(56px*2);
+  }
+
+  .deco_05 {
+    top: var.px_vw(390px*2);
+    right: var.px_vw(-20px*2);
+    width: var.px_vw(98px*2);
+    transform: rotate(20deg);
+  }
+
+  .deco_06 {
+    top: var.px_vw(540px*2);
+    right: var.px_vw(-60px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(-143deg);
+  }
+
+  .m-accordion-wrapper {
+    ul {
+      .deco_07 {
+        top: var.px_vw(50px*2);
+        left: var.px_vw(100px*2);
+        width: var.px_vw(83px*2);
+      }
+
+      .deco_08 {
+        top: var.px_vw(85px*2);
+        right: var.px_vw(95px*2);
+        width: var.px_vw(29px*2);
+      }
+    }
+
+    &.active {
+      ul {
+        .deco_07 {
+          top: var.px_vw(275px*2);
+        }
+
+        .deco_08 {
+          top: var.px_vw(300px*2);
+        }
+      }
+    }
+  }
+}
+
+
+.Menu {
+  z-index: 0;
+
+  .deco_01 {
+    top: var.px_vw(118px*2);
+    left: var.px_vw(-30px*2);
+    width: var.px_vw(92px*2);
+  }
+
+  .deco_02 {
+    top: var.px_vw(130px*2);
+    right: var.px_vw(-80px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(-204deg);
+  }
+
+  .deco_03 {
+    top: var.px_vw(371px*2);
+    right: var.px_vw(-65px*2);
+    width: var.px_vw(124px*2);
+  }
+
+  .deco_04 {
+    bottom: var.px_vw(-80px*2);
+    left: var.px_vw(115px*2);
+    width: var.px_vw(56px*2);
+    transform: rotate(-5deg);
+  }
+
+  .deco_05 {
+    bottom: var.px_vw(-90px*2);
+    right: var.px_vw(90px*2);
+    width: var.px_vw(91.5px*2);
+  }
+}
+
+.Hotel {
+  z-index: 0;
+
+  .deco_01 {
+    top: var.px_vw(80px*2);
+    left: var.px_vw(-85px*2);
+    width: var.px_vw(155.4px*2);
+    transform: scale(-1, -1) rotate(51deg);
+  }
+
+  .deco_02 {
+    top: var.px_vw(140px*2);
+    right: var.px_vw(-50px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(-134deg);
+  }
+
+  .deco_03 {
+    top: var.px_vw(750px*2);
+    left: var.px_vw(-55px*2);
+    width: var.px_vw(135px*2);
+    transform: rotate(35deg);
+  }
+
+  .deco_04 {
+    bottom: var.px_vw(20px*2);
+    right: var.px_vw(-30px*2);
+    width: var.px_vw(81px*2);
+    transform: rotate(31deg);
+  }
+
+  .deco_05 {
+    bottom: var.px_vw(-80px*2);
+    left: var.px_vw(125px*2);
+    width: var.px_vw(74px*2);
+  }
+
+  .deco_06 {
+    bottom: var.px_vw(-65px*2);
+    right: var.px_vw(135px*2);
+    width: var.px_vw(25px*2);
+  }
+}
+
+
+
+.Resort {
+  z-index: 0;
+
+  .deco_01 {
+    top: var.px_vw(150px*2);
+    right: var.px_vw(-5px*2);
+    width: var.px_vw(70px*2);
+  }
+
+  .deco_02 {
+    top: var.px_vw(570px*2);
+    left: var.px_vw(30px*2);
+    width: var.px_vw(38px*2);
+  }
+
+  .deco_03 {
+    top: var.px_vw(550px*2);
+    right: var.px_vw(10px*2);
+    width: var.px_vw(76px*2);
+  }
+
+}

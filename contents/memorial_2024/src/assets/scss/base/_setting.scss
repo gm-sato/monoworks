@@ -1,0 +1,134 @@
+@use '../base/variables'as var;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+.pcWrap {
+  position: relative;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(0, 67, 134, 1) 0%, rgba(48, 113, 185, 1) 100%);
+
+  @include var.pcView {
+    &::before {
+      position: fixed;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      background-image: url('../images/buzzfinal_bg.png');
+      background-size: auto;
+      background-repeat: repeat;
+      background-position: center;
+    }
+  }
+
+}
+
+.breadcrumb_area {
+  &.pc {
+
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    padding: 0;
+
+    @include var.pcView {
+      display: block;
+      padding: 10px;
+    }
+
+    .breadcrumb {
+      margin-bottom: 0;
+
+      @include var.pcView {
+        margin: 0 auto;
+      }
+
+    }
+  }
+}
+
+
+article {
+  overflow: hidden;
+}
+
+/*---------------------------------------
+
+	margin
+
+-----------------------------------------*/
+.mb10 {
+  margin-bottom: var.px_vw(10px*2) !important;
+}
+
+.mb20 {
+  margin-bottom: var.px_vw(20px*2) !important;
+}
+
+.mb25 {
+  margin-bottom: var.px_vw(25px*2) !important;
+}
+
+.mb30 {
+  margin-bottom: var.px_vw(30px*2) !important;
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+
+
+.mt10 {
+  margin-top: var.px_vw(10px*2) !important;
+}
+
+.mt20 {
+  margin-top: var.px_vw(20px*2) !important;
+}
+
+.mt30 {
+  margin-top: var.px_vw(30px*2) !important;
+}
+
+.mt40 {
+  margin-top: var.px_vw(40px*2) !important;
+}
+
+.pt0 {
+  padding-top: 0 !important;
+}
+
+.pt10 {
+  padding-top: var.px_vw(10px*2) !important;
+}
+
+.pt20 {
+  padding-top: var.px_vw(20px*2) !important;
+}
+
+.pt30 {
+  padding-top: var.px_vw(30px*2) !important;
+}
+
+.pt40 {
+  padding-top: var.px_vw(40px*2) !important;
+}
+
+hr {
+  border-color: #ECF1F4;
+}
+
+.f-bold {
+  font-weight: bold;
+}
+
+.is_hidden {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.c-border_y {
+  border: 1px solid #dae121;
+  margin: 1em var.px_vw(-20px) 0;
+  padding: var.px_vw(20px);
+}

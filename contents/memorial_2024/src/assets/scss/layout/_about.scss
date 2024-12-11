@@ -1,0 +1,161 @@
+@use '../base/variables'as var;
+
+.About {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(121, 107, 175, 1) 0%, rgba(81, 73, 124, 1) 100%);
+  padding: var.px_vw(20px*2) 0 var.px_vw(50px*2);
+
+  &_main {
+    display: block;
+    width: var.px_vw(369px*2);
+    margin: auto;
+
+    &-logo,
+    &-subText,
+    &-title,
+    &-day {
+      margin: auto;
+    }
+
+    &-logo,
+    &-subText,
+    &-day {
+      opacity: 0;
+      transition: 1s;
+
+      &.is-animation {
+        opacity: 1;
+      }
+    }
+
+    &-logo {
+      width: var.px_vw(318px);
+    }
+
+    &-subText {
+      width: var.px_vw(324px);
+      margin-top: var.px_vw(15px*2);
+    }
+
+    &-title {
+      position: relative;
+      width: 95%;
+      margin-top: var.px_vw(15px*2);
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        width: var.px_vw(701.09px);
+        height: var.px_vw(110.45px);
+        background: url(../images/title/m-AboutMain-title-bg.webp);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: var.px_vw(8px);
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: .5s;
+      }
+
+      &.is-open {
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      svg {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+
+
+        path {
+          fill-opacity: 0;
+          /*最初は透過0で見えない状態*/
+          transition: fill-opacity .5s;
+          /*カラーがつく際のアニメーション0.5秒で変化*/
+          fill: none;
+          /*塗りがない状態*/
+          stroke: #333;
+
+          /*線の色*/
+        }
+
+        &.done {
+          path {
+            fill: url(#mettallicyrllow);
+            /*塗りの色*/
+            fill-opacity: 1;
+            /*透過1で見える状態*/
+            stroke: none;
+            /*線の色なし*/
+            // filter: drop-shadow(0px var.px_vw(6px) 0px rgba(20, 18, 111, 0.5));
+
+          }
+        }
+      }
+
+    }
+
+    &-day {
+      width: var.px_vw(587px);
+      margin-top: var.px_vw(10px*2);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_text {
+    position: relative;
+    width: 100%;
+    margin-top: var.px_vw(20px*2);
+    font-size: var.px_vw(15px*2);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+    z-index: 1;
+  }
+
+  &_info {
+    display: block;
+    width: var.px_vw(345px*2);
+    margin: var.px_vw(50px*2) auto 0;
+  }
+
+  &_deco {
+    li {
+      position: absolute;
+      z-index: 0;
+
+      img {
+        width: 100%;
+      }
+
+      &.About_deco_01 {
+        top: var.px_vw(202.1px*2);
+        right: var.px_vw(13px*2);
+        width: var.px_vw(28px*2);
+        height: var.px_vw(28px*2);
+      }
+
+      &.About_deco_02 {
+        top: var.px_vw(313px*2);
+        left: var.px_vw(20px*2);
+        width: var.px_vw(43px*2);
+        height: var.px_vw(43px*2);
+      }
+
+      &.About_deco_03 {
+        top: var.px_vw(285.1px*2);
+        right: var.px_vw(8.6px*2);
+        width: var.px_vw(87px*2);
+        height: var.px_vw(65px*2);
+      }
+    }
+  }
+}

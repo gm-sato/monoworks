@@ -1,0 +1,59 @@
+-
+	var facebookLink = "https://www.facebook.com/share.php?u="+og_url
+	var twitterLink  = "https://twitter.com/share?count=horizontal&original_referer="+og_url+"&text=" + '【公式】' +siteTitle+" | 東京ディズニーリゾート"+"&url="+og_url
+	var lineLink     = "https://line.naver.jp/R/msg/text/?"+'【公式】' +siteTitle+" | 東京ディズニーリゾート"+og_url
+
+	var sns_twitter = "https://twitter.com/TDR_PR"
+	var sns_instagram ="https://www.instagram.com/tokyodisneyresort_official/"
+	var sns_facebook = "https://www.facebook.com/tdr.jp"
+	var sns_youtube = "https://www.youtube.com/user/TDRofficialchannel"
+	var sns_tiktok = "https://www.tiktok.com/@tdr_pr"
+
+footer.m-footerSite#contentFooter
+	.m-footer_topBtn
+		.m-footer_topBtn_wrap
+			a.page_top(href="./#")
+				img(src="../images/footer_topBtn.png" loading='lazy')
+	.m-footer_ticketBtn
+		a(href="https://plan.tokyodisneyresort.jp/2/4/?lang=ja" target="_blank" onmousedown="dataLayer.push({event: 'trackClick', clickParams: {category: 'リンククリック', action: 'SP_buzz2024', label: 'ticket'}});") <span>パークチケットを購入する</span>
+
+	.footer_wrapper
+		section.m-footerBuzz
+			.m-footerBuzz-main
+				img.buzz_apng(src=root+"./../assets/images/m-footer_buzz.png" alt="バズライトイヤー" loading='lazy')
+			ul.m-footerBuzz-deco
+				li.m-footerBuzz-deco_01
+					img.planet-element(src=root+"./../assets/images/m-footer_buzzDeco_01.png" alt="" loading='lazy')
+				li.m-footerBuzz-deco_02
+					img.stars-element(src=root+"./../assets/images/m-footer_buzzDeco_02.png" alt="" loading='lazy')
+		section.m-snsShare
+			span ＼シェアしよう／
+			ul.m-listIconSNS
+				li: a.twitter(href=twitterLink target="_blank" rel="noopener" onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;")
+					img(src=root+"./../assets/images/sns/icon_x.svg" alt="Twitter")
+				li: a.line(href=lineLink target="_blank" rel="noopener")
+					img(src=root+"./../assets/images/sns/icon_line.svg" alt="LINE")
+				li: a.facebook(href=facebookLink target="_blank" rel="noopener")
+					img(src=root+"./../assets/images/sns/icon_facebook.svg" alt="Facebook")
+
+			.m-listNoticeSNS
+				p 【ご利用にあたって】
+				ul
+					li ソーシャルメディアサイトは、13才以上の方がご利用になれます。
+					li 上記、リンク先のページは、東京ディズニーリゾート・オフィシャルウェブサイト外のページです。
+					li 各ウェブサイトのご利用条件、個人情報保護方針等をご確認ください。他のお客様等のご迷惑となる掲載は固くお断りいたします。
+				span.m-textNote 画像・イラストはすべてイメージです。
+
+		section.m-snsLink
+			p 東京ディズニーリゾート公式SNSをフォロー !
+			ul
+				li: a.instagram(href=sns_instagram target="_blank" rel="noopener noreferrer" onmousedown="dataLayer.push({event: 'trackClick', clickParams: {category: 'リンククリック', action: 'SP_buzz2024', label: footer_sns_instagram'}});")
+					img(src=root+"./images/sns/icon_instagram.svg", alt="instagram")
+				li: a.twitter(href=sns_twitter target="_blank" rel="noopener noreferrer" onmousedown="dataLayer.push({event: 'trackClick', clickParams: {category: 'リンククリック', action: 'SP_buzz2024', label: footer_sns_x'}});")
+					img(src=root+"./images/sns/icon_x.svg", alt="twitter" )
+				li: a.tiktok(href=sns_tiktok target="_blank" rel="noopener noreferrer" onmousedown="dataLayer.push({event: 'trackClick', clickParams: {category: 'リンククリック', action: 'SP_buzz2024', label: footer_sns_tiktok'}});")
+					img(src=root+"./images/sns/icon_tiktok.svg", alt="tiktok")
+				li: a.facebook(href=sns_facebook target="_blank" rel="noopener noreferrer" onmousedown="dataLayer.push({event: 'trackClick', clickParams: {category: 'リンククリック', action: 'SP_buzz2024', label: footer_sns_facebook'}});")
+					img(src=root+"./images/sns/icon_facebook.svg", alt="facebook")
+				li: a.youtube(href=sns_youtube target="_blank" rel="noopener noreferrer" onmousedown="dataLayer.push({event: 'trackClick', clickParams: {category: 'リンククリック', action: 'SP_buzz2024', label: footer_sns_youtube'}});")
+					img(src=root+"./images/sns/icon_youtube.svg", alt="youtube")

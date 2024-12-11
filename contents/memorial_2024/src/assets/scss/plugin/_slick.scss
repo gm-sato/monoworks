@@ -1,0 +1,70 @@
+.contents_slider,
+.resort_slider {
+  li {
+    img {
+      width: var.px_vw(321px*2);
+      height: var.px_vw(221px*2);
+    }
+  }
+
+  .slick-arrow:before {
+    content: "" !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .slick-next,
+  .slick-prev {
+    width: var.px_vw(44px*2);
+    height: var.px_vw(51.93px*2);
+    transition: 0.4s;
+    top: 50%;
+
+    &::before {
+      background: url(../images/slider_arrow.png);
+      background-size: contain !important;
+      opacity: 1;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0.75;
+        transition: 0.4s;
+      }
+    }
+  }
+
+  .slick-next {
+    right: var.px_vw(0px*2);
+  }
+
+  .slick-prev {
+
+    left: var.px_vw(0px*2);
+
+    &:before {
+      transform: scale(-1, 1);
+    }
+  }
+}
+
+.l-service {
+  .contents_slider {
+
+    .slick-next,
+    .slick-prev {
+      &::before {
+        background: url(../images/slider_arrow02.png);
+      }
+    }
+  }
+}
+
+#dayz_slider {
+  li {
+    padding: 0 var.px_vw(30px*2);
+  }
+}

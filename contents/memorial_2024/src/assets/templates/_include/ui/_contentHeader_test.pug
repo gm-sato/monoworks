@@ -1,0 +1,59 @@
+-
+	var facebookLink = "https://www.facebook.com/share.php?u="+og_url
+	var twitterLink  = "https://twitter.com/share?count=horizontal&original_referer="+og_url+"&text="+siteTitle+" | 東京ディズニーリゾート"+"&url="+og_url
+	var lineLink     = "https://line.naver.jp/R/msg/text/?"+siteTitle+" | 東京ディズニーリゾート"+og_url
+
+.pageTop
+header#contentHeader
+	.header_inner
+		.header_navTrigger
+			a(href="javascript:void(0)")
+				.header_navTrigger_line
+					span
+					span
+					span
+				.header_navTrigger_text
+					p <span class="open">OPEN</span><span class="close">CLOSE</span>
+		.header_navOpen
+			.header_navOpen_inner
+				.header_navOpen_lists
+					.header_navOpen_logo
+						a(href="./#Top" onmousedown="dataLayer.push({event: 'trackClick', clickParams: {category: 'リンククリック', action: 'SP_buzz2024', label: 'navi_top'}});")
+							img(src="../images/headerNav_logo.png" alt="バズ・ライトイヤーのアストロブラスター“コンプリート・ザ・ミッション！" loading='lazy')
+					.header_navOpen_contents
+						.header_navOpen_contents_wrap
+							a.nav_attraction(href="#Attraction")
+								img(src="../images/headerNav_title-attraction.png" alt="アトラクション" loading='lazy')
+							ul.header_navOpen_contents_list
+								li
+									a(href="./#AstroBlasters")
+										p.en BUZZ LIGHTYEAR'S<br>ASTRO BLASTERS
+										p.jp バズ・ライトイヤーのアストロブラスターについて
+								li
+									a(href="./#AstroHeroTime")
+										p.en ASTRO HERO TIME!
+										p.jp バズ・ライトイヤーのアストロブラスター<br>“アストロ・ヒーロータイム！”
+								li
+									a(href="./#Decoration")
+										p.en DECORATION
+										p.jp デコレーション
+								li
+									a(href="./#SpecialSticker")
+										p.en SPECIAL STICKER
+										p.jp オリジナルシール
+						.header_navOpen_contents_wrap
+							a.nav_goods(href="#Goods")
+								img(src="../images/headerNav_title-goods.png" alt="" loading='lazy')
+						.header_navOpen_contents_wrap
+							a.nav_menu(href="#Menu")
+								img(src="../images/headerNav_title-menu.png" alt="" loading='lazy')
+						.header_navOpen_contents_wrap
+							a.nav_resort(href="#Resort")
+								img(src="../images/headerNav_title-resort.png" alt="" loading='lazy')
+					.contents_border
+						.contents_border_bg
+							img(src="../images/m-ScrollBorderBg.png", alt='' loading='lazy')
+						.contents_border_wrap
+							ul.scroll_border
+								li: img(src="../images/m-ScrollBorder_01.png", alt='' loading='lazy')
+								li: img(src="../images/m-ScrollBorder_01.png", alt='' loading='lazy')

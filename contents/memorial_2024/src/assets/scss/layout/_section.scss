@@ -1,0 +1,81 @@
+.AstroBlasters {
+  .m-contents {
+    &_mainttl {
+      #attraction-en {
+        width: var.px_vw(189px*2);
+        height: var.px_vw(22px*2);
+      }
+
+      .attraction-jp {
+        width: var.px_vw(103px*2);
+        height: var.px_vw(13px*2);
+      }
+    }
+  }
+}
+
+
+.Goods {
+  .m-contents {
+    &_mainttl {
+      #goods-en {
+        width: var.px_vw(238px*2);
+        height: var.px_vw(23px*2);
+      }
+
+      .goods-jp {
+        width: var.px_vw(119px*2);
+        height: var.px_vw(13px*2);
+      }
+    }
+  }
+}
+
+.Menu {
+  .m-contents {
+    &_mainttl {
+      #menu-en {
+        width: var.px_vw(92px*2);
+        height: var.px_vw(23px*2);
+      }
+
+      .menu-jp {
+        width: var.px_vw(57px*2);
+        height: var.px_vw(12px*2);
+      }
+    }
+  }
+}
+
+.Hotel {
+  .m-contents {
+    &_mainttl {
+      #hotel-en {
+        width: var.px_vw(190px*2);
+        height: var.px_vw(18px*2);
+      }
+
+      .hotel-jp {
+        width: var.px_vw(125.44px*2);
+        height: var.px_vw(14px*2);
+      }
+    }
+  }
+}
+
+
+.Resort {
+  .m-contents {
+    &_mainttl {
+      #resort-en {
+        width: var.px_vw(255px*2);
+        height: var.px_vw(18px*2);
+      }
+
+      .resort-jp {
+        width: var.px_vw(179px*2);
+        height: var.px_vw(14px*2);
+      }
+    }
+  }
+}

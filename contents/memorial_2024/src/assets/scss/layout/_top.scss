@@ -1,0 +1,51 @@
+@use '../base/variables'as var;
+
+.Top {
+  &_mv {
+    position: relative;
+    background-image: url('../images/m-Topmv.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: var.px_vw(375px*2);
+    height: var.px_vw(211px*2);
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: var.px_vw(375px*2);
+      height: var.px_vw(13.5px*2);
+      background: url(../images/m-TopmvBorder.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &_deco {
+      li {
+        position: absolute;
+
+        &.mv_buzz {
+          top: var.px_vw(12px*2);
+          right: var.px_vw(9px*2);
+          width: var.px_vw(168px*2);
+          height: var.px_vw(119px*2);
+        }
+
+        &.mv_little {
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: var.px_vw(375px*2);
+          height: var.px_vw(94px*2);
+        }
+      }
+    }
+  }
+}
+
+.Goods {
+  background-color: #5F50AC;
+}

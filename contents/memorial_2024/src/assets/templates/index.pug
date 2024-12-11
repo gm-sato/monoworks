@@ -1,0 +1,54 @@
+extends _include/base/_layout
+
+
+//- -----------------------------------------
+//- head
+block append PARAM
+	-
+		//- 上書きする場合
+		//- siteTitle       = ""
+		//- siteDescription = ""
+		//- siteKeywords    = ""
+		root = ".";
+		//- myClass         = ""
+
+block append JS
+	//- jsの追加読み込み
+	//- script(src=root+"")
+
+block append BREADCRUMB
+	//- パンくずリスト
+	li: span.text-buttons.text-buttons-s: a(href="/top.html") TOP
+	//- li: span: a(href=root+'/')=siteTitle
+	li.current: span=siteTitle
+
+block append HEADER
+	include _include/ui/_contentHeader.pug
+
+block append MAIN
+	//- mainの内容
+
+
+	.main_wrap
+		article.memorial
+			section.memorial_hero
+				h2 memorial_2024
+
+			section.memorial_wrapper
+				.memorial_scenario
+					img(src="")
+					dl
+						dt テキストテキストテキストテキスト
+						dd
+							span	開催日時
+							p	1/22
+						dd
+							span	KP
+							p	〇〇〇
+						dd
+							span	PL
+							p	〇〇/〇〇/〇〇/〇〇
+
+
+
+	include _include/ui/_contentFooter.pug

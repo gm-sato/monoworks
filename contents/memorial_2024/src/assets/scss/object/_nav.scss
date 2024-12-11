@@ -1,0 +1,40 @@
+.MissionNav {
+  position: relative;
+  background-color: #00398D;
+  padding-top: var.px_vw(80px*2);
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: var.px_vw(778px);
+    height: var.px_vw(40px);
+    background-image: url('../images/mission_topBg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: var.px_vw(30px*2);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: var.px_vw(5px*2);
+    flex-wrap: wrap;
+
+    li {
+      width: var.px_vw(108px*2);
+      height: auto;
+
+      a {
+        transition: filter 0.3s ease-in-out;
+
+        &:hover {
+          filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.7));
+        }
+      }
+    }
+  }
+}

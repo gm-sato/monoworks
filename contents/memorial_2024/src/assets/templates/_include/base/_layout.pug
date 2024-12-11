@@ -1,0 +1,59 @@
+block PARAM
+	-
+		let siteTitle       = "サイトタイトルが入ります。"
+		let siteDescription = "サイトディスクリプションが入ります。"
+		let siteKeywords    = ""
+		let og_url          = "https://www.tokyodisneyresort.jp/treasure/buzzfinal/"
+		let og_image        = "https://www.tokyodisneyresort.jp/treasure/buzzfinal/assets/images/ogp.jpg"
+		let myID            = "memorial_2024"
+
+| <!DOCTYPE html>
+| <html lang="ja">
+
+include _head
+
+block BODY
+	|<body>
+	|	<div class="wrap">
+	|		<!--{* ヘッダーインクルード *}-->
+	|		<!--#include virtual="/ssi/header_event_ps_inc.html" -->
+	|		<!--{* /ヘッダーインクルード *}-->
+	|
+	|		<div class="contents-inner breadcrumb_area pc">
+	|			<!--{* ここにパンくずを入れてください PC *}-->
+	|	 			<div class="breadcrumb">
+	|				<ul class="inner">
+
+	block BREADCRUMB
+
+	|
+	|				</ul>
+	|			</div>
+	|			<!--{* /ここにパンくずを入れてください PC *}-->
+	|		</div>
+	|
+	|		<!--{* コンテンツエリア *}-->
+	|		<div class="pcWrap">
+	block HEADER
+
+	main(id=myID)
+		block MAIN
+
+
+block FOOTER
+	|		</div>
+	|		<!--{* /コンテンツエリア *}-->
+	|
+	|		<!--{* フッターインクルード *}-->
+	|		<!--#include virtual="/ssi/footer_event_ps_inc.html" -->
+	|		<!--{* /フッターインクルード *}-->
+	|	</div>
+	|	<!-- /.wrap -->
+	|
+	|	<!--{* 計測用ADPLAN タグ *}-->
+	|	<!--#include virtual="/ssi/adplan_inc.html" -->
+	|	<!--{* /計測用ADPLAN タグ *}-->
+	|
+	|</body>
+	|
+	|</html>

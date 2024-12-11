@@ -1,0 +1,66 @@
+/*SVGの横幅*/
+.svganimeblock {
+  position: absolute;
+  top: var.px_vw(64px*2);
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+/*SVGの可変*/
+.svganimeblock svg {
+  width: 100%;
+  height: 100%;
+}
+
+/*アニメーション前のパスの指定*/
+.svganimeblock svg path {
+  fill-opacity: 0;
+  /*最初は透過0で見えない状態*/
+  transition: fill-opacity .5s;
+  /*カラーがつく際のアニメーション0.5秒で変化*/
+  fill: none;
+  /*塗りがない状態*/
+  stroke: #333;
+  /*線の色*/
+}
+
+/*アニメーション後に.doneというクラス名が付与された時のパスの指定*/
+.svganimeblock svg.done path {
+  fill: #fff;
+  /*塗りの色*/
+  fill-opacity: 1;
+  /*透過1で見える状態*/
+  stroke: none;
+  /*線の色なし*/
+}
+
+// .sub_ttl {
+//   opacity: 0;
+
+//   &.is-active {
+//     animation: fadeIn 1.5s ease forwards;
+//   }
+// }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) translateX(-50%);
+  }
+
+  30% {
+    opacity: 0;
+    transform: translateY(50px) translateX(-50%);
+  }
+
+  100% {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+}
+
+
+.keep-color path {
+  stroke: initial !important;
+}
