@@ -14,8 +14,8 @@ $pdng-v: 140px;
 
 //---width---//
 
-$w-sp: 375px;
-$w-pc: $w-sp * 2;
+$w-sp: 350px;
+$w-pc: $w-sp * 3;
 
 //---responsive---//
 
@@ -72,7 +72,7 @@ $fz-price: 24px;
 //---color---//
 
 $c-main: #fff;
-$c-bg: #fff;
+$c-bg: #2e2e2e;
 
 //---ベースの設計---//
 
@@ -93,27 +93,27 @@ $c-bg: #fff;
     overflow: hidden;
   }
 
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 30px;
-    height: 100%;
-    opacity: 0.2;
-    right: 100%;
-    background: linear-gradient(to left, #fff, transparent);
-  }
+  // &::before {
+  //   content: "";
+  //   display: block;
+  //   position: absolute;
+  //   top: 0;
+  //   width: 30px;
+  //   height: 100%;
+  //   opacity: 0.2;
+  //   right: 100%;
+  //   background: linear-gradient(to left, #fff, transparent);
+  // }
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 30px;
-    height: 100%;
-    opacity: 0.2;
-    left: 100%;
-    background: linear-gradient(to right, #fff, transparent);
-  }
+  // &::after {
+  //   content: "";
+  //   display: block;
+  //   position: absolute;
+  //   top: 0;
+  //   width: 30px;
+  //   height: 100%;
+  //   opacity: 0.2;
+  //   left: 100%;
+  //   background: linear-gradient(to right, #fff, transparent);
+  // }
 }

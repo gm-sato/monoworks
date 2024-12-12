@@ -1,7 +1,6 @@
-import 'slick-carousel';
+import "slick-carousel";
 
-import './assets/scss/style.scss';
+import "./assets/scss/style.scss";
 
-import './assets/js/slick.js';
-import './assets/js/script.js';
-import './assets/js/animation.js';
+import "./assets/js/slick.js";
+import "./assets/js/script.js";
