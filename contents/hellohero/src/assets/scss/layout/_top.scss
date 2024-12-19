@@ -1,0 +1,22 @@
+// main.scss
+$primary-color: #3498db;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $primary-color;
+  color: white;
+}
+
+a {
+  display: inline-block;
+  margin-top: px_vw(10px);
+  padding: px_vw(10px) px_vw(10px);
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+a:hover {
+  background-color: #0056b3;
+}

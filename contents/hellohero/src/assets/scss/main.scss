@@ -1,0 +1,10 @@
+@use "./base/variables" as var;
+
+/*	reset
+-----------------------------------------*/
+@use "./base/reset";
+
+/*	layput
+-----------------------------------------*/
+@use "./layout/top";
+@use "./layout/hero";
