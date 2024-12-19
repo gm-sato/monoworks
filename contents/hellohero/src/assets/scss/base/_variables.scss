@@ -1,0 +1,66 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:string";
+
+//---width---//
+
+$w-sp: 375px;
+$w-pc: $w-sp * 2;
+
+//---responsive---//
+
+$bp: $w-pc;
+
+@mixin spView($breakpoint: $bp) {
+  @media (max-width: ($breakpoint)) {
+    @content;
+  }
+}
+
+@mixin pcView($breakpoint: $bp) {
+  @media (min-width: ($breakpoint)) {
+    @content;
+  }
+}
+
+//---function---//
+
+// px → vw変換
+@function px_vw($val, $width: $w-pc, $sp-width: $w-sp) {
+  $vw: math.div(strip-unit($val), strip-unit($width)) * 100;
+
+  // SP画面の場合、SP画面用の幅で再計算
+  @if $width == $sp-width {
+    $vw: math.div(strip-unit($val), strip-unit($sp-width)) * 100;
+  }
+
+  @if $vw > 0 {
+    @return min(string.unquote($vw + vw), $val);
+  } @else {
+    @return max(string.unquote($vw + vw), $val);
+  }
+}
+
+// 数値から単位を取り除く
+@function strip-unit($number) {
+  @if meta.type-of($number) == "number" and not math.is-unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+:root {
+  /* カラー
+	--------------------------------------------------------------*/
+  --c-primary: #133e34;
+
+  /* 背景カラー
+	--------------------------------------------------------------*/
+  --bgc-dark: rgba(45, 25, 25, 0.25);
+
+  /* フォント
+	--------------------------------------------------------------*/
+  --ff-base: "Noto Serif JP", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho",
+    "MS PMincho", serif;
+}

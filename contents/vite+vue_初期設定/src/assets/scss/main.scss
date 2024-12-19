@@ -1,0 +1,22 @@
+// main.scss
+$primary-color: #3498db;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $primary-color;
+  color: white;
+}
+
+router-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+router-link:hover {
+  background-color: #0056b3;
+}
