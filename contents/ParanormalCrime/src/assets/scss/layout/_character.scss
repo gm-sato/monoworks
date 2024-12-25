@@ -1,0 +1,28 @@
+@use "../base/variables" as var;
+.l-character {
+  display: block;
+  max-width: var.px_vw(980px);
+  margin: auto;
+  &_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  &_card {
+    transform: skewX(-20deg);
+    overflow: hidden;
+    background: #333;
+    width: 100px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      transform: skewX(20deg);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}

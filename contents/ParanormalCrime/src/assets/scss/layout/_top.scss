@@ -1,0 +1,9 @@
+@use "../base/variables" as var;
+// main.scss
+$primary-color: #3498db;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $primary-color;
+  color: white;
+}
