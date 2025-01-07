@@ -7,14 +7,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: var.px_vw(5px);
     margin: auto;
   }
   &_card {
     transform: skewX(-20deg);
     overflow: hidden;
     background: #333;
-    width: 100px;
-    height: 150px;
+    width: var.px_vw(200px);
+    height: var.px_vw(300px);
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,0 +1,8 @@
+@use "../base/variables" as var;
+.l-story {
+  &_text {
+    p {
+      font-size: var.px_vw(24px);
+    }
+  }
+}

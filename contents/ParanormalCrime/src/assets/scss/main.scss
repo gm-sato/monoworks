@@ -10,3 +10,9 @@
 @use "./layout/hero";
 @use "./layout/story";
 @use "./layout/character";
+@use "./layout/episode";
+
+/*	modules
+-----------------------------------------*/
+@use "./modules/m-heading";
+@use "./modules/modal";

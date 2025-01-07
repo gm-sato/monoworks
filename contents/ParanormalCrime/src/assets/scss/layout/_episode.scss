@@ -1,0 +1,26 @@
+@use "../base/variables" as var;
+
+.l-episode {
+  &_list {
+  }
+  &_card {
+    display: grid;
+    grid-template-columns: var.px_vw(200px) auto;
+    gap: var.px_vw(20px);
+    &-image {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    &-text {
+      color: #020202;
+      h3 {
+        font-size: var.px_vw(28.8px);
+      }
+      p {
+        font-size: var.px_vw(24px);
+      }
+    }
+  }
+}

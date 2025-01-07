@@ -1,0 +1,86 @@
+@use "../base/variables" as var;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  display: grid;
+  grid-template-columns: var.px_vw(150px) auto;
+  background: #fff;
+  padding: var.px_vw(20px);
+  border-radius: var.px_vw(8px);
+  max-width: var.px_vw(700px);
+  width: 100%;
+  text-align: center;
+  position: relative;
+
+  /* 初期状態を縮小状態に */
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+
+  /* アニメーションの設定 */
+  animation: openModal 0.5s ease forwards;
+  &-image {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  &-text {
+    color: #020202;
+    h3 {
+      font-size: var.px_vw(28.8px);
+    }
+    p {
+      font-size: var.px_vw(24px);
+    }
+  }
+}
+
+/* モーダルを閉じた後にスムーズに消えるアニメーション */
+.modal-content.closing {
+  animation: closeModal 0.5s ease forwards;
+}
+
+/* アニメーションの定義 */
+@keyframes openModal {
+  from {
+    transform: scaleY(0); /* 縦方向に縮小 */
+    opacity: 0; /* 完全に透明 */
+  }
+  to {
+    transform: scaleY(1); /* 元のサイズに展開 */
+    opacity: 1; /* 完全に表示 */
+  }
+}
+
+@keyframes closeModal {
+  from {
+    transform: scaleY(1); /* 表示状態 */
+    opacity: 1; /* 完全に表示 */
+  }
+  to {
+    transform: scaleY(0); /* 縦方向に縮小 */
+    opacity: 0; /* 完全に透明 */
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}

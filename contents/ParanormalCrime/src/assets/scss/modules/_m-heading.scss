@@ -1,4 +1,9 @@
+@use "../base/variables" as var;
 .m-heading {
   &_Type2 {
+    display: block;
+    h2 {
+      font-size: var.px_vw(34.56px);
+    }
   }
 }

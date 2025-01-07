@@ -7,9 +7,11 @@
   h1 {
     position: absolute;
     display: block;
+    width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: var.px_vw(70px);
+    font-size: var.px_vw(71.66px);
+    text-align: center;
   }
 }
