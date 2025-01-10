@@ -1,6 +1,7 @@
 @use "../base/variables" as var;
 .l-story {
   &_text {
+    text-align: center;
     p {
       font-size: var.px_vw(24px);
     }

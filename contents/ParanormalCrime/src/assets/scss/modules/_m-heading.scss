@@ -2,8 +2,12 @@
 .m-heading {
   &_Type2 {
     display: block;
+
     h2 {
+      display: block;
+      width: fit-content;
       font-size: var.px_vw(34.56px);
+      margin: auto;
     }
   }
 }

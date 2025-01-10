@@ -52,9 +52,10 @@ div.l-bg
         .l-shop_img
           img(src="")
         .l-shop_text
-          h3
+          h3 PARANORMAL CRIME
           span
           p
+          a(href="") BOOTHはこちら
 
 
   p ようこそ、私たちのホームページへ！

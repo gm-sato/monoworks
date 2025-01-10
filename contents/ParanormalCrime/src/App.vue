@@ -1,17 +1,24 @@
 <template lang="pug">
+AppHeader
 main
   router-view
+AppFooter
 </template>
 
 <script>
 import { watch } from "vue";
 import { useRouter } from "vue-router";
+import AppHeader from "./components/Header.vue";
+import AppFooter from "./components/Footer.vue";
 
 export default {
   name: "App",
+  components: {
+    AppHeader,
+    AppFooter,
+  },
   setup() {
     const router = useRouter();
-
     // ページ遷移時にメタ情報を設定
     watch(
       () => router.currentRoute.value.meta,

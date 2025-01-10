@@ -1,0 +1,10 @@
+@use "../base/variables" as var;
+#contentFooter {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: var.px_vw(50px);
+  bottom: 0;
+  background-color: black;
+  z-index: 9999;
+}

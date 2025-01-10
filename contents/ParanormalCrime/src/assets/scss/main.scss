@@ -16,3 +16,8 @@
 -----------------------------------------*/
 @use "./modules/m-heading";
 @use "./modules/modal";
+
+/*	ui
+-----------------------------------------*/
+@use "./ui/contentHeader";
+@use "./ui/contentFooter";
