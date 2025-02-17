@@ -1,0 +1,21 @@
+@use "../base/variables"as var;
+
+.l-handout {
+  display: block;
+  width: var.px_vw(600px);
+  margin: auto;
+
+  &_list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var.px_vw(20px);
+  }
+
+  &_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

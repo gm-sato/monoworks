@@ -1,0 +1,23 @@
+@use "../base/variables"as var;
+
+.l-episode {
+  width: var.px_vw(800px);
+
+  &_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &_card {
+    width: var.px_vw(350px);
+    background-color: aliceblue;
+
+    &:nth-child(odd) {
+      justify-content: start;
+    }
+
+    &:nth-child(even) {
+      justify-content: end;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@use "./base/variables" as var;
+@use "./base/variables"as var;
 
 /*	reset
 -----------------------------------------*/
@@ -8,3 +8,6 @@
 -----------------------------------------*/
 @use "./layout/top";
 @use "./layout/hero";
+@use "./layout/story";
+@use "./layout/handout";
+@use "./layout/episode";
