@@ -23,20 +23,20 @@ div.l-bg
         h2 HANDOUT
       .l-handout_list
         .l-handout_card
-          h3.l-handout_card-name HO1
+          h3.l-handout_card-name HO1<br>「ロスト探索者」
           p.l-handout_card-text
-          router-link(to="/ho1").l-handout_card-link#handout01 リンク
+          router-link(to="/ho1").l-handout_card-link#handout01 MORE
         .l-handout_card
-          h3.l-handout_card-name HO2
+          h3.l-handout_card-name HO2<br>「SAN0探索者」
           p.l-handout_card-text
-          router-link(to="/ho2").l-handout_card-link#handout02 リンク
+          router-link(to="/ho2").l-handout_card-link#handout02 MORE
         .l-handout_card
-          h3.l-handout_card-name HO3
+          h3.l-handout_card-name HO3<br>「生存探索者」
           p.l-handout_card-text
-          router-link(to="/ho3").l-handout_card-link#handout03 リンク
+          router-link(to="/ho3").l-handout_card-link#handout03 MORE
     section.l-episode
       .m-headingType2
-        h2 HANDOUT
+        h2 EPISODE
       .l-episode_list
         .l-episode_card
           h3.l-episode_card-name 第一話<br>ヒーローと眠り姫
@@ -105,20 +105,19 @@ div.l-bg
 
     section.l-character
       h3 これはちっぽけなヒーローの物語
-      ul
-        li
-        li
-        li
+      ul.l-character_list
+        li.l-character_list-ho1: img(src="../assets/images/character.png")
+        li.l-character_list-ho2: img(src="../assets/images/character.png")
+        li.l-character_list-ho3: img(src="../assets/images/character.png")
 
     section.l-shop
       .l-shop_wrapper
-        .l-shop_img
         .l-shop_text
-
-
-  p ようこそ、私たちのホームページへ！
-  router-link(to="/about") アバウトページへ
-
+          span サークル「語部茶屋」
+          h2 HALLO HERO
+          a(href="")
+        .l-shop_img
+          img(src="../assets/images/book.png")
 </template>
 
 <script>

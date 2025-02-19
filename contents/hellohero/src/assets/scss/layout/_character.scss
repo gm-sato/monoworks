@@ -1,0 +1,34 @@
+@use "../base/variables" as var;
+
+.l-character {
+  width: var.px_vw(800px);
+  margin: auto;
+  h3 {
+    display: block;
+    width: 100%;
+    font-size: var.px_vw(24px);
+    text-align: center;
+  }
+  &_list {
+    position: relative;
+    display: block;
+    height: var.px_vw(500px);
+    li {
+      position: absolute;
+      width: var.px_vw(200px);
+      transform: translateX(-50%);
+    }
+    &-ho1 {
+      top: var.px_vw(10px);
+      left: 55%;
+    }
+    &-ho2 {
+      top: var.px_vw(100px);
+      left: 45%;
+    }
+    &-ho3 {
+      top: var.px_vw(300px);
+      left: 50%;
+    }
+  }
+}

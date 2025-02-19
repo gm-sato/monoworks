@@ -1,8 +1,8 @@
-@use "../base/variables"as var;
+@use "../base/variables" as var;
 
 .l-handout {
   display: block;
-  width: var.px_vw(600px);
+  width: var.px_vw(800px);
   margin: auto;
 
   &_list {
@@ -17,5 +17,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: var.px_vw(10px);
+    background-color: #fff;
+    &-name {
+      font-size: var.px_vw(20px);
+      font-weight: bold;
+      text-align: center;
+      color: #707070;
+    }
+    &-link {
+      display: block;
+      width: 60%;
+      margin: auto;
+      border: 1px solid #707070;
+      font-size: var.px_vw(20px);
+      font-weight: bold;
+      text-align: center;
+      line-height: 1;
+      padding: var.px_vw(10px);
+    }
   }
 }
