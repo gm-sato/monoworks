@@ -1,0 +1,48 @@
+@use "../base/variables" as var;
+
+.l-episode {
+  display: block;
+  width: var.px_vw(700px);
+  margin: auto;
+  &_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var.px_vw(200px) var.px_vw(60px);
+  }
+
+  &_card {
+    background-color: aliceblue;
+    color: #707070;
+    padding: var.px_vw(10px);
+
+    &:nth-child(odd) {
+      justify-content: start;
+    }
+
+    &:nth-child(even) {
+      justify-content: end;
+      transform: translateY(var.px_vw(200px));
+    }
+
+    &-name {
+      text-align: center;
+      font-size: var.px_vw(22px);
+    }
+
+    &-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var.px_vw(20px);
+      justify-content: center;
+    }
+    &-item {
+      text-align: center;
+      margin: auto;
+      padding: 0;
+      &:nth-child(3) {
+        grid-column: span 2;
+        justify-self: center;
+      }
+    }
+  }
+}

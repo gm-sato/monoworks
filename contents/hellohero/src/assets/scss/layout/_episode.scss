@@ -3,11 +3,11 @@
 .l-episode {
   display: block;
   width: var.px_vw(700px);
-  margin: auto;
   &_list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var.px_vw(200px) var.px_vw(60px);
+    margin-top: var.px_vw(30px);
   }
 
   &_card {

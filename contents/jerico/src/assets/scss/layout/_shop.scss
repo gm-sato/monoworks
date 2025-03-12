@@ -1,0 +1,10 @@
+@use "../base/variables" as var;
+.l-shop {
+  width: var.px_vw(700px);
+  margin: auto;
+  &_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var.px_vw(40px);
+  }
+}

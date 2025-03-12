@@ -1,8 +1,14 @@
-// main.scss
-$primary-color: #3498db;
+@use "../base/variables" as var;
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: $primary-color;
+  font-family: var(--ff-base);
+  background-color: var(--bgc-dark);
   color: white;
+}
+
+section {
+  margin: var.px_vw(100px) auto 0;
+  &:first-of-type {
+    margin: 0 auto;
+  }
 }

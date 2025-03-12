@@ -1,0 +1,17 @@
+@use "../base/variables"as var;
+
+.l-hero-image {
+  position: relative;
+  display: block;
+  height: 100vh;
+
+  h1 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var.px_vw(100px);
+    text-align: center;
+  }
+}

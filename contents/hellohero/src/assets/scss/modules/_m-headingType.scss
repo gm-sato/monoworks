@@ -1,5 +1,7 @@
+@use "../base/variables" as var;
 .m-headingType2 {
   display: block;
   width: fit-content;
   margin: auto;
+  font-size: var.px_vw(30px);
 }

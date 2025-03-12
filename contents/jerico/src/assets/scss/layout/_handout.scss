@@ -1,0 +1,44 @@
+@use "../base/variables" as var;
+
+.l-handout {
+  display: block;
+  max-width: var(--w-content);
+  width: 100%;
+  margin: auto;
+
+  &__container {
+    &-text {
+      font-size: var(--fs-base);
+      line-height: 1.2em;
+    }
+  }
+
+  &__list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var.px_vw(20px);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var.px_vw(10px);
+    background-color: #fff;
+
+    &-mv {
+      width: 100%;
+    }
+    &-title {
+      font-size: var(--fs-subttl);
+      font-weight: bold;
+      color: #707070;
+    }
+    &-text {
+      font-size: var(--fs-min);
+      color: #707070;
+    }
+  }
+}

@@ -3,13 +3,13 @@
 .l-handout {
   display: block;
   width: var.px_vw(800px);
-  margin: auto;
 
   &_list {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
     gap: var.px_vw(20px);
+    margin-top: var.px_vw(30px);
   }
 
   &_card {

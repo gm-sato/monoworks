@@ -1,0 +1,13 @@
+@use "./variables" as var;
+section {
+  margin-top: var.px_vw(200px);
+}
+
+.c-headingType2 {
+  display: block;
+  width: fit-content;
+  h2 {
+    font-size: var(--fs-ttl);
+    font-weight: bold;
+  }
+}

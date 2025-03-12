@@ -1,0 +1,23 @@
+@use "../base/variables" as var;
+
+.l-story {
+  &__container {
+    display: block;
+    max-width: var(--w-content);
+    width: 100%;
+    margin: auto;
+    padding: var.px_vw(50px) 0;
+    border: var.px_vw(3px) solid #000;
+  }
+  &__text {
+    p {
+      font-size: var.px_vw(43.2px);
+      font-weight: bold;
+      text-align: center;
+      margin-top: 1em;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+}
