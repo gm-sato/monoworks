@@ -4,12 +4,12 @@
   display: block;
   max-width: var(--w-content);
   width: 100%;
-  margin: auto;
 
   &__container {
+    margin-top: var.px_vw(25px);
     &-text {
       font-size: var(--fs-base);
-      line-height: 1.2em;
+      line-height: 1.34;
     }
   }
 
@@ -17,28 +17,31 @@
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: var.px_vw(20px);
+    gap: var.px_vw(40px);
+    margin-top: var.px_vw(50px);
   }
 
   &__card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: var.px_vw(10px);
     background-color: #fff;
 
     &-mv {
       width: 100%;
     }
-    &-title {
-      font-size: var(--fs-subttl);
-      font-weight: bold;
-      color: #707070;
-    }
     &-text {
-      font-size: var(--fs-min);
+      width: 100%;
       color: #707070;
+      padding: var.px_vw(10px) var.px_vw(10px) var.px_vw(25px);
+      h3 {
+        font-size: var(--fs-subttl);
+        font-weight: bold;
+      }
+      p {
+        font-size: var(--fs-min);
+        margin-top: var.px_vw(10px);
+      }
     }
   }
 }

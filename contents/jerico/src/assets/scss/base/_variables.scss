@@ -57,20 +57,21 @@ $fs-story: px_vw(43.2px);
 $fs-subttl: px_vw(25px);
 $fs-min: px_vw(20.83px);
 
-$w-content: px_vw(1400px);
+$w-content: px_vw(1200px);
 
 :root {
   /* カラー
 	--------------------------------------------------------------*/
-  --c-primary: #133e34;
+  --c-primary: #d3d3d3;
 
   /* 背景カラー
 	--------------------------------------------------------------*/
-  --bgc-dark: rgba(45, 25, 25, 0.25);
+  --bgc-dark: #1a1a2e;
 
   /* フォント
 	--------------------------------------------------------------*/
-  --ff-base: "Noto Serif JP", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho",
+  --ff-base: "Noto Sans JP", sans-serif;
+  --ff-serif: "Noto Serif JP", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho",
     "MS PMincho", serif;
 
   /* サイズ
