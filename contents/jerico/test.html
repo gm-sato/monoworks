@@ -2,12 +2,16 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>baseFillから-3～0で変化するグラフ</title>
+    <title>Canvasの横幅に合わせたグラフ描画サイズ</title>
     <style>
       body {
         font-family: sans-serif;
       }
+      /* CSSでレスポンシブにサイズ指定（モーダル内などに合わせる） */
       canvas {
+        width: 30%;
+        height: 400px;
+        max-width: 800px;
         background-color: #f0f0f0;
         display: block;
         margin: 20px auto;
@@ -17,56 +21,56 @@
   <body>
     <canvas id="canvas"></canvas>
     <script>
-      // キャンバス全体の設定
-      const canvasWidth = 800;
-      const canvasHeight = 600;
-      const labelWidth = 150; // ラベル表示用の横幅
-      const marginLeft = labelWidth + 20; // グラフ描画開始位置（ラベル分の余白を確保）
-      const marginTop = 30; // 上部余白
-      const statusSpacing = 80; // 各ステータス間の縦間隔
-      const fontSize = 24; // ラベルのフォントサイズ
-
       const canvas = document.getElementById("canvas");
-      canvas.width = canvasWidth;
-      canvas.height = canvasHeight;
       const ctx = canvas.getContext("2d");
 
-      // 各ステータスの設定（baseFill を基本値として currentFill と targetFill を管理）
+      // 基準となるサイズ（元々のデザイン時のサイズ）
+      const baseCanvasWidth = 800;
+      const baseSegmentWidth = 20;
+      const baseGap = 3;
+      const baseStatusSpacing = 60;
+      const baseMarginLeft = 200; // 例: ラベル用領域150 + 20px
+
+      // 描画パラメータ（レスポンシブに再計算）
+      let segmentWidth = baseSegmentWidth;
+      let gap = baseGap;
+      let statusSpacing = baseStatusSpacing;
+      let marginLeft = baseMarginLeft;
+      const marginTop = 30;
+      const fontSize = 24;
+      const segmentHeight = 30; // 固定サイズでOK
+
+      // ステータス設定
       const statuses = [
         {
           label: "Body",
           totalSegments: 20,
-          baseFill: 12,
-          currentFill: 12,
-          targetFill: 12,
+          filledSegments: 12,
+          activatedCount: 0,
+          frameCount: 0,
         },
         {
           label: "Sense",
           totalSegments: 20,
-          baseFill: 15,
-          currentFill: 15,
-          targetFill: 15,
+          filledSegments: 15,
+          activatedCount: 0,
+          frameCount: 0,
         },
         {
           label: "Mind",
           totalSegments: 20,
-          baseFill: 10,
-          currentFill: 10,
-          targetFill: 10,
+          filledSegments: 10,
+          activatedCount: 0,
+          frameCount: 0,
         },
         {
           label: "Social",
           totalSegments: 20,
-          baseFill: 18,
-          currentFill: 18,
-          targetFill: 18,
+          filledSegments: 18,
+          activatedCount: 0,
+          frameCount: 0,
         },
       ];
-
-      // グラフ描画用パラメータ
-      const segmentWidth = 20; // 各セグメントの横幅
-      const segmentHeight = 30; // 各セグメントの高さ
-      const gap = 3; // セグメント間の隙間
 
       // グラデーション設定（赤～オレンジ）
       let time = 0;
@@ -75,51 +79,49 @@
       const maxHue = 30;
       const hueRange = maxHue - minHue;
 
-      let frameCount = 0;
-      const updateInterval = 60; // 更新間隔（例：60フレームごとに targetFill を更新）
+      // canvas のサイズに合わせて内部解像度と描画パラメータを更新
+      function resizeCanvas() {
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
+        // クライアント幅からスケールファクターを計算
+        const scaleFactor = canvas.width / baseCanvasWidth;
+        segmentWidth = baseSegmentWidth * scaleFactor;
+        gap = baseGap * scaleFactor;
+        statusSpacing = baseStatusSpacing * scaleFactor;
+        marginLeft = baseMarginLeft * scaleFactor;
+      }
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
 
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        frameCount++;
-
-        // updateInterval ごとに、targetFill を baseFill から -3～0 の範囲内で更新
-        if (frameCount % updateInterval === 0) {
-          statuses.forEach((status) => {
-            // Math.floor(Math.random() * 4) は 0～3 の整数を返すので、baseFill - 0～3 となる
-            status.targetFill = status.baseFill - Math.floor(Math.random() * 4);
-          });
-        }
 
         statuses.forEach((status, index) => {
-          // targetFill に向けて currentFill を段階的に更新（1ずつ増減）
-          if (status.currentFill < status.targetFill) {
-            status.currentFill++;
-          } else if (status.currentFill > status.targetFill) {
-            status.currentFill--;
+          status.frameCount++;
+          // ここでは全体で5フレームごとに1セグメント点灯
+          if (
+            status.frameCount % 5 === 0 &&
+            status.activatedCount < status.filledSegments
+          ) {
+            status.activatedCount++;
           }
-          // クランプ処理（万が一オーバーしないように）
-          status.currentFill = Math.min(
-            Math.max(status.currentFill, status.baseFill - 3),
-            status.baseFill
-          );
-          const filledSegments = status.currentFill;
 
           const yOffset = marginTop + index * statusSpacing;
 
           // ラベル描画
           ctx.fillStyle = "#000";
-          ctx.font = `${fontSize}px "Courier New", Courier, monospace`;
+          ctx.font = `${fontSize}px "Impact", Charcoal`;
           ctx.textBaseline = "middle";
           ctx.fillText(status.label, 10, yOffset + segmentHeight / 2);
 
-          // セグメント描画
+          // 各セグメント描画
           for (let i = 0; i < status.totalSegments; i++) {
             const x = marginLeft + i * (segmentWidth + gap);
-            if (i < filledSegments) {
+            if (i < status.activatedCount) {
               const hue = minHue + ((time * speed + i * 3) % (hueRange + 1));
               ctx.fillStyle = `hsl(${hue}, 80%, 50%)`;
             } else {
-              ctx.fillStyle = "rgba(200, 200, 200, 1)";
+              ctx.fillStyle = "rgba(200,200,200,1)";
             }
             ctx.fillRect(x, yOffset, segmentWidth, segmentHeight);
           }

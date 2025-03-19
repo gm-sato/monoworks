@@ -31,20 +31,18 @@ div.l-bg
           .l-handout__card-text
             h3 見出し見出し見出し見出し
             p 本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文
-
-
     section.l-character
       .c-headingType2
         h2 CHARACTER
       .l-character__wrapper
         ul.l-character__list
-          li(data-number="1").l-character__list-item: img(src="../assets/images/character.png")
-          li(data-number="2").l-character__list-item: img(src="../assets/images/character.png")
-          li(data-number="3").l-character__list-item: img(src="../assets/images/character.png")
-          li(data-number="4").l-character__list-item: img(src="../assets/images/character.png")
-          li(data-number="5").l-character__list-item: img(src="../assets/images/character.png")
-          li(data-number="6").l-character__list-item: img(src="../assets/images/character.png")
-
+          // 各キャラクター項目をクリック時に openModal(番号) を呼び出す
+          li(@click="openModal(1)").l-character__list-item: img(src="../assets/images/character.png")
+          li(@click="openModal(2)").l-character__list-item: img(src="../assets/images/character.png")
+          li(@click="openModal(3)").l-character__list-item: img(src="../assets/images/character.png")
+          li(@click="openModal(4)").l-character__list-item: img(src="../assets/images/character.png")
+          li(@click="openModal(5)").l-character__list-item: img(src="../assets/images/character.png")
+          li(@click="openModal(6)").l-character__list-item: img(src="../assets/images/character.png")
     section.l-story
       .l-story__container
         .l-story__text
@@ -58,13 +56,42 @@ div.l-bg
           p ダブルクロスThe 3rd Edition
           p 楽園 <span>-Jericho-</span>
           p ダブルクロス—それは裏切りを意味する言葉。
-
+  // change-modal イベントハンドラを追加
+  Modal(
+    v-if="showModal"
+    :number="currentNumber"
+    @close="closeModal"
+    @change-modal="handleChangeModal"
+  )
 </template>
 
 <script>
+import Modal from "@/components/Modal.vue";
+
 export default {
   name: "Home",
+  components: { Modal },
+  data() {
+    return {
+      showModal: false,
+      currentNumber: null,
+    };
+  },
+  methods: {
+    openModal(num) {
+      this.currentNumber = num;
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+    },
+    handleChangeModal(newNumber) {
+      this.currentNumber = newNumber;
+    },
+  },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* 必要に応じてスタイルを追加 */
+</style>
