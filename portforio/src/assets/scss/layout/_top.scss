@@ -1,0 +1,23 @@
+@use "../base/variables" as var;
+.top-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    position: relative;
+    width: var.px_vw(600px);
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  h1 {
+    color: hotpink;
+    font-size: 60px;
+    font-weight: 600;
+  }
+}
